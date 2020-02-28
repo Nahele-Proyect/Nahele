@@ -17,6 +17,11 @@
  
 ## Models
 
-* User
 
-* Shelter/ Dog Pound
+
+* User {
+  * username
+  * password
+  * img
+  * 
+}
