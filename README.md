@@ -1,13 +1,22 @@
 # Nahele (Third Project)
 
-## Endpoints table
+## Endpoints tables
+
+#### Front Endpoints
   
   Method | Endpoint | Description
   --- | --- | --- 
-  GET | /api | Mostrar todas las mascotas en adopcion
+ 
+  
+  
+ #### Back Endpoint
+ 
+ Method | Endpoint | Description
+ --- | --- | ---
  
  
 ## Models
 
+* User
 
-
+* Shelter/ Dog Pound
