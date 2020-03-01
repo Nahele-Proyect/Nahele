@@ -13,7 +13,7 @@
  
  Method | Endpoint | Description
  --- | --- | ---
- 
+ Get | / | Main page
  
 ## Models
 
