@@ -11,6 +11,7 @@ require('./configs/session.config')(app)
 
 app.use('/api/auth', require('./routes/auth.routes'))
 app.use('/api/files', require('./routes/files.routes.js'))
+app.use('/api/scrap', require('./routes/scrap.routes'))
 
 
 module.exports = app
