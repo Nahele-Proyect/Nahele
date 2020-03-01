@@ -39,7 +39,7 @@ authRoutes.post('/signup', (req, res, next) => {
         })
     }
 
-    if (password.length < 7) {
+    if (password.length < 6) {
         res.status(400).json({
             message: 'La contraseña debe tener al menos 8 carácteres.'
         })
@@ -58,7 +58,7 @@ authRoutes.post('/signup', (req, res, next) => {
 
         if (err) {
             res.status(500).json({
-                message: "Username check went bad."
+                message: "Nombre de usuario incorrecto."
             })
             return
         }
@@ -74,8 +74,9 @@ authRoutes.post('/signup', (req, res, next) => {
         const hashPass = bcrypt.hashSync(password, salt)
 
         const aNewUser = new User({
-            username: username,
-            password: hashPass
+            username,
+            password: hashPass,
+            email
         })
 
         aNewUser.save(err => {
@@ -85,6 +86,7 @@ authRoutes.post('/signup', (req, res, next) => {
                 })
                 return
             }
+
             sendMail(username, email, password)
 
 
