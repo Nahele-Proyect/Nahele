@@ -12,6 +12,7 @@ router.get('/', (req, res) => {
     const species = []
     const urgencys = []
     const flags = []
+    const citys = []
 
     axiosApp.get('/')
         .then(response => {
@@ -40,6 +41,8 @@ router.get('/', (req, res) => {
 
             $('.m-portlet__foot').each((idx, urgency) => urgencys.push(urgency.children[0].data))
 
+            $('.info span').each((idx, city) => citys.push(city.children[0].data))
+
             return names.map((elm, idx) => {
                 return {
                     name: elm,
@@ -47,7 +50,8 @@ router.get('/', (req, res) => {
                     flag: flags[idx],
                     specie: species[idx],
                     urgency: urgencys[idx],
-                    link: links[idx]
+                    link: links[idx],
+                    city: citys[idx]
                 }
             })
 
@@ -98,7 +102,17 @@ router.get('/details/:code', (req, res) => {
                 pet.comment = data.children[0].data
             })
 
+            $('.ciudad').each((idx, city) => pet.city = city.children[0].data)
 
+            $('img').each((idx, image) => {
+
+                if (image.attribs.src.includes('.svg') &&
+                    !image.attribs.src.includes('fav')
+                ) {
+                    pet.flag = image.attribs.src
+                    return
+                }
+            })
 
         }).then(() => res.json({ status: 'ok', pet }))
         .catch(err => console.log(err))
