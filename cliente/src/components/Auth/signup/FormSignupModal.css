@@ -104,7 +104,7 @@
      padding: 0px 10px;
      background-color: rgba(0, 0, 0, 0.03);
      border: none;
-     display: inline;
+     display: inline-block;
      color: #303030;
      font-size: 16px;
      font-weight: 400;

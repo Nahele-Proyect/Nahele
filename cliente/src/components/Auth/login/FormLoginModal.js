@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 
 import AuthServices from '../../../services/auth.service'
-import './FormLoginModal.css'
 
 
 
@@ -16,8 +15,6 @@ class LoginForm extends Component {
         this.AuthServices = new AuthServices()
         this.errorMessage = ""
     }
-
-
 
     finishAction = () => {
         this.props.closeModal()
