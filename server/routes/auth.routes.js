@@ -118,11 +118,6 @@ authRoutes.post('/signup', (req, res, next) => {
     })
 })
 
-
-
-
-
-
 authRoutes.post('/login', (req, res, next) => {
     passport.authenticate('local', (err, theUser, failureDetails) => {
         if (err) {
@@ -178,8 +173,64 @@ authRoutes.get('/loggedin', (req, res, next) => {
 })
 
 authRoutes.put('/updateUser', (req, res, next) => {
-    console.log(req.body)
-    User.findByIdAndUpdate(req.user._id, req.body, {
+
+    const {
+        username,
+        password,
+        confirmPassword
+
+    } = req.body
+
+    if (!username) {
+        res.json({
+            message: 'Porfavor, introduzca nombre de usuario.',
+            status: 'fail'
+        })
+        return
+    }
+    if (!password) {
+        res.json({
+            message: 'Porfavor, introduzca contraseña.',
+            status: 'fail'
+        })
+        return
+    }
+
+    if (password != confirmPassword) {
+        res.json({
+            message: 'Las contraseñas no coinciden.',
+            status: 'fail'
+        })
+    }
+    if (password.length < 6) {
+        res.json({
+            message: 'La contraseña debe tener al menos 8 carácteres.',
+            status: 'fail'
+        })
+        return
+    }
+    if (!password.match(/[A-Z]/) || !password.match(/[0-9]/)) {
+        res.status(400).json({
+            message: 'La contraseña debe tener al menos una mayúscula y un número.',
+            status: 'fail'
+        })
+        return
+    }
+    const salt = bcrypt.genSaltSync(10)
+    const hashPass = bcrypt.hashSync(password, salt)
+
+    if (bcrypt.compareSync(password, req.user.password)) {
+        res.json({
+            status: 'fail',
+            message: 'Ya estás usando esta contraseña'
+        })
+        return
+    }
+
+    User.findByIdAndUpdate(req.user._id, {
+            username,
+            hashPass
+        }, {
             new: true
         })
         .then(theUser => res.json(theUser))
