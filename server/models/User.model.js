@@ -6,7 +6,8 @@ const userSchema = new Schema({
   password: String,
   confirmPassword: String,
   email: String,
-  img: String
+  img: String,
+  pets: [Schema.Types.ObjectId]
 }, {
   timestamps: true
 })
