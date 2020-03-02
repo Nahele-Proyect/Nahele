@@ -16,38 +16,45 @@ authRoutes.post('/signup', (req, res, next) => {
     } = req.body
 
     if (!username) {
-        res.status(400).json({
-            message: 'Porfavor, introduzca nombre de usuario.'
+        res.json({
+            message: 'Porfavor, introduzca nombre de usuario.',
+            status: 'fail'
         })
         return
     }
     if (!password) {
-        res.status(400).json({
-            message: 'Porfavor, introduzca contraseña.'
+        res.json({
+            message: 'Porfavor, introduzca contraseña.',
+            status: 'fail'
         })
         return
     }
 
     if (password != confirmPassword) {
-        res.status(400).json({
-            message: 'Las contraseñas no coinciden.'
+        res.json({
+            message: 'Las contraseñas no coinciden.',
+            status: 'fail'
         })
     }
     if (!email) {
-        res.status(400).json({
-            message: 'Porfavor, introduzca correo electrónico.'
+        res.json({
+            message: 'Porfavor, introduzca correo electrónico.',
+            status: 'fail'
         })
+        return
     }
 
     if (password.length < 6) {
-        res.status(400).json({
-            message: 'La contraseña debe tener al menos 8 carácteres.'
+        res.json({
+            message: 'La contraseña debe tener al menos 8 carácteres.',
+            status: 'fail'
         })
         return
     }
     if (!password.match(/[A-Z]/) || !password.match(/[0-9]/)) {
         res.status(400).json({
-            message: 'La contraseña debe tener al menos una mayúscula y un número.'
+            message: 'La contraseña debe tener al menos una mayúscula y un número.',
+            status: 'fail'
         })
         return
     }
@@ -57,15 +64,17 @@ authRoutes.post('/signup', (req, res, next) => {
     }, (err, foundUser) => {
 
         if (err) {
-            res.status(500).json({
-                message: "Nombre de usuario incorrecto."
+            res.json({
+                message: "Nombre de usuario incorrecto.",
+                status: 'fail'
             })
             return
         }
 
         if (foundUser) {
-            res.status(400).json({
-                message: 'Ya existe este nombre de usuario.'
+            res.json({
+                message: 'Ya existe este nombre de usuario.',
+                status: 'fail'
             })
             return
         }
@@ -117,8 +126,9 @@ authRoutes.post('/signup', (req, res, next) => {
 authRoutes.post('/login', (req, res, next) => {
     passport.authenticate('local', (err, theUser, failureDetails) => {
         if (err) {
-            res.status(500).json({
-                message: 'Algo ha ido mal, porfavor, inténtelo de nuevo.'
+            res.json({
+                message: 'Algo ha ido mal, porfavor, inténtelo de nuevo.',
+                status: 'fail'
             })
             return
         }
@@ -165,6 +175,15 @@ authRoutes.get('/loggedin', (req, res, next) => {
     res.status(403).json({
         message: 'No autorizado.'
     })
+})
+
+authRoutes.put('/updateUser', (req, res, next) => {
+    console.log(req.body)
+    User.findByIdAndUpdate(req.user._id, req.body, {
+            new: true
+        })
+        .then(theUser => res.json(theUser))
+        .catch(err => console.log(err))
 })
 
 module.exports = authRoutes

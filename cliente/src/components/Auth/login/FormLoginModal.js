@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import AuthServices from '../../../services/auth.services'
+import AuthServices from '../../../services/auth.service'
 import './FormLoginModal.css'
 
 

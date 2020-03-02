@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-
+import './Navbar.css'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import Modal from 'react-bootstrap/Modal'
-import AuthServices from '../../services/auth.services'
+import AuthServices from '../../services/auth.service'
 
 import { Link } from 'react-router-dom'
 import SignupForm from '../Auth/signup/FormSignupModal'
@@ -45,7 +45,7 @@ class Navigation extends Component {
             this.props.loggedInUser ?
                 (
                     <Navbar bg="dark" expand="lg" variant="dark">
-                        <Navbar.Brand href="#home">Fluffy's Shelter</Navbar.Brand>
+                        <Navbar.Brand ><Link className='logo' to="/">Fluffy's Shelter</Link></Navbar.Brand>
                         <Nav.Link as="small" style={{ color: 'white' }}>{greeting}</Nav.Link>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
