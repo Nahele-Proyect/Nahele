@@ -13,4 +13,5 @@ export default class Services {
     login = ({ username, password }) => this.service.post('/login', { username, password }).then(response => response.data)
     logout = () => this.service.post('/logout').then(response => response.data)
     loggedin = () => this.service.get('/loggedin').then(response => response.data)
+    updateUser = ({ username, password, confirmPassword, email, img }) => this.service.put('/updateUser', { username, password, confirmPassword, email, img }).then(response => response.data)
 }

@@ -3,9 +3,10 @@ import './App.css';
 
 import Navbar from './components/ui/Navbar'
 
+import { Switch, Route, Redirect } from "react-router-dom"
 
-import AuthServices from './services/auth.services'
-// import SignupForm from './components/Form/FormSignupModal';
+import AuthServices from './services/auth.service'
+import Profile from './components/pages/Profile/Profile'
 
 class App extends Component {
   constructor() {
@@ -31,8 +32,9 @@ class App extends Component {
       <>
         <Navbar setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} />
 
-
-        <h1>Hellooo</h1>
+        {<Switch>
+          <Route path="/profile" render={() => this.state.loggedInUser ? <Profile loggedInUser={this.state.loggedInUser} /> : <Redirect to="/" />} />
+        </Switch>}
       </>
     )
   }

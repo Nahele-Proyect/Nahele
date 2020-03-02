@@ -1,22 +1,25 @@
 import React, { Component } from 'react'
 
 import AuthServices from '../../../services/auth.service'
-import './FormSignupModal.css'
+import FilesServices from '../../../services/files.service'
+import './ProfileForm.css'
 
 
 
-class SignupForm extends Component {
+class ProfileForm extends Component {
 
     constructor(props) {
         super(props)
         this.state = {
-            username: '',
+            username: this.props.loggedInUser.username,
             password: '',
             confirmPassword: '',
-            email: '',
+            email: this.props.loggedInUser.email,
+            img: '',
             errorMessage: ""
         }
         this.AuthServices = new AuthServices()
+        this.filesServices = new FilesServices()
 
     }
 
@@ -25,15 +28,15 @@ class SignupForm extends Component {
     finishAction = () => {
         this.props.closeModal()
     }
-    postUser = () => {
-        this.AuthServices.signup(this.state)
-            .then(theLoggedNewUser => {
-                if (theLoggedNewUser.status === 'fail') {
-                    this.setState({ errorMessage: theLoggedNewUser.message })
+    updateUser = () => {
+        this.AuthServices.updateUser(this.state)
+            .then(theUpdateUser => {
+                if (theUpdateUser.status === 'fail') {
+                    this.setState({ errorMessage: theUpdateUser.message })
                     return
                 }
-                this.setState({ username: '', password: '', confirmPassword: '', email: '' })
-                this.props.setTheUser(theLoggedNewUser)
+                this.setState({ username: '', password: '', confirmPassword: '', email: '', img: '' })
+                this.props.setTheUser(theUpdateUser)
                 this.finishAction()
 
             })
@@ -47,7 +50,7 @@ class SignupForm extends Component {
 
     handleSubmit = e => {
         e.preventDefault()
-        this.postUser()
+        this.updateUser()
     }
 
 
@@ -82,7 +85,10 @@ class SignupForm extends Component {
                                     <label htmlFor='confirmPassword'> Confirmar contraseña</label>
                                     <input type='password' id='confirmPassword' name='confirmPassword' placeholder="Confirme la contraseña"
                                         title='Confirme la contraseña' value={this.state.confirmPassword} onChange={this.handleChange} />
-
+                                </p>
+                                <p className='field'>
+                                    <label htmlFor='img'>Foto de perfil</label>
+                                    <input type='file' id='img' name='img' title='Cambiar foto de perfil' value={this.state.img} onChange={this.handleChange} />
                                 </p>
                                 {this.state.errorMessage}
                                 <p className='link account-message aux-mes' onClick={this.props.closeModal} > Volver atrás</p>
@@ -98,4 +104,4 @@ class SignupForm extends Component {
 }
 
 
-export default SignupForm
+export default ProfileForm
