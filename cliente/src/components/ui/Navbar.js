@@ -61,7 +61,7 @@ class Navigation extends Component {
                 (
                     <>
                         <Navbar bg="dark" expand="lg" variant="dark">
-                            <Navbar.Brand href="/">Fluffy's Shelter</Navbar.Brand>
+                            <Navbar.Brand as="div"><Link to="/">Fluffy's Shelter</Link></Navbar.Brand>
                             <Nav.Link as="small" style={{ color: 'white' }}>{greeting}</Nav.Link>
                             <Navbar.Toggle aria-controls="basic-navbar-nav" />
                             <Navbar.Collapse id="basic-navbar-nav">
