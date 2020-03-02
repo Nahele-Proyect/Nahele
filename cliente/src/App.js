@@ -13,11 +13,15 @@ class App extends Component {
     super()
     this.state = { loggedInUser: false }
     this.services = new AuthServices()
+
   }
 
   componentDidUpdate = (prevProps, prevState) => console.log('El estado de app  se ha actualizado', this.state)
 
-  componentDidMount = () => this.fetchUser()
+  componentDidMount = () => {
+
+    this.fetchUser()
+  }
 
   setTheUser = userObj => this.setState({ loggedInUser: userObj })
 
@@ -30,11 +34,11 @@ class App extends Component {
   render() {
     return (
       <>
-        <Navbar setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} />
+        <Navbar setTheUser={ this.setTheUser } loggedInUser={ this.state.loggedInUser } />
 
-        {<Switch>
-          <Route path="/profile" render={() => this.state.loggedInUser ? <Profile loggedInUser={this.state.loggedInUser} /> : <Redirect to="/" />} />
-        </Switch>}
+        { <Switch>
+          <Route path="/profile" render={ () => this.state.loggedInUser ? <Profile loggedInUser={ this.state.loggedInUser } /> : <Redirect to="/" /> } />
+        </Switch> }
       </>
     )
   }
