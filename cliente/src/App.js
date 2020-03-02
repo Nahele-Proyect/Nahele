@@ -4,6 +4,12 @@ import './App.css';
 import Navbar from './components/ui/Navbar'
 
 
+
+// import Chat from './components/Chat/Chat';
+// import Join from './components/Join/Join';
+// import { Switch, Route } from "react-router-dom";
+
+
 import AuthServices from './services/auth.services'
 // import SignupForm from './components/Form/FormSignupModal';
 
@@ -31,7 +37,10 @@ class App extends Component {
       <>
         <Navbar setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} />
 
-
+        {/* <Switch>
+          <Route path="/join" exact component={Join} />
+          <Route path="/chat" component={Chat} />
+        </Switch> */}
         <h1>Hellooo</h1>
       </>
     )
