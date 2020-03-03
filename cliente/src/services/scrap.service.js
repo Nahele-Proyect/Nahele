@@ -8,5 +8,5 @@ export default class Services {
         })
     }
     getAll = () => this.service.get('/').then(response => response.data)
-    getDetails = endpoint => this.service.get('/details' + endpoint).then(response => response.data)
+    getDetails = endpoint => this.service.get('/details/' + endpoint).then(response => response.data)
 }
