@@ -5,20 +5,22 @@ const petSchema = new Schema({
     name: { type: String, required: true },
     img: { type: String, required: true },
     city: { type: String, required: true },
-    owner: Schema.Types.ObjectId,
-    urgency: { enum: ["En Adopción", "Urgente"] },
+    flag: String,
+    owner: { type: Schema.Types.ObjectId },
+    urgency: { type: String, enum: ["En Adopción", "Urgente"] },
     personality: [String],
     born: String,
     gender: String,
     size: String,
     weigth: String,
     activity: String,
-    vaccinated: { enum: ["Sí", "No"] },
-    dewormed: { enum: ["Sí", "No"] },
-    healthy: { enum: ["Sí", "No"] },
-    sterilized: { enum: ["Sí", "No"] },
-    identified: { enum: ["Sí", "No"] },
-    microchip: { enum: ["Sí", "No"] }
+    vaccinated: { type: String, enum: ["Sí", "No"] },
+    dewormed: { type: String, enum: ["Sí", "No"] },
+    healthy: { type: String, enum: ["Sí", "No"] },
+    sterilized: { type: String, enum: ["Sí", "No"] },
+    identified: { type: String, enum: ["Sí", "No"] },
+    microchip: { type: String, enum: ["Sí", "No"] },
+    comment: String
 }, {
     timestamps: true
 })
