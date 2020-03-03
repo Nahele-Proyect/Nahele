@@ -1,4 +1,4 @@
-.signup h2 {
+.email h2 {
     font-size: 16px;
     letter-spacing: -1px;
     line-height: 20px;
@@ -6,14 +6,12 @@
     text-align: center;
 }
 
-
-
-.signup .i {
+.email .i {
     width: 20px;
     height: 20px;
 }
 
-.signup .i-login {
+.email .i-login {
     margin: 13px 0px 0px 15px;
     position: relative;
     float: left;
@@ -23,7 +21,7 @@
     background-position: center;
 }
 
-.signup .box {
+.email .box {
     width: 330px;
     position: absolute;
     top: 50%;
@@ -31,13 +29,13 @@
     transform: translate(-50%, -50%);
 }
 
-.signup .box-form {
+.email .box-form {
     width: 320px;
     position: relative;
     z-index: 1;
 }
 
-.signup .box-login-tab {
+.email .box-login-tab {
     width: 50%;
     height: 40px;
     background: #fdfdfd;
@@ -51,7 +49,7 @@
     box-shadow: 15px -15px 30px rgba(0, 0, 0, 0.32);
 }
 
-.signup .box-login-title {
+.email .box-login-title {
     width: 35%;
     height: 40px;
     position: absolute;
@@ -59,7 +57,7 @@
     z-index: 2;
 }
 
-.signup .box-login {
+.email .box-login {
     position: relative;
     top: -4px;
     width: 320px;
@@ -73,18 +71,18 @@
     box-shadow: 15px 30px 30px rgba(0, 0, 0, 0.32);
 }
 
-.signup button:focus {
+.email button:focus {
     outline: 0;
 }
 
-.signup .fieldset-body p {
+.email .fieldset-body p {
     width: 100%;
     display: inline-table;
     padding: 5px 20px;
     margin-bottom: 2px;
 }
 
-.signup label {
+.email label {
     float: left;
     width: 100%;
     top: 0px;
@@ -96,9 +94,7 @@
     margin-top: 7px;
 }
 
-.signup input[type=text],
-input[type=password],
-input[type=email] {
+.email input[type=email] {
     width: 100%;
     height: 32px;
     padding: 0px 10px;
@@ -110,14 +106,12 @@ input[type=email] {
     font-weight: 400;
 }
 
-.signup input[type=text]:focus,
-input[type=password]:focus,
-input[type=email]:focus {
+.email input[type=email]:focus {
     background-color: #d4eef5;
     outline: none;
 }
 
-.signup input[type=submit] {
+.email input[type=submit] {
     width: 100%;
     height: 48px;
     margin-top: 15px;
@@ -135,16 +129,16 @@ input[type=email]:focus {
     transition: all .5s ease-in;
 }
 
-.signup input[type=submit]:hover {
+.email input[type=submit]:hover {
     background-color: #40a5df;
     border: 1px #40a5df solid;
 }
 
-.signup input[type=submit]:focus {
+.email input[type=submit]:focus {
     outline: none;
 }
 
-.signup p.field span.i {
+.email p.field span.i {
     width: 24px;
     height: 24px;
     float: right;
@@ -155,15 +149,16 @@ input[type=email]:focus {
     display: none;
 }
 
-.signup .link {
+.email .link {
     color: blue;
     margin-top: 10px;
 }
 
-.signup .link:hover {
+.email .link:hover {
     cursor: pointer;
+
 }
 
-.signup .failureMessage {
+.email .failureError {
     color: red;
 }

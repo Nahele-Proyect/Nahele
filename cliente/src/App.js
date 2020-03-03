@@ -1,10 +1,7 @@
-import React, { Component } from 'react';
-import './App.css';
-
+import React, { Component } from 'react'
+import './App.css'
 import Navbar from './components/ui/Navbar'
-
 import { Switch, Route, Redirect } from "react-router-dom"
-
 import AuthServices from './services/auth.service'
 import Profile from './components/pages/Profile/Profile'
 
@@ -18,7 +15,6 @@ class App extends Component {
   componentDidUpdate = (prevProps, prevState) => console.log('El estado de app  se ha actualizado', this.state)
 
   componentDidMount = () => {
-
     this.fetchUser()
   }
 

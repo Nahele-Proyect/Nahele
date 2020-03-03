@@ -6,7 +6,10 @@ const uploader = require('../configs/cloudinary.config')
 router.post('/upload', uploader.single("imageUrl"), (req, res, next) => {
 
     if (!req.file) {
-        next(new Error('No file uploaded!'))
+        res.json({
+            message: 'Porfavor seleccione una imagen.',
+            status: 'fail'
+        })
         return
     }
 

@@ -1,18 +1,17 @@
+import './ImgForm.css'
 import React, { Component } from 'react'
-import './FormLogin.css'
-import AuthServices from '../../../services/auth.service'
+import FilesServices from '../../../../services/files.service'
+import AuthServices from '../../../../services/auth.service'
 
-
-
-class LoginForm extends Component {
+class ImgForm extends Component {
 
     constructor(props) {
         super(props)
         this.state = {
-            username: '',
-            password: '',
+            img: '',
             errorMessage: ''
         }
+        this.FilesServices = new FilesServices()
         this.AuthServices = new AuthServices()
     }
 
@@ -20,18 +19,18 @@ class LoginForm extends Component {
         this.props.closeModal()
     }
 
-    postUser = () => {
-        this.AuthServices.login(this.state)
-            .then(theLoggedUser => {
-                if (theLoggedUser.status === 'fail') {
-                    this.setState({ errorMessage: theLoggedUser.message })
+    updateUser = () => {
+        this.AuthServices.updateImg(this.state)
+            .then(theUpdateUser => {
+                if (theUpdateUser.status === 'fail') {
+                    this.setState({ errorMessage: theUpdateUser.message })
                     return
                 }
-                this.setState({ username: '', password: '' })
-                this.props.setTheUser(theLoggedUser)
+                this.props.setTheUser(theUpdateUser)
+                this.setState({ img: '', errorMessage: '' })
                 this.finishAction()
             })
-            .catch(err => console.log(err))
+            .catch(err => (err))
     }
 
     handleChange = e => {
@@ -41,14 +40,26 @@ class LoginForm extends Component {
 
     handleSubmit = e => {
         e.preventDefault()
-        this.postUser()
+        this.updateUser()
+    }
+    handleFileUpload = e => {
+        const uploadData = new FormData()
+        uploadData.append("img", e.target.files[0])
+        this.filesServices.handleUpload(uploadData)
+            .then(response => {
+                console.log('Subida de archivo finalizada! La URL de Cloudinray es: ', response.secure_url)
+                this.setState({
+                    img: response.secure_url
+                })
+            })
+            .catch(err => console.log(err))
     }
 
 
     render() {
 
         return (
-            <div className='login'>
+            <div className='email'>
                 <form id="form-container" onSubmit={this.handleSubmit}>
                     <div className='box'>
                         <div className='box-form'>
@@ -61,25 +72,22 @@ class LoginForm extends Component {
                             <div className='box-login'>
                                 <div className='fieldset-body' id='login_form'>
                                     <p className='field'>
-                                        <label htmlFor='username'>Usuario</label>
-                                        <input type='text' id='username' name='username' title='Introduzca nombre de usuario' placeholder="Introduzca nombre de usuario" value={this.state.username} onChange={this.handleChange} />
+                                        <label htmlFor='img'>Foto de perfil</label>
+                                        <input type='file' id='img' name='img' title='Sube una foto de perfil' onChange={this.handleFileUpload} />
                                     </p>
-                                    <p className='field'>
-                                        <label htmlFor='password'>Contraseña</label>
-                                        <input type='password' id='password' name='password' title='Introduzca la contraseña'
-                                            placeholder="Introduzca la contraseña" value={this.state.password} onChange={this.handleChange} /></p>
-                                    <p className='failureMessage'> {this.state.errorMessage}</p>
+                                    <p className='failureError'> {this.state.errorMessage}</p>
                                     <p className='link account-message aux-mes' onClick={this.props.closeModal} > Volver atrás</p>
-                                    <input type='submit' id='do_login' value='ENTRAR' />
+                                    <input type='submit' id='do_login' value='ACTUALIZAR FOTO' />
                                 </div>
                             </div>
                         </div>
                     </div>
                 </form>
             </div>
+
         )
     }
 }
 
 
-export default LoginForm
+export default ImgForm
