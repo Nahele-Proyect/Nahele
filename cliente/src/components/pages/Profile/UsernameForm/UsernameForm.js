@@ -1,41 +1,41 @@
 import React, { Component } from 'react'
 
-import AuthServices from '../../../services/auth.service'
-import './FormSignupModal.css'
+import AuthServices from '../../../../services/auth.service'
+import FilesServices from '../../../../services/files.service'
+import './ProfileForm.css'
 
 
 
-class SignupForm extends Component {
+class UsernameFrom extends Component {
 
     constructor(props) {
         super(props)
         this.state = {
-            username: '',
-            password: '',
-            confirmPassword: '',
-            email: '',
+            username: "",
             errorMessage: ""
         }
+
+
         this.AuthServices = new AuthServices()
+        this.filesServices = new FilesServices()
 
     }
 
     finishAction = () => {
         this.props.closeModal()
     }
-    postUser = () => {
-        this.AuthServices.signup(this.state)
-            .then(theLoggedNewUser => {
-                if (theLoggedNewUser.status === 'fail') {
-                    this.setState({ errorMessage: theLoggedNewUser.message })
+    updateUser = () => {
+        this.AuthServices.updateUsername(this.state)
+            .then(theUpdateUser => {
+                if (theUpdateUser.status === 'fail') {
+                    this.setState({ errorMessage: theUpdateUser.message })
                     return
                 }
-                this.setState({ username: '', password: '', confirmPassword: '', email: '' })
-                this.props.setTheUser(theLoggedNewUser)
+                this.props.setTheUser(theUpdateUser)
+                this.setState({ username: '', mesage: '' })
                 this.finishAction()
-
             })
-            .catch(err => console.log(err))
+            .catch(err => (err))
     }
 
     handleChange = e => {
@@ -45,7 +45,7 @@ class SignupForm extends Component {
 
     handleSubmit = e => {
         e.preventDefault()
-        this.postUser()
+        this.updateUser()
     }
 
 
@@ -65,13 +65,9 @@ class SignupForm extends Component {
                             <div className='fieldset-body' id='login_form'>
                                 <p className='field'>
                                     <label htmlFor='username'>Usuario</label>
-                                    <input type='text' id='username' name='username' title='Introduzca nombre de usuario' placeholder="Introduzca nombre de usuario" value={this.state.username} onChange={this.handleChange} />
+                                    <input type='text' id='username' name='username' title='Introduzca nuevo nombre de usuario' placeholder="Introduzca nombre de usuario" value={this.state.username} onChange={this.handleChange} />
                                 </p>
-                                <p className='field'>
-                                    <label htmlFor='email'>Email</label>
-                                    <input type='email' id='email' name='email' title='Introduzca correo electrónico' placeholder="Introduzca correo electrónico" value={this.state.email} onChange={this.handleChange} />
-
-                                </p>
+                                {/* 
                                 <p className='field'>
                                     <label htmlFor='password'>Contraseña</label>
                                     <input type='password' id='password' name='password' title='Introduzca la contraseña'
@@ -80,8 +76,11 @@ class SignupForm extends Component {
                                     <label htmlFor='confirmPassword'> Confirmar contraseña</label>
                                     <input type='password' id='confirmPassword' name='confirmPassword' placeholder="Confirme la contraseña"
                                         title='Confirme la contraseña' value={this.state.confirmPassword} onChange={this.handleChange} />
-
                                 </p>
+                                <p className='field'>
+                                    <label htmlFor='img'>Foto de perfil</label>
+                                    <input type='file' id='img' name='img' title='Cambiar foto de perfil' value={this.state.img} onChange={this.handleChange} />
+                                </p> */}
                                 {this.state.errorMessage}
                                 <p className='link account-message aux-mes' onClick={this.props.closeModal} > Volver atrás</p>
                                 <input type='submit' id='do_login' value='CREAR CUENTA' />
@@ -96,4 +95,4 @@ class SignupForm extends Component {
 }
 
 
-export default SignupForm
+export default UsernameFrom

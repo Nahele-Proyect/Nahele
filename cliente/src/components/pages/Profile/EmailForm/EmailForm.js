@@ -1,18 +1,20 @@
 import React, { Component } from 'react'
 
-import AuthServices from '../../../services/auth.service'
+import AuthServices from '../../../../services/auth.service'
 
 
 
-class LoginForm extends Component {
+class PasswordForm extends Component {
 
     constructor(props) {
         super(props)
         this.state = {
-            username: '',
-            password: '',
+            newEmail: '',
+            oldEmail: '',
             errorMessage: ''
         }
+
+
         this.AuthServices = new AuthServices()
     }
 
@@ -20,18 +22,18 @@ class LoginForm extends Component {
         this.props.closeModal()
     }
 
-    postUser = () => {
-        this.AuthServices.login(this.state)
-            .then(theLoggedUser => {
-                if (theLoggedUser.status === 'fail') {
-                    this.setState({ errorMessage: theLoggedUser.message })
+    updateUser = () => {
+        this.AuthServices.updateEmail(this.state)
+            .then(theUpdateUser => {
+                if (theUpdateUser.status === 'fail') {
+                    this.setState({ errorMessage: theUpdateUser.message })
                     return
                 }
-                this.setState({ username: '', password: '' })
-                this.props.setTheUser(theLoggedUser)
+                this.props.setTheUser(theUpdateUser)
+                this.setState({ newEmail: '', oldEmail: '', mesage: '' })
                 this.finishAction()
             })
-            .catch(err => console.log(err))
+            .catch(err => (err))
     }
 
     handleChange = e => {
@@ -41,7 +43,7 @@ class LoginForm extends Component {
 
     handleSubmit = e => {
         e.preventDefault()
-        this.postUser()
+        this.updateUser()
     }
 
 
@@ -60,16 +62,17 @@ class LoginForm extends Component {
                         <div className='box-login'>
                             <div className='fieldset-body' id='login_form'>
                                 <p className='field'>
-                                    <label htmlFor='username'>Usuario</label>
-                                    <input type='text' id='username' name='username' title='Introduzca nombre de usuario' placeholder="Introduzca nombre de usuario" value={this.state.username} onChange={this.handleChange} />
+                                    <label htmlFor='oldEmail'>Email actual</label>
+                                    <input type='email' id='oldEmail' name='oldEmail' title='Introduzca nuevo correo electrónico' placeholder="Introduzca email actual" value={this.state.oldEmail} onChange={this.handleChange} />
                                 </p>
                                 <p className='field'>
-                                    <label htmlFor='password'>Contraseña</label>
-                                    <input type='password' id='password' name='password' title='Introduzca la contraseña'
-                                        placeholder="Introduzca la contraseña" value={this.state.password} onChange={this.handleChange} /></p>
+                                    <label htmlFor='newEmail'>Nuevo email</label>
+                                    <input type='email' id='newEmail' name='newEmail' title='Introduzca nuevo correo electrónico' placeholder="Introduzca nuevo email" value={this.state.newEmail} onChange={this.handleChange} />
+                                </p>
+
                                 {this.state.errorMessage}
                                 <p className='link account-message aux-mes' onClick={this.props.closeModal} > Volver atrás</p>
-                                <input type='submit' id='do_login' value='ENTRAR' />
+                                <input type='submit' id='do_login' value='CREAR CUENTA' />
                             </div>
                         </div>
                     </div>
@@ -81,4 +84,4 @@ class LoginForm extends Component {
 }
 
 
-export default LoginForm
+export default PasswordForm

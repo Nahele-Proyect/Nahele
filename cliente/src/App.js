@@ -26,18 +26,18 @@ class App extends Component {
 
   fetchUser = () => {
     this.AuthServices.loggedin()
-      .then(theUser => this.setState({ loggedInUser: theUser }))
+      .then(theUser => theUser.status === 'fail' ? this.setState({ loggedInUser: false }) : this.setState({ loggedInUser: theUser }))
       .catch(() => this.setState({ loggedInUser: false }))
   }
 
   render() {
     return (
       <>
-        <Navbar setTheUser={ this.setTheUser } loggedInUser={ this.state.loggedInUser } />
+        <Navbar setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} />
 
-        { <Switch>
-          <Route path="/profile" render={ () => this.state.loggedInUser ? <Profile loggedInUser={ this.state.loggedInUser } /> : <Redirect to="/" /> } />
-        </Switch> }
+        {<Switch>
+          <Route path="/profile" render={() => this.state.loggedInUser ? <Profile setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} /> : <Redirect to="/" />} />
+        </Switch>}
       </>
     )
   }
