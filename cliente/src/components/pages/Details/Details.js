@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import ScrapServices from '../../../services/scrap.service'
 
+import './details.css'
+
 export default class Details extends Component {
     constructor(props) {
         super(props)
@@ -44,7 +46,6 @@ export default class Details extends Component {
                         <br /><br />
                         <p>Ciudad: { this.state.pet.city }</p>
                         <figure><img src={ this.state.pet.flag } alt="flag" /></figure>
-
 
                     </div>
                     :
