@@ -380,6 +380,7 @@ authRoutes.put('/updateEmail', (req, res, next) => {
         .catch(err => console.log(err))
 })
 
-//TO-DO RUTA PARA CAMBIAR IMG
+
+
 
 module.exports = authRoutes

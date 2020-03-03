@@ -7,7 +7,7 @@ import Profile from './components/pages/Profile/Profile'
 import Index from './components/pages/Index/index'
 import Details from './components/pages/Details/Details'
 
-import BasicChart from './components/Charts/basicChart/BasicChart'
+// import BasicChart from './components/Charts/basicChart/BasicChart'
 
 class App extends Component {
   constructor() {
@@ -33,14 +33,14 @@ class App extends Component {
   render() {
     return (
       <>
-        <Navbar setTheUser={ this.setTheUser } loggedInUser={ this.state.loggedInUser } />
+        <Navbar setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} />
 
-        { <Switch>
-          {/* <Route exact path='/' render={ () => <BasicChart /> } /> */ }
-          <Route exact path='/' render={ () => <Index { ...this.state.loggedInUser } /> } />
-          <Route path='/details/:link' render={ props => <Details { ...props } /> } />
-          <Route path="/profile" render={ () => this.state.loggedInUser ? <Profile loggedInUser={ this.state.loggedInUser } /> : <Redirect to="/" /> } />
-        </Switch> }
+        {<Switch>
+          {/* <Route exact path='/' render={ () => <BasicChart /> } /> */}
+          <Route exact path='/' render={() => <Index {...this.state.loggedInUser} />} />
+          <Route path='/details/:link' render={props => <Details {...props} />} />
+          <Route path="/profile" render={() => this.state.loggedInUser ? <Profile loggedInUser={this.state.loggedInUser} /> : <Redirect to="/" />} />
+        </Switch>}
       </>
     )
   }

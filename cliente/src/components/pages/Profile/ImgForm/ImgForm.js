@@ -8,7 +8,7 @@ class ImgForm extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            img: '',
+            imageUrlimageUrl: '',
             errorMessage: ''
         }
         this.FilesServices = new FilesServices()
@@ -19,18 +19,22 @@ class ImgForm extends Component {
         this.props.closeModal()
     }
 
-    updateUser = () => {
-        this.AuthServices.updateImg(this.state)
-            .then(theUpdateUser => {
-                if (theUpdateUser.status === 'fail') {
-                    this.setState({ errorMessage: theUpdateUser.message })
-                    return
-                }
-                this.props.setTheUser(theUpdateUser)
-                this.setState({ img: '', errorMessage: '' })
-                this.finishAction()
-            })
-            .catch(err => (err))
+    // updateUser = () => {
+    //     this.AuthServices.updateImg(this.state)
+    //         .then(theUpdateUser => {
+    //             if (theUpdateUser.status === 'fail') {
+    //                 this.setState({ errorMessage: theUpdateUser.message })
+    //                 return
+    //             }
+    //             this.props.setTheUser(theUpdateUser)
+    //             this.setState({ imageUrl: '', errorMessage: '' })
+    //             this.finishAction()
+    //         })
+    //         .catch(err => (err))
+    // }
+
+    finishAction = () => {
+        this.props.closeModal()
     }
 
     handleChange = e => {
@@ -40,14 +44,14 @@ class ImgForm extends Component {
 
     handleSubmit = e => {
         e.preventDefault()
-        this.updateUser()
+        // this.updateUser()
     }
     handleFileUpload = e => {
         const uploadData = new FormData()
-        uploadData.append("img", e.target.files[0])
-        this.filesServices.handleUpload(uploadData)
+        uploadData.append("imageUrl", e.target.files[0])
+        this.FilesServices.handleUpload(uploadData)
             .then(response => {
-                console.log('Subida de archivo finalizada! La URL de Cloudinray es: ', response.secure_url)
+                console.log('Subida de archivo finalizada! La URL de Cloudinary es: ', response.secure_url)
                 this.setState({
                     img: response.secure_url
                 })
@@ -72,8 +76,8 @@ class ImgForm extends Component {
                             <div className='box-login'>
                                 <div className='fieldset-body' id='login_form'>
                                     <p className='field'>
-                                        <label htmlFor='img'>Foto de perfil</label>
-                                        <input type='file' id='img' name='img' title='Sube una foto de perfil' onChange={this.handleFileUpload} />
+                                        <label htmlFor='imageUrl'>Foto de perfil</label>
+                                        <input type='file' id='imageUrl' name='imageUrl' title='Sube una foto de perfil' onChange={this.handleFileUpload} />
                                     </p>
                                     <p className='failureError'> {this.state.errorMessage}</p>
                                     <p className='link account-message aux-mes' onClick={this.props.closeModal} > Volver atrás</p>
