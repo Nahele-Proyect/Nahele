@@ -1,13 +1,13 @@
 const express = require('express')
 const authRoutes = express.Router()
 const sendMail = require('../configs/mailer.config').welcomeMail
+const changeEmail = require('../configs/mailer.config').newEmail
 const passport = require('passport')
 const bcrypt = require('bcryptjs')
-
 const User = require('../models/User.model')
 
-
 authRoutes.post('/signup', (req, res, next) => {
+
     const {
         username,
         password,
@@ -22,6 +22,7 @@ authRoutes.post('/signup', (req, res, next) => {
         })
         return
     }
+
     if (!password) {
         res.json({
             message: 'Porfavor, introduzca contraseña.',
@@ -36,9 +37,18 @@ authRoutes.post('/signup', (req, res, next) => {
             status: 'fail'
         })
     }
+
     if (!email) {
         res.json({
             message: 'Porfavor, introduzca correo electrónico.',
+            status: 'fail'
+        })
+        return
+    }
+
+    if (!email.match(/^\S+@\S+\.\S+$/)) {
+        res.json({
+            message: 'Introduce una dirección de correo válida',
             status: 'fail'
         })
         return
@@ -51,8 +61,9 @@ authRoutes.post('/signup', (req, res, next) => {
         })
         return
     }
+
     if (!password.match(/[A-Z]/) || !password.match(/[0-9]/)) {
-        res.status(400).json({
+        res.json({
             message: 'La contraseña debe tener al menos una mayúscula y un número.',
             status: 'fail'
         })
@@ -89,6 +100,7 @@ authRoutes.post('/signup', (req, res, next) => {
         })
 
         aNewUser.save(err => {
+
             if (err) {
                 res.status(400).json({
                     message: 'Saving user to database went wrong.'
@@ -119,7 +131,32 @@ authRoutes.post('/signup', (req, res, next) => {
 })
 
 authRoutes.post('/login', (req, res, next) => {
+
+    const {
+        username,
+        password
+    } = req.body
+
+    if (!username) {
+        res.json({
+            message: 'Porfavor, introduce nombre de usuario.',
+            status: 'fail'
+        })
+        return
+    }
+
+    if (!password) {
+        res.json({
+            message: 'Porfavor, introduce la contraseña.',
+            status: 'fail'
+        })
+        return
+    }
+
+
+
     passport.authenticate('local', (err, theUser, failureDetails) => {
+
         if (err) {
             res.json({
                 message: 'Algo ha ido mal, porfavor, inténtelo de nuevo.',
@@ -131,7 +168,10 @@ authRoutes.post('/login', (req, res, next) => {
         if (!theUser) {
             // "failureDetails" contains the error messages
             // from our logic in "LocalStrategy" { message: '...' }.
-            res.status(401).json(failureDetails)
+            res.json({
+                message: failureDetails.message,
+                status: 'fail'
+            })
             return
         }
 
@@ -150,8 +190,6 @@ authRoutes.post('/login', (req, res, next) => {
     })(req, res, next)
 })
 
-
-
 authRoutes.post('/logout', (req, res, next) => {
     // req.logout() is defined by passport
     req.logout()
@@ -160,26 +198,45 @@ authRoutes.post('/logout', (req, res, next) => {
     })
 })
 
-
 authRoutes.get('/loggedin', (req, res, next) => {
     // req.isAuthenticated() is defined by passport
     if (req.isAuthenticated()) {
         res.json(req.user)
         return
     }
-    res.status(403).json({
-        message: 'No autorizado.'
+    res.json({
+        message: 'No autorizado.',
+        status: 'fail'
     })
 })
 
-authRoutes.put('/updateUser', (req, res, next) => {
+
+authRoutes.put('/updateUsername', (req, res, next) => {
 
     const {
-        username,
-        password,
-        confirmPassword
-
+        username
     } = req.body
+
+    User.findOne({
+        username
+    }, (err, foundUser) => {
+
+        if (err) {
+            res.json({
+                message: "Nombre de usuario incorrecto.",
+                status: 'fail'
+            })
+            return
+        }
+
+        if (foundUser) {
+            res.json({
+                message: 'Ya existe este nombre de usuario.',
+                status: 'fail'
+            })
+            return
+        }
+    })
 
     if (!username) {
         res.json({
@@ -188,6 +245,31 @@ authRoutes.put('/updateUser', (req, res, next) => {
         })
         return
     }
+
+    if (username === req.user.username) {
+        res.json({
+            message: 'Ya estás usando este nombre de usuario',
+            status: 'fail'
+        })
+        return
+    }
+
+    User.findByIdAndUpdate(req.user._id, {
+            username
+        }, {
+            new: true
+        })
+        .then(theUser => res.json(theUser))
+        .catch(err => console.log(err))
+})
+
+authRoutes.put('/updatePassword', (req, res, next) => {
+
+    const {
+        password,
+        confirmPassword
+    } = req.body
+
     if (!password) {
         res.json({
             message: 'Porfavor, introduzca contraseña.',
@@ -201,7 +283,9 @@ authRoutes.put('/updateUser', (req, res, next) => {
             message: 'Las contraseñas no coinciden.',
             status: 'fail'
         })
+        return
     }
+
     if (password.length < 6) {
         res.json({
             message: 'La contraseña debe tener al menos 8 carácteres.',
@@ -209,6 +293,7 @@ authRoutes.put('/updateUser', (req, res, next) => {
         })
         return
     }
+
     if (!password.match(/[A-Z]/) || !password.match(/[0-9]/)) {
         res.status(400).json({
             message: 'La contraseña debe tener al menos una mayúscula y un número.',
@@ -216,6 +301,7 @@ authRoutes.put('/updateUser', (req, res, next) => {
         })
         return
     }
+
     const salt = bcrypt.genSaltSync(10)
     const hashPass = bcrypt.hashSync(password, salt)
 
@@ -228,13 +314,72 @@ authRoutes.put('/updateUser', (req, res, next) => {
     }
 
     User.findByIdAndUpdate(req.user._id, {
-            username,
-            hashPass
+            password: hashPass
         }, {
             new: true
         })
         .then(theUser => res.json(theUser))
         .catch(err => console.log(err))
 })
+
+authRoutes.put('/updateEmail', (req, res, next) => {
+
+    const {
+        newEmail,
+        oldEmail
+    } = req.body
+
+    if (!oldEmail) {
+        res.json({
+            message: 'Porfavor introduzca el correo electrónico actual',
+            status: 'fail'
+        })
+        return
+    }
+
+    if (oldEmail != req.user.email) {
+        res.json({
+            message: 'El correo electrónico introducido no coincide con el actual.',
+            status: 'fail'
+        })
+        return
+    }
+
+    if (newEmail === req.user.email) {
+        res.json({
+            message: 'Ya estás usando esta dirección de correo',
+            status: 'fail'
+        })
+        return
+    }
+
+    if (!newEmail) {
+        res.json({
+            message: 'Porfavor, introduzca correo electrónico.',
+            status: 'fail'
+        })
+        return
+    }
+
+    if (!newEmail.match(/^\S+@\S+\.\S+$/)) {
+        res.json({
+            message: 'Introduce una dirección de correo válida',
+            status: 'fail'
+        })
+        return
+    }
+
+    changeEmail(req.user.username, req.user.email, newEmail)
+
+    User.findByIdAndUpdate(req.user._id, {
+            email: newEmail
+        }, {
+            new: true
+        })
+        .then(theUser => res.json(theUser))
+        .catch(err => console.log(err))
+})
+
+//TO-DO RUTA PARA CAMBIAR IMG
 
 module.exports = authRoutes

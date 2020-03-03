@@ -15,12 +15,34 @@ const welcomeTemplate = hbs.compile(fs.readFileSync((__dirname, './views/welcome
 exports.welcomeMail = (username, email, password) => {
 
     transporter.sendMail({
-        from: 'BeSports',
+        from: "Fluffy's Shelter",
         to: email,
         subject: '¡Bienvenido a Nahere!',
         html: welcomeTemplate({
             username,
             password
+        })
+    }).then(info => {
+        console.log(info)
+    }).catch(error => {
+        console.log(error)
+        throw error
+    })
+}
+
+
+const changeEmail = hbs.compile(fs.readFileSync((__dirname, './views/changeEmail.hbs'), 'utf8'))
+
+exports.newEmail = (username, oldEmail, newEmail) => {
+
+    transporter.sendMail({
+        from: "Fluffy's Shelter",
+        to: [oldEmail, newEmail],
+        subject: 'Detectado cambio de email',
+        html: changeEmail({
+            username,
+            oldEmail,
+            newEmail
         })
     }).then(info => {
         console.log(info)
