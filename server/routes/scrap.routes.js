@@ -74,33 +74,33 @@ router.get('/details/:code', (req, res) => {
             $('.m-list-timeline__time').each((idx, data) => {
 
                 if (idx > 5) return
-                idx === 0 && (pet.specie = data.children[0].data.trim())
-                idx === 1 && (pet.born = data.children[0].data.trim())
-                idx === 2 && (pet.gender = data.children[0].data.trim())
-                idx === 3 && (pet.size = data.children[0].data.trim())
-                idx === 4 && (pet.weigth = data.children[0].data.trim())
-                idx === 5 && (pet.activity = data.children[0].data.trim())
+                data.children[0] && idx === 0 && (pet.specie = data.children[0].data.trim())
+                data.children[0] && idx === 1 && (pet.born = data.children[0].data.trim())
+                data.children[0] && idx === 2 && (pet.gender = data.children[0].data.trim())
+                data.children[0] && idx === 3 && (pet.size = data.children[0].data.trim())
+                data.children[0] && idx === 4 && (pet.weigth = data.children[0].data.trim())
+                data.children[0] && idx === 5 && (pet.activity = data.children[0].data.trim())
             })
 
             $('.m-badge--wide').each((idx, data) => {
 
-                idx === 1 && (pet.vaccinated = data.children[0].data.trim())
-                idx === 2 && (pet.dewormed = data.children[0].data.trim())
-                idx === 3 && (pet.healthy = data.children[0].data.trim())
-                idx === 4 && (pet.sterilized = data.children[0].data.trim())
-                idx === 5 && (pet.identified = data.children[0].data.trim())
-                idx === 6 && (pet.microchip = data.children[0].data.trim())
-                idx > 6 && pet.personality.push(data.children[0].data.trim())
+                data.children[0] && idx === 1 && (pet.vaccinated = data.children[0].data.trim())
+                data.children[0] && idx === 2 && (pet.dewormed = data.children[0].data.trim())
+                data.children[0] && idx === 3 && (pet.healthy = data.children[0].data.trim())
+                data.children[0] && idx === 4 && (pet.sterilized = data.children[0].data.trim())
+                data.children[0] && idx === 5 && (pet.identified = data.children[0].data.trim())
+                data.children[0] && idx === 6 && (pet.microchip = data.children[0].data.trim())
+                data.children[0] && idx > 6 && pet.personality.push(data.children[0].data.trim())
             })
 
             $('.m-badge').each((idx, data) => {
                 if (idx > 0) return
-                idx === 0 && (pet.urgency = data.children[0].data.trim())
+                data.children[0] && idx === 0 && (pet.urgency = data.children[0].data.trim())
             })
 
             $('.m-portlet__body p').each((idx, data) => {
                 if (idx > 1) return
-                pet.comment = data.children[0].data.trim()
+                data.children[0] && (pet.comment = data.children[0].data.trim())
             })
 
             $('.ciudad').each((idx, city) => pet.city = city.children[0].data.trim())

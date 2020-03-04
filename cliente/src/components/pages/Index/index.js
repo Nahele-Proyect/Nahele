@@ -22,6 +22,10 @@ export default class Index extends Component {
 
     }
 
+    componentWillUnmount = () => {
+        this.scrapServices.cancelAll()
+    }
+
     getAllPets = () => {
         this.scrapServices.getAll()
             .then(allPets => this.setState({ pets: allPets.pets }))

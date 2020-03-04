@@ -1,0 +1,2565 @@
+[
+    {
+        "_id": {
+            "$oid": "5e5fd6ee040913632abf639c"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/es.svg",
+        "personality": [
+            "Bueno con otros perros",
+            "Amigable con extraños"
+        ],
+        "img": "https://img.miwuki.com/a/GUWQC/500",
+        "name": "Arrow",
+        "specie": "Perro",
+        "born": "2019-01-01",
+        "gender": "Macho",
+        "size": "Mediano",
+        "weigth": "0 Kg.",
+        "activity": "Media",
+        "vaccinated": "Sí",
+        "dewormed": "Sí",
+        "healthy": "Sí",
+        "sterilized": "No",
+        "identified": "Sí",
+        "microchip": "Sí",
+        "urgency": "En Adopción",
+        "comment": "las chicas de Orejotas Felices, me sacaron hace un año de la perrera. Tenía dos mesecitos y pensaban que encontraría una familia rápido, pero no ha sido así.\nEstuve en una casa de acogida y ahora llevo mucho tiempo en residencia.\nTengo poco más de un año y soy de tamaño mediano.\nQué tengo que hacer para que se fijen en mi?😔",
+        "city": "- Valencia, España",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339246961"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339246961"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd6ee040913632abf639d"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/es.svg",
+        "personality": [
+            "Bueno con otros perros",
+            "Bueno con gatos",
+            "Bueno con otros animales",
+            "Amigable con extraños",
+            "Bueno en casa",
+            "Me gusta estar en compañía",
+            "Cariñoso",
+            "Dormilón"
+        ],
+        "img": "https://img.miwuki.com/a/USB52/500",
+        "name": "Rafaello",
+        "specie": "Gato",
+        "born": "2012-05-06",
+        "gender": "Macho",
+        "size": "Mediano",
+        "weigth": "0 Kg.",
+        "activity": "Media",
+        "vaccinated": "Sí",
+        "dewormed": "Sí",
+        "healthy": "Sí",
+        "sterilized": "Sí",
+        "identified": "No",
+        "microchip": "Sí",
+        "urgency": "En Adopción",
+        "comment": "",
+        "city": "- Barcelona, España",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339246966"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339246966"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd6ef040913632abf639e"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/es.svg",
+        "personality": [
+            "Me gusta pasear",
+            "Cariñoso",
+            "Juguetón"
+        ],
+        "img": "https://img.miwuki.com/a/WJOL0V/500",
+        "name": "Iris",
+        "specie": "Perro",
+        "born": "2015-06-15",
+        "gender": "Hembra",
+        "size": "Mediano",
+        "weigth": "0 Kg.",
+        "activity": "Media",
+        "vaccinated": "Sí",
+        "dewormed": "Sí",
+        "healthy": "No",
+        "sterilized": "Sí",
+        "identified": "Sí",
+        "microchip": "Sí",
+        "urgency": "En Adopción",
+        "comment": "A IRIS la recogimos sola en la calle con tan solo 8 mesecitos aprox, por lo que sabemos se ve que llevaba un mes abandonada en un solar. Hubo un trabajo insuficiente de socialización tanto con personas como con perros, pero la peluda aprende rápido y tiene muy buen fondo. Es muy lista y juguetona, siente verdadera pasión por los juegos con pelota y sabe traerla. La jaula le produce ,mucha ansiedad ¿Te animas a darle una oportunidad? Sólo se dará en adopción a familias dispuestas a seguir las pautas necesarias para que no tenga conductas indebidas.",
+        "city": "- Tarragona, España",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339247157"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339247157"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd6ef040913632abf639f"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/es.svg",
+        "personality": [
+            "Bueno con otros perros",
+            "Bueno con otros animales",
+            "Bueno con niños",
+            "Amigable con extraños"
+        ],
+        "img": "https://img.miwuki.com/a/L1AYPY/500",
+        "name": "Rocco",
+        "specie": "Perro",
+        "born": "2010-10-12",
+        "gender": "Macho",
+        "size": "Grande",
+        "weigth": "0 Kg.",
+        "activity": "Desconocida",
+        "vaccinated": "No",
+        "dewormed": "No",
+        "healthy": "No",
+        "sterilized": "Sí",
+        "identified": "No",
+        "microchip": "No",
+        "urgency": "En Adopción",
+        "comment": "",
+        "city": "- Valencia, España",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339247159"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339247159"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd6f0040913632abf63a0"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/es.svg",
+        "personality": [
+            "Bueno con otros perros",
+            "Bueno con gatos",
+            "Amigable con extraños",
+            "A veces ladro, maúllo...",
+            "Cariñoso",
+            "Juguetón"
+        ],
+        "img": "https://img.miwuki.com/a/7VO0M/500",
+        "name": "Renton",
+        "specie": "Gato",
+        "born": "2019-04-01",
+        "gender": "Macho",
+        "size": "Mediano",
+        "weigth": "0 Kg.",
+        "activity": "Media",
+        "vaccinated": "Sí",
+        "dewormed": "Sí",
+        "healthy": "Sí",
+        "sterilized": "Sí",
+        "identified": "No",
+        "microchip": "No",
+        "urgency": "En Adopción",
+        "comment": "",
+        "city": "- Valencia, España",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339248362"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339248362"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd6f0040913632abf63a1"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/es.svg",
+        "personality": [
+            "Bueno con otros perros",
+            "Bueno con otros animales",
+            "Bueno con niños",
+            "Amigable con extraños",
+            "Bueno en el coche",
+            "Escapista",
+            "Me gusta pasear",
+            "Me gusta estar en compañía",
+            "Cariñoso",
+            "Juguetón",
+            "Dormilón"
+        ],
+        "img": "https://img.miwuki.com/a/0JV4BB/500",
+        "name": "Toffee",
+        "specie": "Perro",
+        "born": "2016-01-01",
+        "gender": "Macho",
+        "size": "Pequeño",
+        "weigth": "13 Kg.",
+        "activity": "Media",
+        "vaccinated": "Sí",
+        "dewormed": "Sí",
+        "healthy": "No",
+        "sterilized": "Sí",
+        "identified": "Sí",
+        "microchip": "Sí",
+        "urgency": "En Adopción",
+        "comment": "",
+        "city": "- Madrid, España",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339248364"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339248364"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd6f0040913632abf63a2"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/es.svg",
+        "personality": [
+            "Bueno con gatos",
+            "Cauteloso con extraños",
+            "Cariñoso"
+        ],
+        "img": "https://img.miwuki.com/a/5OSFHZ/500",
+        "name": "Mishina / Vimera",
+        "specie": "Gato",
+        "born": "2015-02-15",
+        "gender": "Hembra",
+        "size": "Pequeño",
+        "weigth": "0 Kg.",
+        "activity": "Baja",
+        "vaccinated": "No",
+        "dewormed": "No",
+        "healthy": "No",
+        "sterilized": "No",
+        "identified": "No",
+        "microchip": "No",
+        "urgency": "En Adopción",
+        "comment": "Muy dura ha sido la vida de Mishina, vivía en un polígono en Vic y una de nuestras adoptantes la alimentaba y pese ha llevar días buscando ayuda para ella y sus pequeños nadie les tendía su mano, eran un total de 6 cachorros pero dos desaparecieron y viendo que los días pasaban, nadie tendía ayuda y la situación cada vez se tornaba mas peligrosa dado que ya cruzaban la carretera jugueteando nos decidimos a ayudarlos así que los trajo a todos hasta nosotros. Mishina es una gata muy dulce y mansa, en la calle convivía con otros gatos. Necesita del calor y amor de un hogar, eso de lo que tanto ha oído ha hablar pero que nunca a conocido. Vimera, procedente de una camada indeseada de Mishina. Recogimos a la madre y algunos de los pequeños, pero Vimera quedó en la sombra y nadie se fija en ella. Una pequeña cariñosa y atenta. BUSCAMOS UNA FAMÍLIA QUE PUDIERA ADOPTAR A MISHINA Y VIMERA JUNTAS (ya que desde que nació la pequeña Vimera, nunca se han separado).",
+        "city": "- Barcelona, España",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339248519"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339248519"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd6f0040913632abf63a3"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/mx.svg",
+        "personality": [
+            "Bueno con gatos",
+            "Bueno con otros animales",
+            "Bueno con niños",
+            "Amigable con extraños",
+            "Protector",
+            "Independiente",
+            "Cariñoso"
+        ],
+        "img": "https://img.miwuki.com/a/3KRRU2/500",
+        "name": "Hambre",
+        "specie": "Gato",
+        "born": "2015-06-15",
+        "gender": "Hembra",
+        "size": "Pequeño",
+        "weigth": "3 Kg.",
+        "activity": "Media",
+        "vaccinated": "No",
+        "dewormed": "No",
+        "healthy": "No",
+        "sterilized": "Sí",
+        "identified": "No",
+        "microchip": "No",
+        "urgency": "En Adopción",
+        "comment": "Hambre es una gatita gris rayada, muy cariñosa y protectora, ¡está divina!",
+        "city": "- Yucatán, México",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339248543"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339248543"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd6f0040913632abf63a4"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/es.svg",
+        "personality": [
+            "Bueno con gatos",
+            "Bueno con otros animales",
+            "Amigable con extraños",
+            "Bueno en el coche",
+            "Bueno en casa",
+            "No ladro, no maúllo...",
+            "Me gusta estar en compañía",
+            "Cariñoso",
+            "Juguetón"
+        ],
+        "img": "https://img.miwuki.com/a/KGPKTX/500",
+        "name": "Roi",
+        "specie": "Gato",
+        "born": "2017-05-02",
+        "gender": "Macho",
+        "size": "Mediano",
+        "weigth": "4 Kg.",
+        "activity": "Media",
+        "vaccinated": "Sí",
+        "dewormed": "Sí",
+        "healthy": "Sí",
+        "sterilized": "Sí",
+        "identified": "Sí",
+        "microchip": "Sí",
+        "urgency": "En Adopción",
+        "comment": "Lo ha pasado mal en la calle, pues tiene miedo de que lo cojan y levanten del suelo. También se asusta de los transportines. Ha pasado de la calle a una perrera, nosotros lo adoptamos para poder darle una vida mejor, allí estaba muy asustado. Con los gatos genial. Ahora con las personas es cariñoso pero sin que lo levanten del suelo.",
+        "city": "- Lleida, España",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339248846"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339248846"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd6f1040913632abf63a5"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/es.svg",
+        "personality": [
+            "Bueno con otros perros",
+            "Cauteloso con extraños",
+            "Ladro, maúllo... mucho",
+            "Protector",
+            "Tímido",
+            "Independiente"
+        ],
+        "img": "https://img.miwuki.com/a/0MEC6Z/500",
+        "name": "Rudy",
+        "specie": "Perro",
+        "born": "2018-04-20",
+        "gender": "Macho",
+        "size": "Mediano",
+        "weigth": "20 Kg.",
+        "activity": "Media",
+        "vaccinated": "Sí",
+        "dewormed": "Sí",
+        "healthy": "Sí",
+        "sterilized": "Sí",
+        "identified": "Sí",
+        "microchip": "Sí",
+        "urgency": "Urgente",
+        "comment": "",
+        "city": "- Castellón, España",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339249767"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339249767"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd6f1040913632abf63a6"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/es.svg",
+        "personality": [
+            "Bueno sólo con machos",
+            "Bueno con gatos",
+            "Bueno con otros animales",
+            "Bueno con niños",
+            "Protector con extraños",
+            "Bueno en el coche",
+            "Bueno en casa",
+            "No ladro, no maúllo...",
+            "Protector",
+            "Me gusta pasear",
+            "Me gusta estar en compañía",
+            "Cariñoso",
+            "Juguetón",
+            "Dormilón"
+        ],
+        "img": "https://img.miwuki.com/a/H8PVC1/500",
+        "name": "Laika",
+        "specie": "Perro",
+        "born": "2018-12-15",
+        "gender": "Hembra",
+        "size": "Grande",
+        "weigth": "26 Kg.",
+        "activity": "Alta",
+        "vaccinated": "Sí",
+        "dewormed": "Sí",
+        "healthy": "Sí",
+        "sterilized": "Sí",
+        "identified": "Sí",
+        "microchip": "Sí",
+        "urgency": "En Adopción",
+        "comment": "Hola! Me llamo Laika! Soy una cachorrita boxer de 1 año y busco una familia que me dedique el tiempo que necesito y juegue muchoo conmigo.\nSoy muy cariñosa y juguetona. Me encanta dormir acurrucada a mi familia. Convivo con mi hermano gato y me llevo muy bien con él!! \nTambién cuido mucho de mi familia y del bebé que acaba de llegar. \n\nMe queda mucho por aprender pero estoy en el camino solo necesito que me hagan mucho caso y estén pendientes de mi.",
+        "city": "- Madrid, España",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339249795"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339249795"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd6f1040913632abf63a7"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/es.svg",
+        "personality": [
+            "Bueno con otros perros",
+            "Bueno con otros animales",
+            "Bueno con niños",
+            "Amigable con extraños",
+            "Bueno en casa",
+            "No ladro, no maúllo...",
+            "Tímido",
+            "Independiente",
+            "Cariñoso",
+            "Juguetón"
+        ],
+        "img": "https://img.miwuki.com/a/8J0UW3/500",
+        "name": "Sigrid",
+        "specie": "Perro",
+        "born": "2019-06-11",
+        "gender": "Hembra",
+        "size": "Grande",
+        "weigth": "12 Kg.",
+        "activity": "Baja",
+        "vaccinated": "Sí",
+        "dewormed": "Sí",
+        "healthy": "Sí",
+        "sterilized": "Sí",
+        "identified": "No",
+        "microchip": "Sí",
+        "urgency": "En Adopción",
+        "comment": "",
+        "city": "- Huelva, España",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339249852"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339249852"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd6f2040913632abf63a8"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/es.svg",
+        "personality": [
+            "Amigable con extraños",
+            "A veces ladro, maúllo...",
+            "Cariñoso"
+        ],
+        "img": "https://img.miwuki.com/a/A9DQ3F/500",
+        "name": "Cloe",
+        "specie": "Perro",
+        "born": "2016-06-15",
+        "gender": "Hembra",
+        "size": "Mediano",
+        "weigth": "0 Kg.",
+        "activity": "Alta",
+        "vaccinated": "No",
+        "dewormed": "No",
+        "healthy": "No",
+        "sterilized": "Sí",
+        "identified": "No",
+        "microchip": "Sí",
+        "urgency": "Urgente",
+        "comment": "CLOE FUE ESTRENADA PARA MATAR...LA USABAN PARA LAS PELEAS DE PERROS....ELLA MATABA PARA SOBREVIVIR....A DÍA DE HOY NO PUEDE CONVIVIR CON MÁS ANIMALES... ELLA ESTA EN UNA RESIDENCIA , PERO CADA VEZ NOS CUESTA MÁS MANTENER SU ESTANCIA ALLI.....CON LAS PERSONAS ES PURO AMOR NECESITA ACOGIDA O ADOPCION URGENTE",
+        "city": "- Granada, España",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339250262"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339250262"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd6f2040913632abf63a9"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/es.svg",
+        "personality": [
+            "Bueno con otros perros",
+            "Bueno con gatos",
+            "Bueno con niños",
+            "Amigable con extraños",
+            "Bueno en casa",
+            "No ladro, no maúllo...",
+            "Escapista",
+            "Me gusta pasear",
+            "Tímido",
+            "Independiente",
+            "Me gusta estar en compañía",
+            "Cariñoso",
+            "Juguetón",
+            "Dormilón",
+            "animal.obediente"
+        ],
+        "img": "https://img.miwuki.com/a/4JDOOQ/500",
+        "name": "Yeico",
+        "specie": "Perro",
+        "born": "2017-02-20",
+        "gender": "Macho",
+        "size": "Mediano",
+        "weigth": "12 Kg.",
+        "activity": "Alta",
+        "vaccinated": "Sí",
+        "dewormed": "Sí",
+        "healthy": "Sí",
+        "sterilized": "Sí",
+        "identified": "Sí",
+        "microchip": "Sí",
+        "urgency": "Urgente",
+        "comment": "Es un Pincher mediano y quiero darlo en adopción porque no me puedo hacer cargo de él,es un perro rescatado de la calle hace 2 años,hace poco me mudé a un piso y no puedo tenerlo ni hacerme cargo porque encontré un nuevo trabajo y pasa todo el día encerrado para que no sepan que lo tengo es muy bueno con la gente,es muy cariñoso,es tranquilo aunque también es algo activo.Lo voy a dar a la perrera porque no puedo encontrarle un hogar...Le encanta jugar y está acostumbrado a vivir con otros animales ya que antes viva en una casa con gatos etc",
+        "city": "- Pontevedra, España",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339250453"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339250453"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd6f2040913632abf63aa"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/es.svg",
+        "personality": [
+            "Bueno con otros perros",
+            "Bueno con otros animales",
+            "Bueno con niños",
+            "Amigable con extraños",
+            "Bueno en el coche",
+            "Bueno en casa",
+            "No ladro, no maúllo...",
+            "Me gusta pasear",
+            "Tímido",
+            "Me gusta estar en compañía",
+            "Cariñoso",
+            "Dormilón"
+        ],
+        "img": "https://img.miwuki.com/a/LM6B1Q/500",
+        "name": "Manjula y Sus Bebes",
+        "specie": "Perro",
+        "born": "2016-07-14",
+        "gender": "Hembra",
+        "size": "Grande",
+        "weigth": "25 Kg.",
+        "activity": "Baja",
+        "vaccinated": "Sí",
+        "dewormed": "Sí",
+        "healthy": "Sí",
+        "sterilized": "Sí",
+        "identified": "Sí",
+        "microchip": "Sí",
+        "urgency": "En Adopción",
+        "comment": "",
+        "city": "- Sevilla, España",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339250998"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339250998"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd6f3040913632abf63ab"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/es.svg",
+        "personality": [
+            "Bueno con otros perros",
+            "Bueno con otros animales",
+            "Bueno con niños",
+            "Amigable con extraños",
+            "Bueno en el coche",
+            "Bueno en casa",
+            "No ladro, no maúllo...",
+            "Me gusta pasear",
+            "Me gusta estar en compañía",
+            "Cariñoso",
+            "Juguetón"
+        ],
+        "img": "https://img.miwuki.com/a/AXUSCJ/500",
+        "name": "Oso",
+        "specie": "Perro",
+        "born": "2018-06-01",
+        "gender": "Macho",
+        "size": "Mediano",
+        "weigth": "0 Kg.",
+        "activity": "Alta",
+        "vaccinated": "Sí",
+        "dewormed": "Sí",
+        "healthy": "Sí",
+        "sterilized": "Sí",
+        "identified": "Sí",
+        "microchip": "Sí",
+        "urgency": "En Adopción",
+        "comment": "Aquí tenemos a Oso y Flinky Winky, los chicos más divertidos de Mundo Bull,  son uña y carne, si uno anda el otro también, si uno se sienta el otro también, si uno conduce el otro va de copiloto 😂😂😂😂 son traviesos y juguetones, activos y muy cariñosos, son bellos y tiernos, que más se puede pedir? Pues una familia que los ame!!! Si te has enamorado de estos 2 algodones de azúcar escribe a somossuvoz@hotmail.es ❤❤",
+        "city": "- Sevilla, España",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339251019"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339251019"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd6f3040913632abf63ac"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/es.svg",
+        "personality": [
+            "Bueno con gatos",
+            "Me gusta estar en compañía",
+            "Cariñoso",
+            "Juguetón"
+        ],
+        "img": "https://img.miwuki.com/a/ZH3SHH/500",
+        "name": "Carlittos",
+        "specie": "Gato",
+        "born": "2015-05-24",
+        "gender": "Macho",
+        "size": "Mediano",
+        "weigth": "0 Kg.",
+        "activity": "Media",
+        "vaccinated": "Sí",
+        "dewormed": "Sí",
+        "healthy": "Sí",
+        "sterilized": "Sí",
+        "identified": "Sí",
+        "microchip": "Sí",
+        "urgency": "En Adopción",
+        "comment": "",
+        "city": "- Madrid, España",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339251398"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339251398"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd6f3040913632abf63ad"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/es.svg",
+        "personality": [
+            "Bueno con otros perros",
+            "Bueno con gatos",
+            "Bueno con otros animales",
+            "Bueno con niños",
+            "Amigable con extraños",
+            "Bueno en el coche",
+            "Bueno en casa",
+            "No ladro, no maúllo...",
+            "Me gusta pasear",
+            "Me gusta estar en compañía",
+            "Cariñoso"
+        ],
+        "img": "https://img.miwuki.com/a/2BQV84/500",
+        "name": "Mahou",
+        "specie": "Perro",
+        "born": "2015-05-14",
+        "gender": "Macho",
+        "size": "Pequeño",
+        "weigth": "10 Kg.",
+        "activity": "Baja",
+        "vaccinated": "Sí",
+        "dewormed": "Sí",
+        "healthy": "Sí",
+        "sterilized": "Sí",
+        "identified": "Sí",
+        "microchip": "Sí",
+        "urgency": "En Adopción",
+        "comment": "",
+        "city": "- Cantabria, España",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339251683"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339251683"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd6f3040913632abf63ae"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/es.svg",
+        "personality": [
+            "Bueno con otros perros",
+            "Bueno con gatos",
+            "Bueno con niños",
+            "Amigable con extraños",
+            "Cariñoso"
+        ],
+        "img": "https://img.miwuki.com/a/D7AVM6/500",
+        "name": "Femme",
+        "specie": "Gato",
+        "born": "2018-05-06",
+        "gender": "Hembra",
+        "size": "Pequeño",
+        "weigth": "0 Kg.",
+        "activity": "Media",
+        "vaccinated": "No",
+        "dewormed": "No",
+        "healthy": "No",
+        "sterilized": "No",
+        "identified": "No",
+        "microchip": "No",
+        "urgency": "En Adopción",
+        "comment": "Femme es una pequeña tigresa. Rescatada en mal estado y ya recuperada busca familia responsable. Es juguetona, curiosa y muy dulce y mimosa.",
+        "city": "- Murcia, España",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339251952"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339251952"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd6f4040913632abf63af"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/es.svg",
+        "personality": [
+            "Bueno con otros perros",
+            "Bueno con otros animales",
+            "Bueno con niños",
+            "Amigable con extraños",
+            "No ladro, no maúllo...",
+            "Me gusta pasear",
+            "Me gusta estar en compañía",
+            "Cariñoso",
+            "Juguetón"
+        ],
+        "img": "https://img.miwuki.com/a/CWSVJ/500",
+        "name": "Venus",
+        "specie": "Perro",
+        "born": "2019-01-15",
+        "gender": "Hembra",
+        "size": "Grande",
+        "weigth": "25 Kg.",
+        "activity": "Media",
+        "vaccinated": "Sí",
+        "dewormed": "Sí",
+        "healthy": "Sí",
+        "sterilized": "Sí",
+        "identified": "Sí",
+        "microchip": "Sí",
+        "urgency": "En Adopción",
+        "comment": "Os presentamos a VENUS, estaba ABANDONADA en un campo, un vecino la alimentaba, era tímida y no se dejaba tocar. Una noche entro al pueblo (La Rambla) Y una voluntaria la pudo coger, ahora vive en el refugio; pero Necesita un Hogar!!!\nTodo lo que tiene de grandota lo tiene de cariñosa, es un amor, súper buena y sumisa.\n¿QUIERES LLEVAR A VENUS A TU CASA?\n\nSe entregará vacunada, chipada, desparasitada, esterilizada y con contrato de adopción.\nContacto: laramblaessuvoz@hotmail.com \nTlf: 638 308 722",
+        "city": "- Córdoba, España",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339252665"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339252665"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd6f4040913632abf63b0"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/es.svg",
+        "personality": [
+            "Bueno con otros perros",
+            "Bueno con otros animales",
+            "Bueno con niños",
+            "Amigable con extraños",
+            "Cariñoso"
+        ],
+        "img": "https://img.miwuki.com/a/TRFXAX/500",
+        "name": "Barrio",
+        "specie": "Perro",
+        "born": "2014-02-14",
+        "gender": "Macho",
+        "size": "Grande",
+        "weigth": "0 Kg.",
+        "activity": "Media",
+        "vaccinated": "No",
+        "dewormed": "No",
+        "healthy": "No",
+        "sterilized": "Sí",
+        "identified": "No",
+        "microchip": "Sí",
+        "urgency": "En Adopción",
+        "comment": "EDAD; 14/02/2014 BARRIO es un joven y cariñoso cruce de Dogo y Labrador de dos años y medio. El fue encontrado en medio de la carretera y tuvo la suerte de cruzarse con una compañera. El pobre andaba desorientado, esquivando los coches y en cuanto vio la puerta del coche abierta, se subió de un salto hacia su salvación. Es un perro muy activo, juguetón, cariñoso y sociable con otros perros. El necesita un hogar con jardín donde pueda correr ya que tiene gran actividad y es de tamaño grande. No es apto con gatos. Se entrega con contrato de adopción, desparasitado, vacunado, chipado, test leishmania y erlichia negativos y esterilizado. Para adoptarlo: adopciones@axlamadrid",
+        "city": "- Madrid, España",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339252667"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339252667"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd6f4040913632abf63b1"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/es.svg",
+        "personality": [
+            "Bueno con niños",
+            "Amigable con extraños"
+        ],
+        "img": "https://img.miwuki.com/a/6TZYYY/500",
+        "name": "Mia",
+        "specie": "Perro",
+        "born": "2014-09-15",
+        "gender": "Hembra",
+        "size": "Pequeño",
+        "weigth": "8 Kg.",
+        "activity": "Media",
+        "vaccinated": "Sí",
+        "dewormed": "Sí",
+        "healthy": "Sí",
+        "sterilized": "Sí",
+        "identified": "Sí",
+        "microchip": "Sí",
+        "urgency": "En Adopción",
+        "comment": "Mía es una perra inquieta pero muy cariñosa. Está buscando una familia donde encontrar la tranquilidad y estabilidad que ella necesita. Con los perros hay que ser cauteloso, no se lleva muy bien con ellos de primeras, hay que trabajarlo. En casa se porta muy bien, pero hay que ganarse su confianza poco a poco, una vez ella entiende que no le van a maltratar es muy buena, y está llena de amor. ¿Te gustaría conocerla? Escribenos! Sólo se busca adopción en Sevilla. Nuestros animales están chipados, con la cartilla al día de vacunas y castrados o se entregan con compromiso de castración. La tasa de adopción iría exclusivamente para estos conceptos, siendo ésta, una asociación sin ánimo de lucro y con mucho amor por los animales.",
+        "city": "- Sevilla, España",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339252909"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339252909"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd6f5040913632abf63b2"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/es.svg",
+        "personality": [
+            "Bueno con gatos",
+            "Bueno con otros animales",
+            "Bueno con niños",
+            "Bueno en el coche",
+            "Bueno en casa",
+            "Me gusta estar en compañía",
+            "Cariñoso"
+        ],
+        "img": "https://img.miwuki.com/a/KDUW69/500",
+        "name": "Frida",
+        "specie": "Gato",
+        "born": "2018-09-01",
+        "gender": "Hembra",
+        "size": "Pequeño",
+        "weigth": "1 Kg.",
+        "activity": "Desconocida",
+        "vaccinated": "Sí",
+        "dewormed": "Sí",
+        "healthy": "No",
+        "sterilized": "No",
+        "identified": "Sí",
+        "microchip": "Sí",
+        "urgency": "Urgente",
+        "comment": "🆘🆘NECESITAMOS AYUDA DESESPERADA🆘🆘 Nos dan el aviso de este gatito Bebé en Bormujos. Lleva varios días vagando por la zona y no podemos dejarlo así. Pero no tenemos dinero para afrontar sus gastos y una casita de acogida q no tenga más gatos. Os Necesitamos 🙏🏼🙏🏼🙏🏼 Con un poco de cada uno lo lograremos. \nDONACIONES: ES15 0182 6101 8702 0158 9601 Lydia Infante \nSubiremos todas las facturas con sus gastos. \nCONTACTO: 653981934☎️\nEs urgente tener un lugar donde poder tener al pequeño hasta que mañana el veterinario lo valore y recaudar el dinero para sus gastos veterinarios.",
+        "city": "- Sevilla, España",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339253240"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339253240"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd6f5040913632abf63b3"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/es.svg",
+        "personality": [],
+        "img": "https://img.miwuki.com/a/KXBL4Q/500",
+        "name": "Niña",
+        "specie": "Perro",
+        "born": "2018-02-13",
+        "gender": "Hembra",
+        "size": "Pequeño",
+        "weigth": "7 Kg.",
+        "activity": "Desconocida",
+        "vaccinated": "Sí",
+        "dewormed": "Sí",
+        "healthy": "Sí",
+        "sterilized": "Sí",
+        "identified": "Sí",
+        "microchip": "Sí",
+        "urgency": "En Adopción",
+        "comment": "Niña en adopción \nEs una podenca de 1 año aprox, pesa unos 7 kg, es algo miedosa pero muy cariñosa cuando coge confianza.\nEstá en Talavera, Toledo.\nSe entrega con chip, pasaporte, vacunada, desparasitada y castrada.",
+        "city": "- Toledo, España",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339253326"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339253326"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd6f6040913632abf63b4"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/mx.svg",
+        "personality": [
+            "Amigable con extraños",
+            "Independiente",
+            "Cariñoso"
+        ],
+        "img": "https://img.miwuki.com/a/FA93FN/500",
+        "name": "Coqui",
+        "specie": "Gato",
+        "born": "2017-01-06",
+        "gender": "Hembra",
+        "size": "Mediano",
+        "weigth": "5 Kg.",
+        "activity": "Media",
+        "vaccinated": "No",
+        "dewormed": "No",
+        "healthy": "No",
+        "sterilized": "No",
+        "identified": "No",
+        "microchip": "No",
+        "urgency": "En Adopción",
+        "comment": "Coqui es un mar de Amor ??",
+        "city": "- San Luis Potosí, México",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339254064"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339254064"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd6f6040913632abf63b5"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/es.svg",
+        "personality": [
+            "Amigable con extraños",
+            "Cariñoso"
+        ],
+        "img": "https://img.miwuki.com/a/FK3ASW/500",
+        "name": "Lalo",
+        "specie": "Gato",
+        "born": "2016-10-08",
+        "gender": "Macho",
+        "size": "Mediano",
+        "weigth": "2.1 Kg.",
+        "activity": "Media",
+        "vaccinated": "No",
+        "dewormed": "No",
+        "healthy": "No",
+        "sterilized": "Sí",
+        "identified": "No",
+        "microchip": "Sí",
+        "urgency": "En Adopción",
+        "comment": "Lalo es un gatito adolescente de 7 meses muy tierno, de bebe que fue llevado por su mama junto a sus hermanos a una zona de la calle muy peligrosa en donde fueron rescatados y llevados a una casa de acogida. Es un gatito muy bueno, incansable jugueton y muy inteligente. La adopción es gestionada por SOS Felina Felinae, es gratuita, pero se abonan los gastos veterinarios a un costo de Protectora. Los gatos se entregan, desparasitados, testados, vacunados y a partir de los 6 meses esterilizados.Recuerda una Protectora garantiza seguridad y te ayuda a encontrar el gato de tu vida. NO COMPRES, ADOPTA",
+        "city": "- Madrid, España",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339254066"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339254066"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd6f6040913632abf63b6"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/es.svg",
+        "personality": [
+            "Bueno con otros perros",
+            "Bueno con gatos",
+            "Bueno con otros animales",
+            "Amigable con extraños",
+            "Bueno en casa",
+            "A veces ladro, maúllo...",
+            "Me gusta estar en compañía",
+            "Cariñoso",
+            "Juguetón"
+        ],
+        "img": "https://img.miwuki.com/a/01L4M8/500",
+        "name": "Sinnombre",
+        "specie": "Gato",
+        "born": "2019-04-15",
+        "gender": "Hembra",
+        "size": "Pequeño",
+        "weigth": "1 Kg.",
+        "activity": "Desconocida",
+        "vaccinated": "No",
+        "dewormed": "Sí",
+        "healthy": "Sí",
+        "sterilized": "No",
+        "identified": "No",
+        "microchip": "No",
+        "urgency": "En Adopción",
+        "comment": "Es una hembrita divertida y juguetona, activa y despierta, siempre atenta a todo.\nEs algo dependiente, le gusta mucho y necesita compañía, espera a que estés con ella para ponerse a comer. Es muy bebota.\nDe los tres hermanos. fue la primera a la que encontramos y gracias a ella, que les maullaba, pudimos coger a los otros dos.",
+        "city": "- Toledo, España",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339254470"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339254470"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd6f6040913632abf63b7"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/es.svg",
+        "personality": [],
+        "img": "https://img.miwuki.com/a/3BPX6T/500",
+        "name": "Papi",
+        "specie": "Perro",
+        "born": "2010-01-15",
+        "gender": "Macho",
+        "size": "Grande",
+        "weigth": "0 Kg.",
+        "activity": "Desconocida",
+        "vaccinated": "No",
+        "dewormed": "No",
+        "healthy": "No",
+        "sterilized": "Sí",
+        "identified": "No",
+        "microchip": "Sí",
+        "urgency": "En Adopción",
+        "comment": "",
+        "city": "- Madrid, España",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339254608"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339254608"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd6f6040913632abf63b8"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/es.svg",
+        "personality": [
+            "Bueno con otros perros",
+            "Bueno con gatos"
+        ],
+        "img": "https://img.miwuki.com/a/XPKKWG/500",
+        "name": "Zarpas",
+        "specie": "Gato",
+        "gender": "Macho",
+        "size": "Pequeño",
+        "weigth": "0 Kg.",
+        "activity": "Desconocida",
+        "vaccinated": "No",
+        "dewormed": "No",
+        "healthy": "No",
+        "sterilized": "No",
+        "identified": "No",
+        "microchip": "No",
+        "urgency": "En Adopción",
+        "comment": "",
+        "city": "- Ciudad Real, España",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339254900"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339254900"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd6f7040913632abf63b9"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/mx.svg",
+        "personality": [
+            "Bueno con otros perros",
+            "Bueno con otros animales",
+            "Bueno con niños",
+            "Amigable con extraños",
+            "A veces ladro, maúllo...",
+            "Protector",
+            "Independiente",
+            "Cariñoso"
+        ],
+        "img": "https://img.miwuki.com/a/STF0V7/500",
+        "name": "Flaquita",
+        "specie": "Perro",
+        "born": "2012-06-15",
+        "gender": "Hembra",
+        "size": "Pequeño",
+        "weigth": "0 Kg.",
+        "activity": "Alta",
+        "vaccinated": "No",
+        "dewormed": "No",
+        "healthy": "No",
+        "sterilized": "Sí",
+        "identified": "No",
+        "microchip": "No",
+        "urgency": "En Adopción",
+        "comment": "Juguetona, amigable con niños, se lleva bien con otros perros. Flaquita nació en el refugio ya que su mamá Güera ingresó preñada, es hermana de Lucas y Rocky",
+        "city": "- Ciudad de México, México",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339255601"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339255601"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd6f7040913632abf63ba"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/mx.svg",
+        "personality": [
+            "Bueno con otros perros",
+            "Bueno con gatos",
+            "Bueno con otros animales",
+            "Cauteloso con extraños",
+            "Bueno en el coche",
+            "A veces ladro, maúllo...",
+            "Me gusta pasear",
+            "Independiente",
+            "Me gusta estar en compañía",
+            "Cariñoso",
+            "Juguetón"
+        ],
+        "img": "https://img.miwuki.com/a/0U0ATF/500",
+        "name": "Sunny",
+        "specie": "Perro",
+        "born": "2017-09-01",
+        "gender": "Hembra",
+        "size": "Mediano",
+        "weigth": "12 Kg.",
+        "activity": "Media",
+        "vaccinated": "No",
+        "dewormed": "Sí",
+        "healthy": "Sí",
+        "sterilized": "Sí",
+        "identified": "No",
+        "microchip": "No",
+        "urgency": "Urgente",
+        "comment": "Perrita mestiza de aproximadamente dos años y medio.Sociable, juguetona y cariñosa. Talla mediana. Energía media. Disfruta mucho las caminatas largas. Requiere de apoyo para superar cierto miedo que presenta hacia algunas personas. Sugiero que quien esté interesado tenga experiencia previa en perros.",
+        "city": "- Ciudad de México, México",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339255908"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339255908"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd6f7040913632abf63bb"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/es.svg",
+        "personality": [],
+        "img": "https://img.miwuki.com/a/BEK2WD/500",
+        "name": "Bosco",
+        "specie": "Gato",
+        "born": "2013-06-15",
+        "gender": "Macho",
+        "size": "Mediano",
+        "weigth": "0 Kg.",
+        "activity": "Desconocida",
+        "vaccinated": "No",
+        "dewormed": "No",
+        "healthy": "No",
+        "sterilized": "Sí",
+        "identified": "No",
+        "microchip": "Sí",
+        "urgency": "En Adopción",
+        "comment": "",
+        "city": "- Madrid, España",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339255928"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339255928"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd6f8040913632abf63bc"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/es.svg",
+        "personality": [
+            "Amigable con extraños",
+            "No ladro, no maúllo...",
+            "Independiente",
+            "Cariñoso"
+        ],
+        "img": "https://img.miwuki.com/a/ZJL889/500",
+        "name": "Izar",
+        "specie": "Gato",
+        "born": "2014-06-15",
+        "gender": "Hembra",
+        "size": "Pequeño",
+        "weigth": "4 Kg.",
+        "activity": "Media",
+        "vaccinated": "No",
+        "dewormed": "No",
+        "healthy": "No",
+        "sterilized": "Sí",
+        "identified": "No",
+        "microchip": "No",
+        "urgency": "En Adopción",
+        "comment": "Izar vivió desde pequeñita con un matrimonio, hasta que un día hicieron obras en la casa y ella se estresó mucho con el estruendo poniéndose agresiva. Al ser un matrimonio mayor no supieron lidiar con el problema y terminamos recogiéndola por el bien de ella. Cuando llegó a nosotros no dejaba que nadie la tocase. En su casa de acogida también tuvo problemas lo que disparó su estrés. Al final decidimos traerla al refugio para tratarla con otros medios e intentar que se relajase. Ahora está en tratamiento con flores de Bach y le va muy bien. Está relajada y lista para ser adoptada, es un cielo de gatita pero por culpa del trauma sufrido se pone muy nerviosa con los ruidos fuertes y cuando otros gatos montan jaleo, necesita una casa sin más animales donde ella sea la reina y pueda disfrutar de paz y tranquilidad. Te animas a conocerla?? te encantará!",
+        "city": "- Guipúzcoa, España",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339256034"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339256034"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd6f8040913632abf63bd"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/es.svg",
+        "personality": [
+            "Bueno con otros perros",
+            "Bueno con gatos",
+            "Bueno con niños",
+            "Amigable con extraños",
+            "Cariñoso",
+            "animal.obediente"
+        ],
+        "img": "https://img.miwuki.com/a/RXAH7R/500",
+        "name": "Kino",
+        "specie": "Perro",
+        "born": "2010-01-01",
+        "gender": "Macho",
+        "size": "Mediano",
+        "weigth": "20 Kg.",
+        "activity": "Media",
+        "vaccinated": "No",
+        "dewormed": "No",
+        "healthy": "No",
+        "sterilized": "Sí",
+        "identified": "No",
+        "microchip": "Sí",
+        "urgency": "En Adopción",
+        "comment": "Kino es un precioso macho nacido el 1/01/2010, es de tamaño mediano y está castrado. Fue rescatado hace varios años de la perrera, el pobre había sido abandonado 2 veces. Desde entonces está esperando una segunda oportunidad de encontrar familia en una residencia. Es muy bueno, cariñoso, tranquilo, muy dulce, sabe pasear con correa. Se lleva muy bien con todos, tanto personas, perros y gatos. Es un amor de perrito...pero el pobre es invisible y nadie se fija en él. Está en Valencia pero si le sale una buena familia podría enviarse a otras partes de España. Si te animas a darle una oportunidad, envia email a aso.cuentaconmigo@gmail.com Gracias.",
+        "city": "- Valencia, España",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339256520"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339256520"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd6f9040913632abf63be"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/es.svg",
+        "personality": [
+            "Bueno con gatos",
+            "Cariñoso"
+        ],
+        "img": "https://img.miwuki.com/a/TVTD3R/500",
+        "name": "Oggy",
+        "specie": "Gato",
+        "born": "2016-03-23",
+        "gender": "Hembra",
+        "size": "Mediano",
+        "weigth": "0 Kg.",
+        "activity": "Desconocida",
+        "vaccinated": "Sí",
+        "dewormed": "Sí",
+        "healthy": "Sí",
+        "sterilized": "Sí",
+        "identified": "Sí",
+        "microchip": "Sí",
+        "urgency": "En Adopción",
+        "comment": "",
+        "city": "- Murcia, España",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339257114"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339257114"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd6f9040913632abf63bf"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/es.svg",
+        "personality": [
+            "Bueno con otros perros",
+            "Bueno con otros animales",
+            "Bueno con niños",
+            "Amigable con extraños",
+            "No ladro, no maúllo...",
+            "Tímido",
+            "Cariñoso",
+            "animal.obediente"
+        ],
+        "img": "https://img.miwuki.com/a/VVI0PA/500",
+        "name": "Pit",
+        "specie": "Perro",
+        "born": "2012-10-15",
+        "gender": "Macho",
+        "size": "Mediano",
+        "weigth": "25 Kg.",
+        "activity": "Media",
+        "vaccinated": "No",
+        "dewormed": "No",
+        "healthy": "No",
+        "sterilized": "Sí",
+        "identified": "No",
+        "microchip": "Sí",
+        "urgency": "En Adopción",
+        "comment": "PIT de primeras es un poco distante, pero a lo que empieza a conocerte se muestra más cercano. Y empieza a ser cariñoso y juguetón. Pit cuando está en su jaula, es un perro muy tranquilo, pero cuando aún no le ha tocado el turno de salir al patio y pasas por delante de su jaula, se pone ansioso por llamar tu atención. No soporta estar encerrado. A pesar de su tranquilidad dentro de la jaula, fuera de ella es un perro activo, le gusta jugar, correr.... pero también explorar tranquilo. Es muy divertido cuando te pones en posición para jugar como un perro y él responde de la misma manera. Y después se echa unas carreras para quemar el estrés que produce vivir encerrado en una jaula. Pero si te agachas y lo acaricias, Pit se queda relajado disfrutando de los mimos. Ven a conocerlo y dale la oportunidad de mostrarte su carácter. Nombre: PIT Desde 15-6-2017 Sexo: Macho Edad: 5 años fecha de nacimiento 10/2012 Raza: Cruce de boxer Tamaño: Mediano Localidad: Vilanova I La Geltrú (Barcelona) Situación: Refugio Salud: Buena Se entrega con contrato de adopción que incluye desparasitación interna y externa, vacuna, cartilla, chip identificativo y esterilización.",
+        "city": "- Barcelona, España",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339257328"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339257328"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd6f9040913632abf63c0"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/es.svg",
+        "personality": [
+            "Bueno con gatos",
+            "Bueno con niños",
+            "Tímido",
+            "Cariñoso"
+        ],
+        "img": "https://img.miwuki.com/a/R4P1LV/500",
+        "name": "Miel",
+        "specie": "Gato",
+        "born": "2017-05-15",
+        "gender": "Hembra",
+        "size": "Pequeño",
+        "weigth": "0 Kg.",
+        "activity": "Baja",
+        "vaccinated": "No",
+        "dewormed": "No",
+        "healthy": "No",
+        "sterilized": "Sí",
+        "identified": "No",
+        "microchip": "No",
+        "urgency": "En Adopción",
+        "comment": "",
+        "city": "- Madrid, España",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339257378"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339257378"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd6f9040913632abf63c1"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/es.svg",
+        "personality": [
+            "Bueno con otros perros",
+            "Amigable con extraños",
+            "A veces ladro, maúllo...",
+            "Independiente",
+            "Cariñoso",
+            "animal.obediente"
+        ],
+        "img": "https://img.miwuki.com/a/207R63/500",
+        "name": "Tyson P.",
+        "specie": "Perro",
+        "born": "2017-02-07",
+        "gender": "Macho",
+        "size": "Mediano",
+        "weigth": "18 Kg.",
+        "activity": "Alta",
+        "vaccinated": "No",
+        "dewormed": "No",
+        "healthy": "No",
+        "sterilized": "Sí",
+        "identified": "No",
+        "microchip": "Sí",
+        "urgency": "Urgente",
+        "comment": "Tyson es un perro joven y activo, cariñoso y obediente.",
+        "city": "- Madrid, España",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339257553"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339257553"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd6fa040913632abf63c2"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/es.svg",
+        "personality": [
+            "Bueno sólo con hembras",
+            "Amigable con extraños",
+            "A veces ladro, maúllo...",
+            "Protector",
+            "Cariñoso"
+        ],
+        "img": "https://img.miwuki.com/a/ZVJ985/500",
+        "name": "Thor",
+        "specie": "Perro",
+        "gender": "Macho",
+        "size": "Gigante",
+        "weigth": "0 Kg.",
+        "activity": "Media",
+        "vaccinated": "No",
+        "dewormed": "No",
+        "healthy": "No",
+        "sterilized": "No",
+        "identified": "No",
+        "microchip": "No",
+        "urgency": "En Adopción",
+        "comment": "THOR es un mastín joven de aprox 1-2 años, tamaño xxl , cariñoso y sociable. Interesados en adoptar mail a adopciones@protectorazafra. org. Todos nuestros perritos en adopción en http: //protectorazafra. org",
+        "city": "- Badajoz, España",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339258105"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339258105"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd6fa040913632abf63c3"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/es.svg",
+        "personality": [
+            "Bueno con niños",
+            "Bueno en el coche",
+            "Bueno en casa",
+            "Protector",
+            "Me gusta estar en compañía",
+            "Cariñoso"
+        ],
+        "img": "https://img.miwuki.com/a/Q7ODJD/500",
+        "name": "Tico",
+        "specie": "Gato",
+        "born": "2017-03-14",
+        "gender": "Macho",
+        "size": "Grande",
+        "weigth": "5 Kg.",
+        "activity": "Media",
+        "vaccinated": "Sí",
+        "dewormed": "Sí",
+        "healthy": "Sí",
+        "sterilized": "Sí",
+        "identified": "No",
+        "microchip": "Sí",
+        "urgency": "En Adopción",
+        "comment": "Tico fue recogido en una colonia pensando que era un gato nacido en la calle pero resultó tener un caracter excepcional. No tenia chip y nadie lo reclamó. Es uno de los gatos más cariñosos que han pasado por la protectora pero no está teniendo suerte,  llevar ya dos casas de acogida,  el se adaptation fenomenal pero necesita estabiludad y que lo quieran para siempre. Si vienes a conocerlo no te querrás ya separar de él.  Contacto: adopciones@gestionfelinamadrid.org",
+        "city": "- Madrid, España",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339258659"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339258659"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd6fa040913632abf63c4"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/mx.svg",
+        "personality": [
+            "Bueno con gatos",
+            "Bueno con niños",
+            "Amigable con extraños",
+            "Bueno en casa",
+            "A veces ladro, maúllo...",
+            "Me gusta estar en compañía",
+            "Cariñoso",
+            "Juguetón",
+            "Dormilón",
+            "animal.obediente"
+        ],
+        "img": "https://img.miwuki.com/a/3ZNDKT/500",
+        "name": "Lucho",
+        "specie": "Gato",
+        "born": "2019-02-15",
+        "gender": "Macho",
+        "size": "Grande",
+        "weigth": "0 Kg.",
+        "activity": "Media",
+        "vaccinated": "Sí",
+        "dewormed": "No",
+        "healthy": "Sí",
+        "sterilized": "Sí",
+        "identified": "No",
+        "microchip": "No",
+        "urgency": "En Adopción",
+        "comment": "Hola estoy dando en adopción a un gatito de la raza azul ruso de un año de edad aproximadamente por falta de espacio y tiempo para cuidarlo, el único requisito que pido es que lo quieran es muy cariñoso, juguetón y tierno la familia o persona que lo adopte que lo quieran, lo cuiden mucho y que tengan espacio es el único requisito que pido, ya está vacunado y operado.",
+        "city": "- Ciudad de México, México",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339258683"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339258683"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd6fa040913632abf63c5"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/es.svg",
+        "personality": [
+            "Bueno con otros perros",
+            "A veces ladro, maúllo..."
+        ],
+        "img": "https://img.miwuki.com/a/YXJXLC/500",
+        "name": "Balto",
+        "specie": "Perro",
+        "born": "2017-09-27",
+        "gender": "Macho",
+        "size": "Grande",
+        "weigth": "0 Kg.",
+        "activity": "Desconocida",
+        "vaccinated": "No",
+        "dewormed": "No",
+        "healthy": "No",
+        "sterilized": "No",
+        "identified": "No",
+        "microchip": "No",
+        "urgency": "En Adopción",
+        "comment": "",
+        "city": "- Valencia, España",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339258921"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339258921"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd6fb040913632abf63c6"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/es.svg",
+        "personality": [],
+        "img": "https://img.miwuki.com/a/QK3G44/500",
+        "name": "Trébol",
+        "specie": "Perro",
+        "born": "2017-01-11",
+        "gender": "Macho",
+        "size": "Mediano",
+        "weigth": "0 Kg.",
+        "activity": "Desconocida",
+        "vaccinated": "Sí",
+        "dewormed": "Sí",
+        "healthy": "Sí",
+        "sterilized": "Sí",
+        "identified": "Sí",
+        "microchip": "Sí",
+        "urgency": "En Adopción",
+        "comment": "🇪🇸TRÉBOL, nacido aproximadamente en noviembre 2017.\nSuerte tuviste pues una pareja te encontró en plena carretera pero no miraron a otro lado. Pararon y te recogieron. Y con ello te salvaron la vida. \nComo ha podido alguien dejarte morir de hambre. Con alguna herida y esquelético has entrado a nuestras vidas pero tu no has mostrado mas que amor, que ternura, que cariño, amabilidad, sociable con todo ser viviente, carisma....alma pura que alguien intentó destrozar. \nPero desde ahora tu vida va a tomar otro rumbo. Porque un perro tan adorable como tu es imposible que no encuentre a quien enamorar. Y a esa persona o familia buscamos . A quien quiera realmente ayudarte y recuperarte porque cuando ganes peso y tu pelo vuelva a brillar y la sonrisa vuelva a tu cara serás un perro que deslumbre en todos los aspectos.",
+        "city": "- Toledo, España",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339259039"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339259039"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd6fb040913632abf63c7"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/es.svg",
+        "personality": [
+            "Bueno con otros perros",
+            "Amigable con extraños",
+            "A veces ladro, maúllo...",
+            "Me gusta pasear",
+            "Me gusta estar en compañía",
+            "Cariñoso",
+            "Juguetón"
+        ],
+        "img": "https://img.miwuki.com/a/T4ZK9N/500",
+        "name": "Atila",
+        "specie": "Perro",
+        "born": "2013-08-03",
+        "gender": "Macho",
+        "size": "Mediano",
+        "weigth": "22 Kg.",
+        "activity": "Alta",
+        "vaccinated": "Sí",
+        "dewormed": "Sí",
+        "healthy": "Sí",
+        "sterilized": "Sí",
+        "identified": "Sí",
+        "microchip": "Sí",
+        "urgency": "En Adopción",
+        "comment": "Atila llegó directamente de casa de sus dueños, ya no lo querían.  Es un mestizo de pittbull precioso y bajito. Es un encanto con las personas, muy alegre, sociable con otros perros, en el patio con los demás se lleva genial.\nLos domingos cuando ve a las voluntarias les ladra para que le saquen a pasear, es todo un crack nuestro chico .\nEs una pena que ya lleve seis años esperando a que alguien vea lo maravilloso que es y le adopte.\nEs necesaria tener la Licencia PPP para adoptarle.\nEstá en un pueblo de Ciudad Real, se entrega con todo el protocolo de adopción.\n\nContacto: ciudadanimal@gmail.com\n\n2020 - www.ciudadanimal.org",
+        "city": "- Ciudad Real, España",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339259689"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339259689"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd6fc040913632abf63c8"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/es.svg",
+        "personality": [
+            "Bueno con otros perros",
+            "Bueno con gatos",
+            "Bueno con otros animales",
+            "Bueno con niños",
+            "Amigable con extraños",
+            "Cariñoso",
+            "animal.obediente"
+        ],
+        "img": "https://img.miwuki.com/a/GP49B5/500",
+        "name": "Primi",
+        "specie": "Gato",
+        "born": "2016-07-03",
+        "gender": "Hembra",
+        "size": "Pequeño",
+        "weigth": "2 Kg.",
+        "activity": "Media",
+        "vaccinated": "No",
+        "dewormed": "No",
+        "healthy": "No",
+        "sterilized": "No",
+        "identified": "No",
+        "microchip": "No",
+        "urgency": "En Adopción",
+        "comment": "La Primi, siempre la primera en salir, la primera en mirarte, la primera para darte el beso de buenas noches, la primera en maullarte ayudándole después de un día de trabajo, la primera en dar buena cuenta de la la tita, la primera en abrazarte para dormirse y la primera en mirarte al despertar... Sólo Madrid y alrededores. Adopciones: Whatsapp al 661945229 O bien escribiendo a luchandoporellos@gmail,com",
+        "city": "- Madrid, España",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339260224"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339260224"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd6fc040913632abf63c9"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/cl.svg",
+        "personality": [
+            "Bueno con otros perros",
+            "Bueno con niños",
+            "Amigable con extraños",
+            "Bueno en casa",
+            "A veces ladro, maúllo...",
+            "Cariñoso",
+            "Juguetón"
+        ],
+        "img": "https://img.miwuki.com/a/HX3ZQ7/500",
+        "name": "Pelusa",
+        "specie": "Perro",
+        "born": "2019-09-01",
+        "gender": "Hembra",
+        "size": "Pequeño",
+        "weigth": "0 Kg.",
+        "activity": "Desconocida",
+        "vaccinated": "No",
+        "dewormed": "Sí",
+        "healthy": "Sí",
+        "sterilized": "No",
+        "identified": "No",
+        "microchip": "Sí",
+        "urgency": "En Adopción",
+        "comment": "perrita aproximadamente de 08 meses, fue recogida de la calle en noviembre 2019, hoy por motivos económicos debo cambiarme de hogar y no puedo llevarla, se llama pelusa. la entrego con su shampoo correa, comida todo lo que es de ella.  solo quiero que la adopte una persona que le entregue amor y que se preocupe.",
+        "city": "- Santiago, Chile",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339260226"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339260226"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd6fc040913632abf63ca"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/es.svg",
+        "personality": [
+            "Amigable con extraños",
+            "A veces ladro, maúllo..."
+        ],
+        "img": "https://img.miwuki.com/a/4MC7XA/500",
+        "name": "Chico",
+        "specie": "Perro",
+        "born": "2017-06-15",
+        "gender": "Macho",
+        "size": "Grande",
+        "weigth": "12 Kg.",
+        "activity": "Media",
+        "vaccinated": "No",
+        "dewormed": "No",
+        "healthy": "No",
+        "sterilized": "Sí",
+        "identified": "No",
+        "microchip": "No",
+        "urgency": "En Adopción",
+        "comment": "",
+        "city": "- Sevilla, España",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339260311"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339260311"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd6fd040913632abf63cc"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/es.svg",
+        "personality": [
+            "Bueno con otros perros",
+            "Bueno con niños",
+            "Amigable con extraños",
+            "Bueno en casa",
+            "No ladro, no maúllo...",
+            "Me gusta pasear",
+            "Cariñoso",
+            "Juguetón"
+        ],
+        "img": "https://img.miwuki.com/a/4O64KF/500",
+        "name": "Susto",
+        "specie": "Perro",
+        "born": "2013-06-15",
+        "gender": "Macho",
+        "size": "Grande",
+        "weigth": "0 Kg.",
+        "activity": "Baja",
+        "vaccinated": "Sí",
+        "dewormed": "Sí",
+        "healthy": "Sí",
+        "sterilized": "Sí",
+        "identified": "Sí",
+        "microchip": "Sí",
+        "urgency": "En Adopción",
+        "comment": "",
+        "city": "- Córdoba, España",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339261277"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339261277"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd6fd040913632abf63cd"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/ar.svg",
+        "personality": [
+            "Bueno con otros perros",
+            "Bueno con niños"
+        ],
+        "img": "https://img.miwuki.com/a/LYJ1HA/500",
+        "name": "Globo",
+        "specie": "Perro",
+        "gender": "Macho",
+        "size": "Grande",
+        "weigth": "0 Kg.",
+        "activity": "Desconocida",
+        "vaccinated": "No",
+        "dewormed": "No",
+        "healthy": "No",
+        "sterilized": "No",
+        "identified": "No",
+        "microchip": "No",
+        "urgency": "En Adopción",
+        "comment": "Activo, dócil, pasea con correa.",
+        "city": "- Buenos Aires, Argentina",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339261420"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339261420"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd6fd040913632abf63ce"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/es.svg",
+        "personality": [
+            "Bueno con gatos",
+            "Bueno en casa",
+            "Tímido"
+        ],
+        "img": "https://img.miwuki.com/a/67FFT0/500",
+        "name": "Yoga",
+        "specie": "Gato",
+        "born": "2016-03-01",
+        "gender": "Hembra",
+        "size": "Mediano",
+        "weigth": "0 Kg.",
+        "activity": "Baja",
+        "vaccinated": "Sí",
+        "dewormed": "Sí",
+        "healthy": "Sí",
+        "sterilized": "Sí",
+        "identified": "Sí",
+        "microchip": "Sí",
+        "urgency": "En Adopción",
+        "comment": "Vivía en una calle de Córdoba, me tiraban piedras y me daban palizas siempre que podían, un día me recogió una señora y me envió a Madrid a Lara.\n\nAquí estoy tranquila y me han prometido buscar una familia de humanos buenos que me quieran y me cuiden.\n\n¿Me ayudas a logar mi deseo?\n\nContacto: adopciones@asociacionlara.org\n\n691598283",
+        "city": "- Madrid, España",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339261661"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339261661"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd6fd040913632abf63cf"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/es.svg",
+        "personality": [
+            "Tímido",
+            "Cariñoso"
+        ],
+        "img": "https://img.miwuki.com/a/R7B05D/500",
+        "name": "Atlas",
+        "specie": "Perro",
+        "gender": "Macho",
+        "size": "Grande",
+        "weigth": "0 Kg.",
+        "activity": "Desconocida",
+        "vaccinated": "No",
+        "dewormed": "No",
+        "healthy": "No",
+        "sterilized": "Sí",
+        "identified": "No",
+        "microchip": "Sí",
+        "urgency": "En Adopción",
+        "comment": "",
+        "city": "- Madrid, España",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339261757"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339261757"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd6fd040913632abf63d0"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/es.svg",
+        "personality": [
+            "Bueno con gatos"
+        ],
+        "img": "https://img.miwuki.com/a/TP1G1H/500",
+        "name": "Aticus",
+        "specie": "Gato",
+        "born": "2015-05-20",
+        "gender": "Macho",
+        "size": "Mediano",
+        "weigth": "0 Kg.",
+        "activity": "Media",
+        "vaccinated": "Sí",
+        "dewormed": "Sí",
+        "healthy": "Sí",
+        "sterilized": "Sí",
+        "identified": "Sí",
+        "microchip": "Sí",
+        "urgency": "En Adopción",
+        "comment": "",
+        "city": "- Madrid, España",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339261958"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339261958"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd6ff040913632abf63d1"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/es.svg",
+        "personality": [
+            "Bueno con gatos",
+            "Cauteloso con extraños",
+            "Tímido"
+        ],
+        "img": "https://img.miwuki.com/a/I6K99O/500",
+        "name": "Toulouse",
+        "specie": "Gato",
+        "born": "2018-03-29",
+        "gender": "Hembra",
+        "size": "Mini",
+        "weigth": "0.5 Kg.",
+        "activity": "Media",
+        "vaccinated": "No",
+        "dewormed": "No",
+        "healthy": "No",
+        "sterilized": "No",
+        "identified": "No",
+        "microchip": "No",
+        "urgency": "En Adopción",
+        "comment": "Cachorrito medio tímido que busca una casa en la que le den muchos mimos y mucho amor.",
+        "city": "- Valencia, España",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339263084"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339263084"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd6ff040913632abf63d2"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/ar.svg",
+        "personality": [
+            "Cariñoso"
+        ],
+        "img": "https://img.miwuki.com/a/98580I/500",
+        "name": "La Chola",
+        "specie": "Perro",
+        "gender": "Hembra",
+        "size": "Mediano",
+        "weigth": "0 Kg.",
+        "activity": "Desconocida",
+        "vaccinated": "No",
+        "dewormed": "No",
+        "healthy": "No",
+        "sterilized": "No",
+        "identified": "No",
+        "microchip": "No",
+        "urgency": "En Adopción",
+        "comment": "Esta simpática besucona es La Chola, si te viese el que te abandonó en el costado del refugio y huyó no te reconocería, llegaste flaquísima, con poco pelo y descolorida, (como en las primeras fotos) tiritando de miedo y debilidad. Ahora es pura alegría, desparrama besos por doquier y su cola es giratoria, y eso que está en el refu. Con una familia de bien La Chola estaría en la gloria!",
+        "city": "- Buenos Aires, Argentina",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339263114"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339263114"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd6ff040913632abf63d3"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/es.svg",
+        "personality": [
+            "Bueno con otros perros",
+            "Bueno con niños",
+            "Cauteloso con extraños",
+            "Tímido"
+        ],
+        "img": "https://img.miwuki.com/a/LWZVSN/500",
+        "name": "Bagueera",
+        "specie": "Perro",
+        "born": "2020-01-01",
+        "gender": "Hembra",
+        "size": "Grande",
+        "weigth": "27 Kg.",
+        "activity": "Desconocida",
+        "vaccinated": "Sí",
+        "dewormed": "Sí",
+        "healthy": "No",
+        "sterilized": "Sí",
+        "identified": "Sí",
+        "microchip": "Sí",
+        "urgency": "En Adopción",
+        "comment": "",
+        "city": "- Córdoba, España",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339263115"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339263115"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd6ff040913632abf63d4"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/es.svg",
+        "personality": [
+            "Bueno con gatos",
+            "Bueno con otros animales",
+            "Bueno con niños",
+            "Amigable con extraños",
+            "Tímido",
+            "Cariñoso"
+        ],
+        "img": "https://img.miwuki.com/a/MX35BH/500",
+        "name": "Jack",
+        "specie": "Gato",
+        "born": "2014-06-15",
+        "gender": "Macho",
+        "size": "Pequeño",
+        "weigth": "0 Kg.",
+        "activity": "Media",
+        "vaccinated": "No",
+        "dewormed": "No",
+        "healthy": "No",
+        "sterilized": "Sí",
+        "identified": "No",
+        "microchip": "Sí",
+        "urgency": "En Adopción",
+        "comment": "",
+        "city": "- Madrid, España",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339263266"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339263266"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd6ff040913632abf63d5"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/es.svg",
+        "personality": [
+            "Bueno sólo con hembras",
+            "Bueno con gatos",
+            "Bueno con otros animales",
+            "Amigable con extraños",
+            "Bueno en el coche",
+            "Bueno en casa",
+            "A veces ladro, maúllo...",
+            "Me gusta pasear",
+            "Cariñoso",
+            "Juguetón"
+        ],
+        "img": "https://img.miwuki.com/a/252Y0V/500",
+        "name": "Thor",
+        "specie": "Perro",
+        "born": "2017-09-01",
+        "gender": "Macho",
+        "size": "Mediano",
+        "weigth": "25 Kg.",
+        "activity": "Alta",
+        "vaccinated": "Sí",
+        "dewormed": "Sí",
+        "healthy": "Sí",
+        "sterilized": "No",
+        "identified": "Sí",
+        "microchip": "Sí",
+        "urgency": "En Adopción",
+        "comment": "",
+        "city": "- Pontevedra, España",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339263546"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339263546"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd700040913632abf63d6"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/es.svg",
+        "personality": [
+            "Bueno con gatos",
+            "Bueno con otros animales",
+            "Bueno con niños",
+            "Amigable con extraños",
+            "Cariñoso",
+            "animal.obediente"
+        ],
+        "img": "https://img.miwuki.com/a/A239CN/500",
+        "name": "Ara",
+        "specie": "Gato",
+        "born": "2014-05-14",
+        "gender": "Hembra",
+        "size": "Mediano",
+        "weigth": "0 Kg.",
+        "activity": "Media",
+        "vaccinated": "No",
+        "dewormed": "No",
+        "healthy": "No",
+        "sterilized": "Sí",
+        "identified": "No",
+        "microchip": "Sí",
+        "urgency": "En Adopción",
+        "comment": "Ara vivía por los jardines de la universidad, un día de tormenta la escucharon maullar muy fuerte y cuando se acercaron a ver qué pasaban vieron que los cachorros de Ara se estaban ahogando en una tragona. Ara estaba empapada y muy nerviosa, ella y sus crías fueron rescatadas y aunque Ara es una gata positiva, hace una vida completamente normal y esta fuerte como la que más. Se lleva bien con todos y es realmente cariñosa",
+        "city": "- Jaén, España",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339264504"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339264504"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e5fd700040913632abf63d7"
+        },
+        "flag": "https://petshelter.miwuki.com/img/b/es.svg",
+        "personality": [
+            "Bueno con gatos",
+            "Bueno con otros animales",
+            "Amigable con extraños",
+            "Me gusta estar en compañía",
+            "Cariñoso",
+            "Juguetón"
+        ],
+        "img": "https://img.miwuki.com/a/9Y8LUR/500",
+        "name": "Anita",
+        "specie": "Gato",
+        "born": "2006-06-15",
+        "gender": "Hembra",
+        "size": "Mediano",
+        "weigth": "0 Kg.",
+        "activity": "Media",
+        "vaccinated": "Sí",
+        "dewormed": "Sí",
+        "healthy": "Sí",
+        "sterilized": "Sí",
+        "identified": "Sí",
+        "microchip": "Sí",
+        "urgency": "En Adopción",
+        "comment": "",
+        "city": "- Madrid, España",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1583339264625"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1583339264625"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        }
+    }
+]
