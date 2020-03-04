@@ -1,11 +1,8 @@
 import React, { Component } from 'react'
 import ScrapServices from '../../../services/scrap.service'
 
-import * as am4core from "@amcharts/amcharts4/core"
+import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
-import am4themes_animated from "@amcharts/amcharts4/themes/animated";
-
-am4core.useTheme(am4themes_animated);
 
 
 export default class BasicChart extends Component {
@@ -44,46 +41,32 @@ export default class BasicChart extends Component {
 
     setData = () => {
         let arrSpecie = [...this.state.specie]
-        let key = []
-        arrSpecie.forEach(elm => key.includes(elm) ? null : key.push(elm))
+        let keySpecie = []
+        arrSpecie.forEach(elm => keySpecie.includes(elm) ? null : keySpecie.push(elm))
 
-        this.setState({ data: key })
+        const objSpecie = {}
+        keySpecie.map(elm => objSpecie[elm] = 0)
+        arrSpecie.map(elm => objSpecie[elm] += 1)
+
+
+        this.setState({ ...this.state.data, data: { specie: keySpecie.map((elm, idx) => { return { Especie: elm, Cantidad: objSpecie[elm], name: 'name' + idx } }) } })
 
     }
 
     mountChart = () => {
-        let chart = am4core.create("chartdiv", am4charts.XYChart);
+        let chart = am4core.create("chartdiv", am4charts.PieChart);
 
         chart.paddingRight = 20;
+        chart.data = this.state.data.specie;
 
-        let data = [];
-        let visits = 10;
-        for (let i = 1;i < 366;i++) {
-            visits += Math.round((Math.random() < 0.5 ? 1 : -1) * Math.random() * 10);
-            data.push({ date: new Date(2018, 0, i), name: "name" + i, value: visits });
-        }
+        console.log(this.state.data.specie)
 
-        chart.data = data;
+        let pieSeries = chart.series.push(new am4charts.PieSeries());
 
-        let dateAxis = chart.xAxes.push(new am4charts.DateAxis());
-        dateAxis.renderer.grid.template.location = 0;
 
-        let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-        valueAxis.tooltip.disabled = true;
-        valueAxis.renderer.minWidth = 35;
+        pieSeries.dataFields.value = "Cantidad";
+        pieSeries.dataFields.category = "Especie";
 
-        let series = chart.series.push(new am4charts.LineSeries());
-        series.dataFields.dateX = "date";
-        series.dataFields.valueY = "value";
-
-        series.tooltipText = "{valueY.value}";
-        chart.cursor = new am4charts.XYCursor();
-
-        let scrollbarX = new am4charts.XYChartScrollbar();
-        scrollbarX.series.push(series);
-        chart.scrollbarX = scrollbarX;
-
-        this.chart = chart;
     }
 
     render() {
