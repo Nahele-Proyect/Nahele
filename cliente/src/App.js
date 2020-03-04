@@ -40,8 +40,8 @@ class App extends Component {
         <Navbar setTheUser={ this.setTheUser } loggedInUser={ this.state.loggedInUser } />
 
         { <Switch>
-          <Route exact path='/' render={ () => <BasicChart /> } />
-          {/* <Route exact path='/' render={ () => <Index { ...this.state.loggedInUser } /> } /> */ }
+          <Route path='/grafic' render={ () => <BasicChart /> } />
+          <Route exact path='/' render={ () => <Index { ...this.state.loggedInUser } /> } />
           <Route path='/details/:link' render={ props => <Details { ...props } /> } />
           <Route path="/profile" render={ () => this.state.loggedInUser ? <Profile loggedInUser={ this.state.loggedInUser } /> : <Redirect to="/" /> } />
         </Switch> }
