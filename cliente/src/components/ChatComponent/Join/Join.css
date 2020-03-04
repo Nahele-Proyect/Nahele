@@ -1,0 +1,85 @@
+.joinComponent {
+  box-sizing: border-box;
+}
+
+.joinComponent .joinOuterContainer {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+  padding-top: 80px;
+  background-color: #1A1A1D;
+}
+
+.joinComponent .joinInnerContainer {
+  width: 35%;
+
+}
+
+.joinComponent h2 {
+  color: red;
+  text-transform: uppercase;
+  margin-top: 50px;
+}
+
+.joinComponent .joinInput {
+  border-radius: 0;
+  padding: 15px 20px;
+  width: 100%;
+}
+
+.joinComponent .heading {
+  color: white;
+  font-size: 2.5em;
+  padding-bottom: 10px;
+  border-bottom: 2px solid white;
+  /* margin-bottom: 80px; */
+}
+
+.joinComponent .button {
+  width: 100%;
+  height: 48px;
+  padding: 0px 20px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #fff;
+  line-height: 40px;
+  text-align: center;
+  background-color: #313787;
+  border: 1px #313787 solid;
+  opacity: 1;
+  cursor: pointer;
+  transition: all .5s ease-in;
+  border-radius: 5px;
+  text-transform: uppercase;
+  margin-top: 20px;
+}
+
+.joinComponent .button:hover {
+  background-color: #40a5df;
+  border: 1px #40a5df solid;
+}
+
+.joinComponent label {
+  color: white;
+  font-size: 1.7em;
+  margin: 30px 0;
+  border-bottom: 2px solid white;
+  margin-bottom: 50px;
+}
+
+.joinComponent select {
+  height: 48px;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .joinComponent .joinOuterContainer {
+    height: 100%;
+  }
+
+  .joinComponent .joinInnerContainer {
+    width: 90%;
+  }
+
+}

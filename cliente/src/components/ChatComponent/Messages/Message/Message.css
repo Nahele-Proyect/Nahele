@@ -1,0 +1,67 @@
+.messageComponent .messageBox {
+  background: #F3F3F3;
+  border-radius: 20px;
+  padding: 5px 20px;
+  color: white;
+  display: inline-block;
+  max-width: 80%;
+}
+
+.messageComponent .messageText {
+  width: 100%;
+  letter-spacing: 0;
+  float: left;
+  font-size: 1.1em;
+  word-wrap: break-word;
+}
+
+.messageComponent .messageText img {
+  vertical-align: middle;
+}
+
+.messageComponent .messageContainer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 5%;
+  margin-top: 3px;
+}
+
+.messageComponent .sentText {
+  display: flex;
+  align-items: center;
+  font-family: Helvetica;
+  color: #828282;
+  letter-spacing: 0.3px;
+}
+
+.messageComponent .pl-10 {
+  padding-left: 10px;
+}
+
+.messageComponent .pr-10 {
+  padding-right: 10px;
+}
+
+.messageComponent .justifyStart {
+  justify-content: flex-start;
+}
+
+.messageComponent .justifyEnd {
+  justify-content: flex-end;
+}
+
+.messageComponent .colorWhite {
+  color: white;
+}
+
+.messageComponent .colorDark {
+  color: #353535;
+}
+
+.messageComponent .backgroundBlue {
+  background: #2979FF;
+}
+
+.messageComponent .backgroundLight {
+  background: #F3F3F3;
+}
