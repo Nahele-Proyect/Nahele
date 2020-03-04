@@ -10,10 +10,10 @@
 .chatComponent .container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   background: #FFF;
   border-radius: 8px;
-  height: 60%;
+  height: 65%;
   width: 35%;
 }
 

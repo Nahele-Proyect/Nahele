@@ -1,7 +1,7 @@
 .textContainerComponent .textContainer {
   display: flex;
   flex-direction: column;
-  margin-left: 100px;
+  margin-right: 100px;
   color: white;
   height: 60%;
   justify-content: space-between;
@@ -10,7 +10,7 @@
 .textContainerComponent .activeContainer {
   display: flex;
   align-items: center;
-  margin-bottom: 50%;
+  margin-bottom: 65%;
 }
 
 .textContainerComponent .activeItem {
@@ -23,7 +23,7 @@
 }
 
 .textContainerComponent .textContainer h1 {
-  margin-bottom: 0px;
+  margin-bottom: 50px;
 }
 
 @media (min-width: 320px) and (max-width: 1200px) {

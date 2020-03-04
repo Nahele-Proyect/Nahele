@@ -18,9 +18,9 @@ const Chat = props => {
   const [message, setMessage] = useState('')
   const [messages, setMessages] = useState([])
   const ENDPOINT = 'http://localhost:5000'
+
   useEffect(() => {
     const { name, room } = queryString.parse(props.location.search)
-
     socket = io(ENDPOINT)
 
     setRoom(room)
@@ -44,10 +44,10 @@ const Chat = props => {
 
     return () => {
       socket.emit('disconnect')
-
       socket.off()
     }
   }, [messages])
+
 
   const sendMessage = e => {
     e.preventDefault()
@@ -55,9 +55,11 @@ const Chat = props => {
   }
 
   return (
+
     <div className='chatComponent'>
       <div className="outerContainer">
         <div className="container">
+
           <InfoBar room={room} />
           <Messages messages={messages} name={name} />
           <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />

@@ -1,20 +1,19 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 import onlineIcon from '../../../icons/onlineIcon.png'
 import closeIcon from '../../../icons/closeIcon.png'
 
 import './InfoBar.css'
 
-const InfoBar = ({ room }) => (
+const InfoBar = props => (
   <div className='infoComponent'>
     <div className="infoBar">
       <div className="leftInnerContainer">
         <img className="onlineIcon" src={onlineIcon} alt="online icon" />
-        <h3>Sala: {room}</h3>
+        <h3>Sala: {props.room}</h3>
       </div>
       <div className="rightInnerContainer">
-        <Link to="/"><img src={closeIcon} alt="close icon" /></Link>
+        <a href="/join"><img src={closeIcon} alt="close icon" /></a>
       </div>
     </div>
   </div>
