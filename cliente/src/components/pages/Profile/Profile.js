@@ -60,7 +60,7 @@ class Profile extends Component {
                         </Col>
                         <Col>
 
-                            <Button onClick={ this.petFormChange }>Crear mascota</Button>
+                            <Button onClick={ this.petFormChange }>{ this.state.showPetForm ? 'Ocultar formulario' : 'Mostrar formulario' }</Button>
                         </Col>
                     </Row>
 
