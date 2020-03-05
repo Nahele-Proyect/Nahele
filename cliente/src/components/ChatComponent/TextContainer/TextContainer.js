@@ -1,8 +1,8 @@
-import React from 'react';
+import React from 'react'
 
-import onlineIcon from '../../../icons/onlineIcon.png';
+import onlineIcon from '../../../icons/onlineIcon.png'
 
-import './TextContainer.css';
+import './TextContainer.css'
 
 const TextContainer = ({ users }) => (
   <div className='textContainerComponent'>
@@ -27,6 +27,6 @@ const TextContainer = ({ users }) => (
       }
     </div>
   </div>
-);
+)
 
-export default TextContainer;
+export default TextContainer

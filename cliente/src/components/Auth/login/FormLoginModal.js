@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
+
 import './FormLogin.css'
+
 import AuthServices from '../../../services/auth.service'
 
-
-
-class LoginForm extends Component {
+export default class LoginForm extends Component {
 
     constructor(props) {
         super(props)
@@ -16,9 +16,7 @@ class LoginForm extends Component {
         this.AuthServices = new AuthServices()
     }
 
-    finishAction = () => {
-        this.props.closeModal()
-    }
+    finishAction = () => this.props.closeModal()
 
     postUser = () => {
         this.AuthServices.login(this.state)
@@ -80,6 +78,3 @@ class LoginForm extends Component {
         )
     }
 }
-
-
-export default LoginForm

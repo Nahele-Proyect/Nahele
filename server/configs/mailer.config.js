@@ -30,7 +30,6 @@ exports.welcomeMail = (username, email, password) => {
     })
 }
 
-
 const changeEmail = hbs.compile(fs.readFileSync((__dirname, './views/changeEmail.hbs'), 'utf8'))
 
 exports.newEmail = (username, oldEmail, newEmail) => {

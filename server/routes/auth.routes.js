@@ -110,9 +110,6 @@ authRoutes.post('/signup', (req, res, next) => {
 
             sendMail(username, email, password)
 
-
-            // Automatically log in user after sign up
-            // .login() here is actually predefined passport method
             req.login(aNewUser, (err) => {
 
                 if (err) {
@@ -122,8 +119,6 @@ authRoutes.post('/signup', (req, res, next) => {
                     return
                 }
 
-                // Send the user's information to the frontend
-                // We can use also: res.status(200).json(req.user)
                 res.json(aNewUser)
             })
         })
@@ -166,8 +161,6 @@ authRoutes.post('/login', (req, res, next) => {
         }
 
         if (!theUser) {
-            // "failureDetails" contains the error messages
-            // from our logic in "LocalStrategy" { message: '...' }.
             res.json({
                 message: failureDetails.message,
                 status: 'fail'
@@ -175,7 +168,6 @@ authRoutes.post('/login', (req, res, next) => {
             return
         }
 
-        // save user in session
         req.login(theUser, (err) => {
             if (err) {
                 res.status(500).json({
@@ -184,14 +176,13 @@ authRoutes.post('/login', (req, res, next) => {
                 return
             }
 
-            // We are now logged in (that's why we can also send req.user)
             res.json(theUser)
         })
     })(req, res, next)
 })
 
 authRoutes.post('/logout', (req, res, next) => {
-    // req.logout() is defined by passport
+
     req.logout()
     res.json({
         message: 'Sesión cerrada.'
@@ -199,7 +190,7 @@ authRoutes.post('/logout', (req, res, next) => {
 })
 
 authRoutes.get('/loggedin', (req, res, next) => {
-    // req.isAuthenticated() is defined by passport
+
     if (req.isAuthenticated()) {
         res.json(req.user)
         return
@@ -379,8 +370,5 @@ authRoutes.put('/updateEmail', (req, res, next) => {
         .then(theUser => res.json(theUser))
         .catch(err => console.log(err))
 })
-
-
-
 
 module.exports = authRoutes
