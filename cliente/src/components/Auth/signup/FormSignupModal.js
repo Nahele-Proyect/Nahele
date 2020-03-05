@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
 
 import AuthServices from '../../../services/auth.service'
+
 import './FormSignupModal.css'
 
-
-
-class SignupForm extends Component {
+export default class SignupForm extends Component {
 
     constructor(props) {
         super(props)
@@ -20,9 +19,8 @@ class SignupForm extends Component {
 
     }
 
-    finishAction = () => {
-        this.props.closeModal()
-    }
+    finishAction = () => this.props.closeModal()
+
     postUser = () => {
         this.AuthServices.signup(this.state)
             .then(theLoggedNewUser => {
@@ -47,7 +45,6 @@ class SignupForm extends Component {
         e.preventDefault()
         this.postUser()
     }
-
 
     render() {
 
@@ -98,4 +95,3 @@ class SignupForm extends Component {
 }
 
 
-export default SignupForm

@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
-import './App.css'
-import Navbar from './components/ui/Navbar'
 import { Switch, Route, Redirect } from "react-router-dom"
+import './App.css'
+
 import AuthServices from './services/auth.service'
+
+import Navbar from './components/ui/Navbar'
 import Profile from './components/pages/Profile/Profile'
 import Index from './components/pages/Index/index'
 import Details from './components/pages/Details/Details'
-
-// Chat
 import Chat from './components/ChatComponent/Chat/Chat';
 import Join from './components/ChatComponent/Join/Join';
 
@@ -18,11 +18,12 @@ import Join from './components/ChatComponent/Join/Join';
 class App extends Component {
   constructor() {
     super()
+
     this.state = { loggedInUser: false }
     this.AuthServices = new AuthServices()
   }
 
-  componentDidUpdate = (prevProps, prevState) => console.log('El estado de app  se ha actualizado', this.state)
+  componentDidUpdate = () => console.log('El estado de app  se ha actualizado', this.state)
 
   componentDidMount = () => {
     this.fetchUser()
@@ -39,21 +40,21 @@ class App extends Component {
   render() {
     return (
       <>
-        <Navbar setTheUser={ this.setTheUser } loggedInUser={ this.state.loggedInUser } />
+        <Navbar setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} />
 
-        { <Switch>
-          {/* <Route exact path='/' render={ () => <BasicChart /> } /> */ }
-          <Route exact path='/' render={ () => <Index { ...this.state.loggedInUser } /> } />
-          <Route path='/details/:link' render={ props => <Details { ...props } /> } />
-          <Route path="/profile" render={ () => this.state.loggedInUser ? <Profile loggedInUser={ this.state.loggedInUser } /> : <Redirect to="/" /> } />
-
-
+        {<Switch>
+          {/* <Route exact path='/' render={ () => <BasicChart /> } /> */}
+          <Route exact path='/' render={() => <Index {...this.state.loggedInUser} />} />
+          <Route path='/details/:link' render={props => <Details {...props} />} />
+          <Route path="/profile" render={() => this.state.loggedInUser ? <Profile loggedInUser={this.state.loggedInUser} /> : <Redirect to="/" />} />
 
 
-          <Route path="/join" render={ () => <Join loggedInUser={ this.state.loggedInUser } /> } />
-          <Route path="/chat" render={ props => <Chat { ...props } loggedInUser={ this.state.loggedInUser } /> } />
 
-        </Switch> }
+
+          <Route path="/join" render={() => <Join loggedInUser={this.state.loggedInUser} />} />
+          <Route path="/chat" render={props => <Chat {...props} loggedInUser={this.state.loggedInUser} />} />
+
+        </Switch>}
       </>
     )
   }

@@ -1,5 +1,7 @@
-import './ImgForm.css'
 import React, { Component } from 'react'
+
+import './ImgForm.css'
+
 import FilesServices from '../../../../services/files.service'
 import AuthServices from '../../../../services/auth.service'
 

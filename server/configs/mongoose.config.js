@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 
 mongoose
   .connect(`${process.env.DB}`, {
@@ -10,6 +10,6 @@ mongoose
   })
   .catch(err => {
     console.error('Error connecting to mongo', err)
-  });
+  })
 
-module.exports = mongoose;
+module.exports = mongoose

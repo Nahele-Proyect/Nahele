@@ -3,8 +3,9 @@ const router = express.Router()
 const axios = require('axios')
 const cheerio = require('cheerio')
 
-const axiosApp = axios.create({ baseURL: 'https://petshelter.miwuki.com' })
-
+const axiosApp = axios.create({
+    baseURL: 'https://petshelter.miwuki.com'
+})
 
 router.get('/', (req, res) => {
     const names = []
@@ -18,7 +19,6 @@ router.get('/', (req, res) => {
     axiosApp.get('/')
         .then(response => {
             const $ = cheerio.load(response.data)
-
 
             $('img').each((idx, image) => {
 
@@ -56,12 +56,17 @@ router.get('/', (req, res) => {
                 }
             })
 
-        }).then(pets => res.json({ status: 'ok', pets }))
+        }).then(pets => res.json({
+            status: 'ok',
+            pets
+        }))
         .catch(err => console.log(err))
 })
 
 router.get('/details/:code', (req, res) => {
-    const pet = { personality: [] }
+    const pet = {
+        personality: []
+    }
 
     axiosApp.get('/' + req.params.code)
         .then(response => {
@@ -115,7 +120,10 @@ router.get('/details/:code', (req, res) => {
                 }
             })
 
-        }).then(() => res.json({ status: 'ok', pet }))
+        }).then(() => res.json({
+            status: 'ok',
+            pet
+        }))
         .catch(err => console.log(err))
 })
 
