@@ -1,6 +1,6 @@
 import React from 'react'
 
-import onlineIcon from '../../../icons/onlineIcon.png'
+import onlineIcon from '../../../images/onlineIcon.png'
 
 import './TextContainer.css'
 

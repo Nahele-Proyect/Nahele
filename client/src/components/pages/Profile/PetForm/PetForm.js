@@ -50,7 +50,7 @@ export default class PetForm extends Component {
                     <Form.Row className='justify-content-between'>
 
                         <Form.Group as={Col} md='5'>
-                            {this.state.form.img ? <img style={{ margin: '20px 0px', width: '60%' }} src={this.state.form.img} />
+                            {this.state.form.img ? <img style={{ margin: '20px 0px', width: '60%' }} src={this.state.form.img} alt='foto' />
                                 :
                                 <>
                                     <Form.Label htmlFor='img'>Imagen</Form.Label>
