@@ -7,6 +7,7 @@ import Col from 'react-bootstrap/Col'
 import ScrapServices from '../../../services/scrap.service'
 
 import PetCard from './petCard/PetCard'
+import Filter from './Filter/Filter'
 
 export default class Index extends Component {
     constructor(props) {
@@ -14,8 +15,10 @@ export default class Index extends Component {
         this.state = {
             loggedInUser: props.loggedInUser,
             pets: undefined,
-            specieFilter: '',
-            urgencyFilter: ''
+            filters: {
+                specieFilter: '',
+                urgencyFilter: ''
+            }
         }
         this.filtered = undefined
         this.scrapServices = new ScrapServices()
@@ -31,16 +34,28 @@ export default class Index extends Component {
             .catch(err => err)
     }
 
+    changeFilters = filters => this.setState(filters)
+
     render() {
         if (this.state.pets) {
             this.filtered = [...this.state.pets]
-            this.state.specieFilter && (this.filtered = this.state.pets.filter(elm => !elm.specie.localeCompare(this.state.specieFilter)))
-            this.state.urgencyFilter && (this.filtered = this.state.filter(elm => !elm.urgency.localeCompare(this.state.urgencyFilter)))
+
+            this.state.filters.specieFilter && (
+                this.state.filters.specieFilter === 'Otros' ?
+                    this.filtered = this.state.pets.filter(elm => elm.specie.localeCompare('Gato') && elm.specie.localeCompare('Perro'))
+                    :
+                    (this.filtered = this.state.pets.filter(elm => !elm.specie.localeCompare(this.state.filters.specieFilter))))
+            this.state.filters.urgencyFilter && (this.filtered = this.filtered.filter(elm => !elm.urgency.localeCompare(this.state.filters.urgencyFilter)))
         }
 
         return (
             <div className='index'>
                 <Container>
+                    <Row>
+                        <Col >
+                            <Filter changeFilters={ this.changeFilters } />
+                        </Col>
+                    </Row>
 
                     { this.state.pets ?
                         <Row>

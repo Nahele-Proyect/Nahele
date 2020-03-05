@@ -14,7 +14,7 @@ import Map from './components/GoogleMaps/GoogleMaps'
 
 
 
-// import BasicChart from './components/Charts/basicChart/BasicChart'
+import BasicChart from './components/Charts/basicChart/BasicChart'
 
 class App extends Component {
   constructor() {
@@ -41,22 +41,22 @@ class App extends Component {
   render() {
     return (
       <>
-        <Navbar setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} />
+        <Navbar setTheUser={ this.setTheUser } loggedInUser={ this.state.loggedInUser } />
 
-        {<Switch>
-          {/* <Route exact path='/' render={ () => <BasicChart /> } /> */}
-          <Route exact path='/' render={() => <Index {...this.state.loggedInUser} />} />
-          <Route path='/details/:link' render={props => <Details {...props} />} />
-          <Route path="/profile" render={() => this.state.loggedInUser ? <Profile loggedInUser={this.state.loggedInUser} /> : <Redirect to="/" />} />
-
-
+        { <Switch>
+          <Route exact path='/grafic' render={ () => <BasicChart /> } />
+          <Route exact path='/' render={ () => <Index { ...this.state.loggedInUser } /> } />
+          <Route path='/details/:link' render={ props => <Details { ...props } /> } />
+          <Route path="/profile" render={ () => this.state.loggedInUser ? <Profile loggedInUser={ this.state.loggedInUser } /> : <Redirect to="/" /> } />
 
 
-          <Route path="/join" render={() => <Join loggedInUser={this.state.loggedInUser} />} />
-          <Route path="/chat" render={props => <Chat {...props} loggedInUser={this.state.loggedInUser} />} />
-          <Route path="/map" render={props => <Map {...props} />} />
 
-        </Switch>}
+
+          <Route path="/join" render={ () => <Join loggedInUser={ this.state.loggedInUser } /> } />
+          <Route path="/chat" render={ props => <Chat { ...props } loggedInUser={ this.state.loggedInUser } /> } />
+          <Route path="/map" render={ props => <Map { ...props } /> } />
+
+        </Switch> }
       </>
     )
   }
