@@ -31,8 +31,7 @@ export default class Index extends Component {
             .catch(err => err)
     }
 
-    render() { //ME CAGO EN DIOS¡¡¡¡¡
-
+    render() {
         if (this.state.pets) {
             this.filtered = [...this.state.pets]
             this.state.specieFilter && (this.filtered = this.state.pets.filter(elm => !elm.specie.localeCompare(this.state.specieFilter)))
