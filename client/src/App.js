@@ -26,9 +26,8 @@ class App extends Component {
 
   componentDidUpdate = () => console.log('El estado de app  se ha actualizado', this.state)
 
-  componentDidMount = () => {
-    this.fetchUser()
-  }
+  componentDidMount = () => this.fetchUser()
+
 
   setTheUser = userObj => this.setState({ loggedInUser: userObj })
 
@@ -47,7 +46,7 @@ class App extends Component {
           {/* <Route exact path='/' render={ () => <BasicChart /> } /> */}
           <Route exact path='/' render={() => <Index {...this.state.loggedInUser} />} />
           <Route path='/details/:link' render={props => <Details {...props} />} />
-          <Route path="/profile" render={() => this.state.loggedInUser ? <Profile loggedInUser={this.state.loggedInUser} /> : <Redirect to="/" />} />
+          <Route path="/profile" render={() => this.state.loggedInUser ? <Profile loggedInUser={this.state.loggedInUser} setTheUser={this.setTheUser} /> : <Redirect to="/" />} />
 
 
 

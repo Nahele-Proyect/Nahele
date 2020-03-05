@@ -31,6 +31,7 @@ class Profile extends Component {
             showModalImg: false,
             showPetForm: false
         }
+        console.log(this.state)
     }
     showModalUsername = () => this.setState({ showModalUsername: true })
     showModalPassword = () => this.setState({ showModalPassword: true })
@@ -38,8 +39,6 @@ class Profile extends Component {
     showModalImg = () => this.setState({ showModalImg: true })
 
     closeModal = () => this.setState({ showModalUsername: false, showModalPassword: false, showModalEmail: false, showModalImg: false })
-
-    closeModal = () => this.setState({ showModalUsername: false, showModalPassword: false, showModalEmail: false })
 
     petFormChange = () => this.setState({ showPetForm: !this.state.showPetForm })
 
@@ -49,13 +48,6 @@ class Profile extends Component {
                 <h1>Soy el perfil y tal : 3, {this.props.loggedInUser.username}</h1>
                 <figure><img src={this.props.loggedInUser.img} alt="Profile Pic" /></figure>
 
-                <DropdownButton as={ButtonGroup} title="Dropdown" id="bg-nested-dropdown">
-                    <Dropdown.Item eventKey="1" onClick={this.showModalUsername} >Cambiar nombre de usuario</Dropdown.Item>
-                    <Dropdown.Item eventKey="2" onClick={this.showModalPassword}>Cambiar contraseña</Dropdown.Item>
-                    <Dropdown.Item eventKey="3" onClick={this.showModalEmail}>Cambiar email</Dropdown.Item>
-                    <Dropdown.Item eventKey="4" onClick={this.showModalImg}>Cambiar foto de perfil</Dropdown.Item>
-                </DropdownButton>
-
 
                 <Container>
                     <Row className='justify-content-between'>
@@ -64,6 +56,7 @@ class Profile extends Component {
                                 <Dropdown.Item eventKey="1" onClick={this.showModalUsername} >Cambiar nombre de usuario</Dropdown.Item>
                                 <Dropdown.Item eventKey="2" onClick={this.showModalPassword}>Cambiar contraseña</Dropdown.Item>
                                 <Dropdown.Item eventKey="3" onClick={this.showModalEmail}>Cambiar email</Dropdown.Item>
+                                <Dropdown.Item eventKey="4" onClick={this.showModalImg}>Cambiar foto de perfil</Dropdown.Item>
                             </DropdownButton>
                         </Col>
                         <Col>
