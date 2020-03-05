@@ -8,8 +8,9 @@ import Navbar from './components/ui/Navbar'
 import Profile from './components/pages/Profile/Profile'
 import Index from './components/pages/Index/index'
 import Details from './components/pages/Details/Details'
-import Chat from './components/ChatComponent/Chat/Chat';
-import Join from './components/ChatComponent/Join/Join';
+import Chat from './components/ChatComponent/Chat/Chat'
+import Join from './components/ChatComponent/Join/Join'
+import Map from './components/GoogleMaps/GoogleMaps'
 
 
 
@@ -53,6 +54,7 @@ class App extends Component {
 
           <Route path="/join" render={() => <Join loggedInUser={this.state.loggedInUser} />} />
           <Route path="/chat" render={props => <Chat {...props} loggedInUser={this.state.loggedInUser} />} />
+          <Route path="/map" render={props => <Map {...props} />} />
 
         </Switch>}
       </>
