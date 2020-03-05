@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
+
+import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
-import Form from 'react-bootstrap/Form'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
-import FormControl from 'react-bootstrap/FormControl'
 
 export default class PetForm extends Component {
     constructor(props) {

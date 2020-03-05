@@ -10,5 +10,5 @@ mongoose.connect(process.env.DB, {
 
 Pets.create(pets)
     .then(created => console.log(created.name))
-    .then(() => mongoose.disconnect())
+    .then(() => mongoose.connections.close())
     .catch(err => err)

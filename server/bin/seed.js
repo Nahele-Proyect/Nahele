@@ -78,3 +78,4 @@ petsLinks.forEach(elm => {
         .then(created => console.log(created.name))
         .catch(err => err)
 })
+mongoose.connection.close()
