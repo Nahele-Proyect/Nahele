@@ -3,7 +3,7 @@ import axios from 'axios'
 export default class Services {
     constructor() {
         this.service = new axios.create({
-            baseURL: `${process.env.REACT_APP_URL}/scrap`,
+            baseURL: "http://localhost:5000/api/scrap",
             withCredentials: true
         })
         this.axiosCancelSource = axios.CancelToken.source()

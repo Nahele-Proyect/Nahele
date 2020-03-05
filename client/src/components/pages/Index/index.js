@@ -13,11 +13,8 @@ export default class Index extends Component {
         super(props)
         this.state = {
             loggedInUser: props.loggedInUser,
-            pets: undefined,
-            specieFilter: '',
-            urgencyFilter: ''
+            pets: undefined
         }
-        this.filtered = undefined
         this.scrapServices = new ScrapServices()
     }
 
@@ -32,19 +29,13 @@ export default class Index extends Component {
     }
 
     render() {
-        if (this.state.pets) {
-            this.filtered = [...this.state.pets]
-            this.state.specieFilter && (this.filtered = this.state.pets.filter(elm => !elm.specie.localeCompare(this.state.specieFilter)))
-            this.state.urgencyFilter && (this.filtered = this.state.filter(elm => !elm.urgency.localeCompare(this.state.urgencyFilter)))
-        }
-
         return (
             <div className='index'>
                 <Container>
 
-                    { this.state.pets ?
+                    {this.state.pets ?
                         <Row>
-                            { this.filtered.map((elm, idx) => <Col md="3" key={ idx }><PetCard { ...elm }></PetCard></Col>) }
+                            {this.state.pets.map((elm, idx) => <Col md="4" key={idx}><PetCard {...elm}></PetCard></Col>)}
                         </Row>
                         :
                         <p>Cargando man... :3</p>
