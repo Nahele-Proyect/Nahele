@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { Switch, Route, Redirect } from "react-router-dom"
+
+/* ---- styling ---- */
 import './App.css'
 
 import AuthServices from './services/auth.service'
