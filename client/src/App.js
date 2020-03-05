@@ -8,8 +8,8 @@ import Navbar from './components/ui/Navbar'
 import Profile from './components/pages/Profile/Profile'
 import Index from './components/pages/Index/index'
 import Details from './components/pages/Details/Details'
-import Chat from './components/ChatComponent/Chat/Chat';
-import Join from './components/ChatComponent/Join/Join';
+import Chat from './components/ChatComponent/Chat/Chat'
+import Join from './components/ChatComponent/Join/Join'
 
 
 
