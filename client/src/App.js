@@ -21,8 +21,7 @@ class App extends Component {
     super()
 
     this.state = {
-      loggedInUser: false,
-      petUrl: ""
+      loggedInUser: false
     }
     this.AuthServices = new AuthServices()
   }
@@ -58,7 +57,7 @@ class App extends Component {
           <Route path="/join" render={ () => <Join loggedInUser={ this.state.loggedInUser } /> } />
           <Route path="/chat" render={ props => <Chat { ...props } loggedInUser={ this.state.loggedInUser } /> } />
           <Route path="/map" render={ props => <Map { ...props } /> } />
-          {/* <Route path="/newCalendar/:id" render={ props => <Calendar { ...props } /> } /> */ }
+          <Route path="/newCalendar/:id" render={ props => <Calendar { ...props } fetchUser={ this.fetchUser } /> } />
 
         </Switch> }
       </>

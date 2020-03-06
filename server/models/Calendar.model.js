@@ -5,10 +5,7 @@ const calendarSchema = new Schema({
     title: String,
     start: Date,
     end: Date,
-    dog: {
-        type: Schema.Types.ObjectId,
-        ref: 'Pet'
-    },
+    petsUrl: [String],
     user: {
         type: Schema.Types.ObjectId,
         ref: 'User'

@@ -32,6 +32,7 @@ class Profile extends Component {
             showModalImg: false,
             showPetForm: false
         }
+
     }
     showModalUsername = () => this.setState({ showModalUsername: true })
     showModalPassword = () => this.setState({ showModalPassword: true })
