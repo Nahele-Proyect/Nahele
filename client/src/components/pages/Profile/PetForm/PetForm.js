@@ -14,21 +14,21 @@ export default class PetForm extends Component {
                 name: '',//Basic
                 img: 'https://img.miwuki.com/a/ZJL889/500',//Basic
                 city: '',//Basic
-                urgency: '',//Basic
+                urgency: 'En Adopción',//Basic
                 born: '',//Basic
-                specie: '',//Basic
+                specie: 'Desconocida',//Basic
                 gender: '',//Basic
 
                 activity: '',//Extends
                 weigth: '',//Extends
-                size: '',//Extends
+                size: 'Mediano',//Extends
 
-                vaccinated: '',//State
-                dewormed: '',//State
-                healthy: '',//State
-                sterilized: '',//State
-                indentified: '',//State
-                microchip: '',//State
+                vaccinated: false,//State
+                dewormed: false,//State
+                healthy: false,//State
+                sterilized: false,//State
+                indentified: false,//State
+                microchip: false,//State
 
                 personality: [],//Soft
                 comment: '',//Soft
@@ -40,6 +40,20 @@ export default class PetForm extends Component {
         }
     }
     showMoreInfoHandler = () => this.setState({ showMoreForm: !this.state.showMoreForm })
+    inputsHandler = e => {
+        e.target.type === 'radio' && (e.target.value = e.target.checked)
+        e.target.type === 'checkbox' && (e.target.value = e.target.checked)
+
+        this.setState({ form: { ...this.state.form, [e.target.name]: e.target.value } })
+    }
+    imgInputHandler = e => {
+
+    }
+    submitHandler = e => {
+        e.preventDefault()
+
+
+    }
 
     render() {
         return (
@@ -50,7 +64,7 @@ export default class PetForm extends Component {
                     <Form.Row className='justify-content-between'>
 
                         <Form.Group as={ Col } md='5'>
-                            { this.state.form.img ? <img style={ { margin: '20px 0px', width: '60%' } } src={ this.state.form.img } alt='foto' />
+                            { this.state.form.img ? <img style={ { margin: '20px 0px', width: '60%' } } src={ this.state.form.img } alt='foto' onChange={ this.imgInputHandler } />
                                 :
                                 <>
                                     <Form.Label htmlFor='img'>Imagen</Form.Label>
@@ -58,11 +72,11 @@ export default class PetForm extends Component {
                                 </>
                             }
 
-                            <Form.Label htmlFor='specie'>Especie</Form.Label>
-                            <Form.Control type='text' id='specie' name='specie' value={ this.state.form.specie } placeholder='Gato, Perro...' />
+                            <Form.Label htmlFor='specie'></Form.Label>
+                            <Form.Control type='text' id='specie' name='specie' value={ this.state.form.specie } placeholder='Gato, Perro...' onChange={ this.inputsHandler } />
 
-                            <Form.Label htmlFor='urgency'>Especie</Form.Label>
-                            <Form.Control as='select' id='urgency' name='urgency' value={ this.state.form.urgency } >
+                            <Form.Label htmlFor='urgency'>Urgencia</Form.Label>
+                            <Form.Control as='select' id='urgency' name='urgency' value={ this.state.form.urgency } onChange={ this.inputsHandler }>
                                 <option>En Adopción</option>
                                 <option>Urgente</option>
                             </Form.Control>
@@ -70,30 +84,30 @@ export default class PetForm extends Component {
                         </Form.Group>
                         <Form.Group as={ Col } md='5' className="align-self-end">
                             <Form.Label htmlFor='name'>Nombre</Form.Label>
-                            <Form.Control type='text' id='name' name='name' value={ this.state.form.name } placeholder='Nombre de la mascota' />
+                            <Form.Control type='text' id='name' name='name' value={ this.state.form.name } placeholder='Nombre de la mascota' onChange={ this.inputsHandler } />
 
                             <Form.Label htmlFor='city'>Ciudad</Form.Label>
-                            <Form.Control type='text' id='city' name='city' value={ this.state.form.city } placeholder='Escribe el nombre de tu ciudad' />
+                            <Form.Control type='text' id='city' name='city' value={ this.state.form.city } placeholder='Escribe el nombre de tu ciudad' onChange={ this.inputsHandler } />
 
                             <fieldset>
                                 <Form.Group as={ Row } >
                                     <Form.Label as={ Col } md={ 2 }>Genero</Form.Label>
                                     <Col md={ 4 }>
 
-                                        <Form.Check
+                                        <Form.Check checked={ this.state.form.gender === 'Macho' } onChange={ this.inputsHandler }
                                             type="radio"
                                             label="Macho"
-                                            name="genero"
-                                            id="male"
+                                            name="gender"
+                                            id="Macho"
                                         />
                                     </Col>
                                     <Col md={ 4 }>
 
-                                        <Form.Check
+                                        <Form.Check checked={ this.state.form.gender === 'Hembra' } onChange={ this.inputsHandler }
                                             type="radio"
                                             label="Hembra"
-                                            name="genero"
-                                            id="female"
+                                            name="gender"
+                                            id="Hembra"
                                         />
                                     </Col>
                                 </Form.Group>
@@ -107,10 +121,10 @@ export default class PetForm extends Component {
                 <Button onClick={ this.showMoreInfoHandler }>{ this.state.showMoreForm ? 'Ocultar opciones extra' : 'Mostrar más opciones' }</Button>
                 {
                     this.state.showMoreForm &&
-                    <Row className='justify-content-between'>
-                        <Form.Group as={ Col } md={ 6 }>
+                    <Row className='justify-content-between align-items-center'>
+                        <Form.Group as={ Col } md={ 5 }>
                             <Form.Label htmlFor='activity'>Especie</Form.Label>
-                            <Form.Control as='select' id='activity' name='activity' value={ this.state.form.activity } >
+                            <Form.Control as='select' id='activity' name='activity' value={ this.state.form.activity } onChange={ this.inputsHandler } >
                                 <option value='Desconocida'>Desconocida</option>
                                 <option value='Baja'>Baja</option>
                                 <option value='Media'>Media</option>
@@ -118,25 +132,32 @@ export default class PetForm extends Component {
                             </Form.Control>
 
                             <Form.Label htmlFor='weigth'>Peso</Form.Label>
-                            <Form.Control type='text' id='weigth' name='weigth' value={ this.state.form.weigth } placeholder='Peso en kilos' />
+                            <Form.Control type='text' id='weigth' name='weigth' value={ this.state.form.weigth } placeholder='Peso en kilos' onChange={ this.inputsHandler } />
 
                             <Form.Label htmlFor='activity'>Actividad</Form.Label>
-                            <Form.Control as='select' id='activity' name='activity' value={ this.state.form.activity }>
+                            <Form.Control as='select' id='activity' name='activity' value={ this.state.form.activity } onChange={ this.inputsHandler }>
                                 <option value='Mediano'>Mediano</option>
                                 <option value='Pequeño'>Pequeño</option>
                                 <option value='Grande'>Grande</option>
                             </Form.Control>
                         </Form.Group>
 
-                        <Form.Group as={ Col } md={ 6 }>
-                            <Form.Check label="Vacunado" name='vaccinated' cheked={ this.state.form.vaccinated } />
-                            <Form.Check label='Desparasitado' name='dewormed' cheked={ this.state.form.dewormed } />
-                            <Form.Check label='Sano' name='healthy' cheked={ this.state.form.healthy } />
-                            <Form.Check label='Esterilizado' name='sterilized' checked={ this.state.form.sterilized } />
-                            <Form.Check label='Identificado' name='identified' checked={ this.state.form.microchip } />
+                        <Form.Group as={ Col } md={ 5 }  >
+                            <Form.Check label="Vacunado" name='vaccinated' checked={ this.state.form.vaccinated === 'true' } onChange={ this.inputsHandler } />
+                            <Form.Check label='Desparasitado' name='dewormed' checked={ this.state.form.dewormed === 'true' } onChange={ this.inputsHandler } />
+                            <Form.Check label='Sano' name='healthy' checked={ this.state.form.healthy === 'true' } onChange={ this.inputsHandler } />
+                            <Form.Check label='Esterilizado' name='sterilized' checked={ this.state.form.sterilized === 'true' } onChange={ this.inputsHandler } />
+                            <Form.Check label='Identificado' name='identified' checked={ this.state.form.identified === 'true' } onChange={ this.inputsHandler } />
+                            <Form.Check label='Microchip' name='microchip' checked={ this.state.form.microchip === 'true' } onChange={ this.inputsHandler } />
                         </Form.Group>
                     </Row>
                 }
+
+                <Container>
+                    <Row className='justify-content-end'>
+                        <Button as={ Col } md={ 2 } onClick={ this.submitHandler }> A ver that shit</Button>
+                    </Row>
+                </Container>
 
             </Container>
         )
