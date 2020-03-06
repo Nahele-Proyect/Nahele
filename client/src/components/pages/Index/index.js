@@ -16,8 +16,8 @@ export default class Index extends Component {
             loggedInUser: props.loggedInUser,
             pets: undefined,
             filters: {
-                specieFilter: '',
-                urgencyFilter: ''
+                specie: '',
+                urgency: ''
             }
         }
         this.filtered = undefined
@@ -34,18 +34,18 @@ export default class Index extends Component {
             .catch(err => err)
     }
 
-    changeFilters = filters => this.setState(filters)
+    changeFilters = filters => this.setState({ ...this.state, filters: { specie: filters.specie, urgency: filters.urgency } })
 
     render() {
         if (this.state.pets) {
             this.filtered = [...this.state.pets]
 
-            this.state.filters.specieFilter && (
-                this.state.filters.specieFilter === 'Otros' ?
+            this.state.filters.specie && (
+                this.state.filters.specie === 'Otros' ?
                     this.filtered = this.state.pets.filter(elm => elm.specie.localeCompare('Gato') && elm.specie.localeCompare('Perro'))
                     :
-                    (this.filtered = this.state.pets.filter(elm => !elm.specie.localeCompare(this.state.filters.specieFilter))))
-            this.state.filters.urgencyFilter && (this.filtered = this.filtered.filter(elm => !elm.urgency.localeCompare(this.state.filters.urgencyFilter)))
+                    (this.filtered = this.state.pets.filter(elm => !elm.specie.localeCompare(this.state.filters.specie))))
+            this.state.filters.urgency && (this.filtered = this.filtered.filter(elm => !elm.urgency.localeCompare(this.state.filters.urgency)))
         }
 
         return (
@@ -59,7 +59,10 @@ export default class Index extends Component {
 
                     { this.state.pets ?
                         <Row>
-                            { this.filtered.map((elm, idx) => <Col md="3" key={ idx }><PetCard { ...elm }></PetCard></Col>) }
+                            { this.filtered.length === 0 ?
+                                <h1>No hay ahora mismo mascotas con esos filtros</h1>
+                                :
+                                this.filtered.map((elm, idx) => <Col md="3" key={ idx }><PetCard { ...elm }></PetCard></Col>) }
                         </Row>
                         :
                         <p>Cargando man... :3</p>
