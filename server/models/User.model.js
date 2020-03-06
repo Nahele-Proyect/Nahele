@@ -7,7 +7,9 @@ const userSchema = new Schema({
   confirmPassword: String,
   email: String,
   img: String,
-  pets: [Schema.Types.ObjectId]
+  pets: [{ type: Schema.Types.ObjectId, ref: 'Pet' }],
+  calendar: [{ type: Schema.Types.ObjectId, ref: 'Calendar' }],
+  petsUrl: [String]
 }, {
   timestamps: true
 })

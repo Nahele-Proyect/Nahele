@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from "react-router-dom"
 
 import ScrapServices from '../../../services/scrap.service'
 
@@ -21,6 +22,7 @@ export default class Details extends Component {
     }
 
     render() {
+
         return (
             <>
                 {this.state.pet ?
@@ -45,6 +47,7 @@ export default class Details extends Component {
                         <br /><br />
                         <p>Ciudad: {this.state.pet.city}</p>
                         <figure><img src={this.state.pet.flag} alt="flag" /></figure>
+                        <Link to={`/newCalendar/${this.props.match.params.link}`}><h3>Book an Appointment</h3></Link>
 
                     </div>
                     :

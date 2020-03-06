@@ -32,6 +32,7 @@ export default class Index extends Component {
         this.scrapServices.getAll()
             .then(allPets => this.setState({ pets: allPets.pets }))
             .catch(err => err)
+
     }
 
     changeFilters = filters => this.setState({ ...this.state, filters: { specie: filters.specie, urgency: filters.urgency } })
