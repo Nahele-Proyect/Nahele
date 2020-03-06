@@ -7,7 +7,7 @@ const petSchema = new Schema({
     city: { type: String, required: true },
     flag: { type: String, default: "https://petshelter.miwuki.com/img/b/es.svg" },
     specie: String,
-    owner: { type: Schema.Types.ObjectId },
+    owner: { type: Schema.Types.ObjectId, ref: 'User' },
     urgency: { type: String, enum: ["En Adopción", "Urgente"] },
     personality: [String],
     born: String,
@@ -21,7 +21,8 @@ const petSchema = new Schema({
     sterilized: { type: String, enum: ["Sí", "No"] },
     identified: { type: String, enum: ["Sí", "No"] },
     microchip: { type: String, enum: ["Sí", "No"] },
-    comment: String
+    comment: String,
+    calendar: [{ type: Schema.Types.ObjectId, ref: "Calendar" }]
 }, {
     timestamps: true
 })
