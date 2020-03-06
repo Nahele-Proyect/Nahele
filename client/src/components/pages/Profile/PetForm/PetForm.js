@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import PetServices from '../../../../services/pet.service'
+
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
@@ -9,6 +11,7 @@ import Row from 'react-bootstrap/Row'
 export default class PetForm extends Component {
     constructor(props) {
         super(props)
+        this.petServices = new PetServices()
         this.state = {
             form: {
                 name: '',//Basic
@@ -16,7 +19,7 @@ export default class PetForm extends Component {
                 city: '',//Basic
                 urgency: 'En Adopción',//Basic
                 born: '',//Basic
-                specie: 'Desconocida',//Basic
+                specie: '',//Basic
                 gender: '',//Basic
 
                 activity: '',//Extends
@@ -37,6 +40,7 @@ export default class PetForm extends Component {
                 //owner: '', //Sera el usuario actual (Podriamos quitaer esto de aqui y usar el req.user para almacenarlo)
             },
             showMoreForm: false,
+            message: ''
         }
     }
     showMoreInfoHandler = () => this.setState({ showMoreForm: !this.state.showMoreForm })
@@ -52,7 +56,9 @@ export default class PetForm extends Component {
     submitHandler = e => {
         e.preventDefault()
 
-
+        this.petServices.createPet(this.state.form)
+            .then(createdPet => createdPet.status === 'ko' && this.setState({ message: createdPet.message }))
+            .catch(err => console.log(err))
     }
 
     render() {
@@ -150,12 +156,19 @@ export default class PetForm extends Component {
                             <Form.Check label='Identificado' name='identified' checked={ this.state.form.identified === 'true' } onChange={ this.inputsHandler } />
                             <Form.Check label='Microchip' name='microchip' checked={ this.state.form.microchip === 'true' } onChange={ this.inputsHandler } />
                         </Form.Group>
+
+                        <Form.Group>
+                            <Form.Label htmlFor='comment'>Información extra:</Form.Label>
+                            <Form.Control as='textarea' name='comment' value={ this.state.form.comment } onChange={ this.inputsHandler } />
+                        </Form.Group>
                     </Row>
+
                 }
 
                 <Container>
                     <Row className='justify-content-end'>
-                        <Button as={ Col } md={ 2 } onClick={ this.submitHandler }> A ver that shit</Button>
+                        { this.state.message.length > 0 && <h6>{ this.state.message }</h6> }
+                        <Button as={ Col } md={ 2 } onClick={ this.submitHandler }>Crear mascota</Button>
                     </Row>
                 </Container>
 

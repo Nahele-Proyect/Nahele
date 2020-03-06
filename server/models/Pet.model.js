@@ -5,7 +5,7 @@ const petSchema = new Schema({
     name: { type: String, required: true },
     img: { type: String, required: true },
     city: { type: String, required: true },
-    flag: { type: String, default: "https://petshelter.miwuki.com/img/b/es.svg" },
+    flag: { type: String, default: "https://petshelter.miwuki.com/img/b/es.svg", required: true },
     specie: String,
     owner: { type: Schema.Types.ObjectId },
     urgency: { type: String, enum: ["En Adopción", "Urgente"] },

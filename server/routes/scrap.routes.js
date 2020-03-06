@@ -80,7 +80,7 @@ router.get('/details/:code', (req, res) => {
 
                 if (idx > 5) return
                 data.children[0] && idx === 0 && (pet.specie = data.children[0].data.trim())
-                data.children[0] && idx === 1 && (pet.born = data.children[0].data.trim())
+                data.children[0] && idx === 1 && (pet.born = new Date(data.children[0].data.trim()))
                 data.children[0] && idx === 2 && (pet.gender = data.children[0].data.trim())
                 data.children[0] && idx === 3 && (pet.size = data.children[0].data.trim())
                 data.children[0] && idx === 4 && (pet.weigth = data.children[0].data.trim())
