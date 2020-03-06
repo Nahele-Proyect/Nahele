@@ -42,6 +42,7 @@ class MyCalendar extends Component {
         e.preventDefault()
         this.calendarService.postCalendar(this.state.myEventsList[0], this.props.match.params.id)
             .then(() => {
+                this.props.fetchUser()
                 this.props.history.push(`/profile`)
             })
             .catch(err => console.log(err))

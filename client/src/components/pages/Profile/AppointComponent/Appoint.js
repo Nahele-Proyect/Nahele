@@ -7,7 +7,7 @@ class myDate extends Component {
     constructor(props) {
         super(props)
         this.state = {}
-        console.log(props)
+        console.log(props.loggedInUser)
     }
     render() {
 
@@ -27,35 +27,31 @@ class myDate extends Component {
                             <h3>CALENDARIO DE CITAS</h3>
                         </Card.Title>
                         <Card.Text
-                            style={{
-                                height: "75vh",
-                                textAlign: "center",
-                                overflow: "scroll"
-                            }}
-                        >
+                            style={{ height: "75vh", textAlign: "center", overflow: "scroll" }}>
+
                             {this.props.loggedInUser.calendar
-                                ? this.state.user.calendar.map(elm => (
-                                    <p>
-                                        <strong>Woof Appointment: </strong>
-                                        {elm.dog.name}
-                                        <br></br>
-                                        <strong>Booking Name: </strong>
-                                        {elm.title}
-                                        <br></br>
-                                        <strong>Date: </strong>
-                                        {elm.start.substr(0, 10)}
-                                        <br></br>
-                                        <Link to={`/centers/${elm.dog.center}`}>
-                                            Go to Center
-                              </Link>
-                                        <hr></hr>
-                                    </p>
+                                ? this.props.loggedInUser.calendar.map((elm, idx) => (
+                                    <div key={idx}>
+                                        <p ><strong>Woof Appointment: </strong>
+
+                                            <strong>Booking Name: </strong>
+                                            {elm.title}
+
+                                            <strong>Date: </strong>
+                                            {elm.start.substr(0, 10)}
+
+                                            <Link to={`/details/${elm.petsUrl}`}>
+                                                Go to Center
+                                        </Link>
+
+                                        </p>
+                                    </div>
                                 ))
                                 : null}
                         </Card.Text>
                     </Card.Body>
-                </Card>
-            </Col>
+                </Card >
+            </Col >
 
         )
     }
