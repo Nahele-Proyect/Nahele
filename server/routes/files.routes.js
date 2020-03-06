@@ -18,12 +18,21 @@ router.post('/upload', uploader.single("imageUrl"), (req, res, next) => {
     })
 
     User.findByIdAndUpdate(req.user._id, {
-            img: req.file.secure_url
-        }, {
-            new: true
-        })
+        img: req.file.secure_url
+    }, {
+        new: true
+    })
         .then(theUser => res.json(theUser))
         .catch(err => console.log(err))
+})
+
+router.post('/uploadImage', uploader.single('img'), (req, res, next) => {
+    if (!req.file) {
+        res.json({ status: 'ko', message: "Debes de ubir una imagen" })
+        return
+    }
+
+    res.json({ status: 'ok', img: req.file.secure_url })
 })
 
 module.exports = router

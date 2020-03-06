@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 
 const Pet = require('../models/Pet.model')
+const User = require('../models/User.model')
 
 router.post('/new', (req, res) => {
     if (!req.body.name) {
@@ -16,6 +17,8 @@ router.post('/new', (req, res) => {
         res.json({ status: 'ko', message: 'La mascota necesita tener una ciudad' })
     }
 
+    req.body.owner = req.user._id
+
     req.body.vaccinated = req.body.vaccinated === 'true' ? 'Sí' : 'No'
     req.body.dewormed = req.body.dewormed === 'true' ? 'Sí' : 'No'
     req.body.healthy = req.body.healthy === 'true' ? 'Sí' : 'No'
@@ -27,8 +30,10 @@ router.post('/new', (req, res) => {
 
     Pet.create(req.body)
         .then(newPet => {
-            console.log(newPet)
-            res.json({ status: 'ok', message: '', pet: newPet })
+            User.findByIdAndUpdate(req.user._id, { $push: { pets: newPet._id } }, { new: true })
+                .populate('pets')
+                .then(user => res.json({ status: 'ok', user }))
+                .catch(err => console.log(err))
         })
         .catch(err => console.log(err))
 })

@@ -3,7 +3,7 @@ import axios from 'axios'
 export default class PetServices {
     constructor() {
         this.service = axios.create({
-            baseURL: 'http://localhost:5000/api/pet',
+            baseURL: `${process.env.REACT_APP_URL}/pet`,
             withCredentials: true
         })
     }

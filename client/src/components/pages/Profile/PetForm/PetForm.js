@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import PetServices from '../../../../services/pet.service'
+import FileServices from '../../../../services/files.service'
 
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
@@ -12,10 +13,11 @@ export default class PetForm extends Component {
     constructor(props) {
         super(props)
         this.petServices = new PetServices()
+        this.fileServices = new FileServices()
         this.state = {
             form: {
                 name: '',//Basic
-                img: 'https://img.miwuki.com/a/ZJL889/500',//Basic
+                img: '',//Basic
                 city: '',//Basic
                 urgency: 'En Adopción',//Basic
                 born: '',//Basic
@@ -50,15 +52,22 @@ export default class PetForm extends Component {
 
         this.setState({ form: { ...this.state.form, [e.target.name]: e.target.value } })
     }
-    imgInputHandler = e => {
-
+    imgFileUpload = e => {
+        const uploadData = new FormData()
+        uploadData.append('img', e.target.files[0])
+        this.fileServices.uploadImage(uploadData)
+            .then(img => this.setState({ form: { ...this.state.form, img: img.img } }))
+            .catch(err => console.log(err))
     }
     submitHandler = e => {
         e.preventDefault()
 
         this.petServices.createPet(this.state.form)
-            .then(createdPet => createdPet.status === 'ko' && this.setState({ message: createdPet.message }))
+            .then(user => user.status === 'ok' ? this.finishForm(user) : this.setState({ message: user.message }))
             .catch(err => console.log(err))
+    }
+    finishForm = user => {
+        this.props.setTheUser(user.user, this.props.petFormChange())
     }
 
     render() {
@@ -70,11 +79,12 @@ export default class PetForm extends Component {
                     <Form.Row className='justify-content-between'>
 
                         <Form.Group as={ Col } md='5'>
-                            { this.state.form.img ? <img style={ { margin: '20px 0px', width: '60%' } } src={ this.state.form.img } alt='foto' onChange={ this.imgInputHandler } />
+                            { this.state.form.img ?
+                                <img style={ { margin: '20px 0px', width: '60%' } } src={ this.state.form.img } alt='foto' />
                                 :
                                 <>
-                                    <Form.Label htmlFor='img'>Imagen</Form.Label>
-                                    <Form.Control name='img' id='img' type='file' />
+                                    <img style={ { margin: '20px 0px', width: '60%' } } src='./jake.png' alt='foto' />
+                                    <Form.Control name='img' id='img' type='file' onChange={ this.imgFileUpload } />
                                 </>
                             }
 

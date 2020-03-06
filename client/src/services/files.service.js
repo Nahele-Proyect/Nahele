@@ -9,4 +9,6 @@ export default class Services {
         })
     }
     handleUpload = theFile => this.service.post('/upload', theFile).then(response => response.data)
+    uploadImage = img => this.service.post('/uploadImage', img).then(response => response.data)
+
 }

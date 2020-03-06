@@ -11,7 +11,7 @@ import Details from './components/pages/Details/Details'
 import Chat from './components/ChatComponent/Chat/Chat'
 import Join from './components/ChatComponent/Join/Join'
 import Map from './components/GoogleMaps/GoogleMaps'
-import Calendar from './components/Calendar/Calendar'
+// import Calendar from './components/Calendar/Calendar'
 
 
 import BasicChart from './components/Charts/basicChart/BasicChart'
@@ -58,7 +58,7 @@ class App extends Component {
           <Route path="/join" render={ () => <Join loggedInUser={ this.state.loggedInUser } /> } />
           <Route path="/chat" render={ props => <Chat { ...props } loggedInUser={ this.state.loggedInUser } /> } />
           <Route path="/map" render={ props => <Map { ...props } /> } />
-          <Route path="/newCalendar/:id" render={ props => <Calendar { ...props } /> } />
+          {/* <Route path="/newCalendar/:id" render={ props => <Calendar { ...props } /> } /> */ }
 
         </Switch> }
       </>
