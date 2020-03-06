@@ -6,7 +6,6 @@ import './petCard.css'
 const PetCard = props => {
 
     return (
-
         <div className='petCardIndex'>
             <figure><img src={props.img} alt='pet' /></figure>
             <h3>{props.name}</h3>
@@ -24,6 +23,7 @@ const PetCard = props => {
             </div>
 
             <Link to={'/details' + props.link}>Detalles</Link>
+
 
         </div>
     )

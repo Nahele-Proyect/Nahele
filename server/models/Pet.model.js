@@ -10,7 +10,7 @@ const petSchema = new Schema({
     owner: { type: Schema.Types.ObjectId, ref: 'User' },
     urgency: { type: String, enum: ["En Adopción", "Urgente"] },
     personality: [String],
-    born: String,
+    born: Date,
     gender: String,
     size: String,
     weigth: String,

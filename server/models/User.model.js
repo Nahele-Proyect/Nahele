@@ -8,7 +8,8 @@ const userSchema = new Schema({
   email: String,
   img: String,
   pets: [{ type: Schema.Types.ObjectId, ref: 'Pet' }],
-  calendar: [{ type: Schema.Types.ObjectId, ref: 'Calendar' }]
+  calendar: [{ type: Schema.Types.ObjectId, ref: 'Calendar' }],
+  petsUrl: [String]
 }, {
   timestamps: true
 })

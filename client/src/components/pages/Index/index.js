@@ -29,6 +29,7 @@ export default class Index extends Component {
         this.scrapServices.getAll()
             .then(allPets => this.setState({ pets: allPets.pets }))
             .catch(err => err)
+
     }
 
     render() {
@@ -42,9 +43,9 @@ export default class Index extends Component {
             <div className='index'>
                 <Container>
 
-                    { this.state.pets ?
+                    {this.state.pets ?
                         <Row>
-                            { this.filtered.map((elm, idx) => <Col md="3" key={ idx }><PetCard { ...elm }></PetCard></Col>) }
+                            {this.filtered.map((elm, idx) => <Col md="3" key={idx}><PetCard  {...elm}></PetCard></Col>)}
                         </Row>
                         :
                         <p>Cargando man... :3</p>

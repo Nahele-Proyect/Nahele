@@ -17,6 +17,7 @@ import PasswordForm from './PasswordForm/PasswordForm'
 import EmailForm from './EmailForm/EmailForm'
 import ImgForm from './ImgForm/ImgForm'
 import PetForm from './PetForm/PetForm'
+import MyDate from './AppointComponent/Appoint'
 
 
 class Profile extends Component {
@@ -51,6 +52,7 @@ class Profile extends Component {
 
                 <Container>
                     <Row className='justify-content-between'>
+                        <MyDate {...this.props} />
                         <Col>
                             <DropdownButton as={ButtonGroup} title="Dropdown" id="bg-nested-dropdown">
                                 <Dropdown.Item eventKey="1" onClick={this.showModalUsername} >Cambiar nombre de usuario</Dropdown.Item>

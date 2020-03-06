@@ -40,5 +40,5 @@ passport.use(new LocalStrategy((username, password, next) => {
     }
 
     next(null, foundUser)
-  })
+  }).populate('calendar').catch(err => err)
 }))
