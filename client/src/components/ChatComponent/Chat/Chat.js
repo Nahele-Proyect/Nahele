@@ -13,7 +13,7 @@ import './Chat.css'
 let socket
 
 const Chat = props => {
-  const [name, setName] = useState('')
+  const [name] = useState(props.loggedInUser.username)
   const [room, setRoom] = useState('')
   const [users, setUsers] = useState('')
   const [message, setMessage] = useState('')
@@ -21,11 +21,10 @@ const Chat = props => {
   const ENDPOINT = 'http://localhost:5000'
 
   useEffect(() => {
-    const { name, room } = queryString.parse(props.location.search)
+    const { room } = queryString.parse(props.location.search)
     socket = io(ENDPOINT)
 
     setRoom(room)
-    setName(name)
 
     socket.emit('join', { name, room }, (error) => {
       if (error) {
@@ -61,11 +60,11 @@ const Chat = props => {
       <div className="outerContainer">
         <div className="container">
 
-          <InfoBar room={room} />
-          <Messages messages={messages} name={name} />
-          <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
+          <InfoBar room={ room } />
+          <Messages messages={ messages } name={ name } />
+          <Input message={ message } setMessage={ setMessage } sendMessage={ sendMessage } />
         </div>
-        <TextContainer users={users} />
+        <TextContainer users={ users } />
       </div>
     </div>
   )

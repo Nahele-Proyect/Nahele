@@ -3,6 +3,10 @@
 }
 
 .details img{
-    height: 550px;
-    object-fit: cover;
+    width: 130%;
+}
+
+.details .flag{
+    width: 30px;
+    height: auto
 }

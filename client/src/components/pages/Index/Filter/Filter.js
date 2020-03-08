@@ -72,11 +72,11 @@ export default class Filter extends Component {
                             <Form.Group as={ Row } >
                                 <Form.Label htmlFor='urgency'>Urgencia:</Form.Label>
                                 <Col md={ 3 } >
-                                    <Form.Check checked={ this.state.form.urgency === 'Urgencia' } onChange={ this.inputHandler }
+                                    <Form.Check checked={ this.state.form.urgency === 'Urgente' } onChange={ this.inputHandler }
                                         type="radio"
-                                        label="Urgencia"
+                                        label="Urgente"
                                         name='urgency'
-                                        id="Urgencia"
+                                        id="Urgente"
                                     />
                                 </Col>
                                 <Col md={ 5 } >

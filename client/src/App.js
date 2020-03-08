@@ -54,8 +54,8 @@ class App extends Component {
 
 
           {/* rutas andres, chat mapa y calendario */ }
-          <Route path="/join" render={ () => <Join loggedInUser={ this.state.loggedInUser } /> } />
-          <Route path="/chat" render={ props => <Chat { ...props } loggedInUser={ this.state.loggedInUser } /> } />
+          <Route path="/join" render={ () => this.state.loggedInUser ? <Join loggedInUser={ this.state.loggedInUser } /> : <Redirect to='/' /> } />
+          <Route path="/chat" render={ props => this.state.loggedInUser ? <Chat { ...props } loggedInUser={ this.state.loggedInUser } /> : <Redirect to='/' /> } />
           <Route path="/map" render={ props => <Map { ...props } /> } />
           {/* <Route path="/newCalendar/:id" render={ props => <Calendar { ...props } fetchUser={ this.fetchUser } /> } /> */ }
 

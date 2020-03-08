@@ -12,13 +12,13 @@ const Join = props => {
         <div className="joinInnerContainer">
           <h1 className="heading">Salas de chat</h1>
 
-          <h2>{props.loggedInUser.username}</h2>
+          <h2>{ props.loggedInUser.username }</h2>
 
           <div >
             <div className="form-group">
               <label htmlFor="chatList">Escoge la sala de chat</label>
-              <select name="park" className="form-control" id="chatList" onChange={e => setRoom(e.target.value)}>
-                <option defaultValue hidden>Seleccionar</option> {/*TO-DO preguntar otra forma*/}
+              <select name="park" className="form-control" id="chatList" onChange={ e => setRoom(e.target.value) }>
+                <option defaultValue hidden>Seleccionar</option> {/*TO-DO preguntar otra forma*/ }
                 <option value="perros">Perros</option>
                 <option value="gatos">Gatos</option>
                 <option value="otros">Otros</option>
@@ -26,7 +26,7 @@ const Join = props => {
               </select>
             </div>
           </div>
-          <Link onClick={e => !room && e.preventDefault()} to={`/chat?name=${props.loggedInUser.username}&room=${room}`}>
+          <Link onClick={ e => !room && e.preventDefault() } to={ `/chat?room=${room}` }>
             <button className='button' type="submit">Entrar</button>
           </Link>
         </div>
