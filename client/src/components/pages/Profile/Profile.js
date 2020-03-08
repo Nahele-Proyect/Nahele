@@ -17,7 +17,7 @@ import PasswordForm from './PasswordForm/PasswordForm'
 import EmailForm from './EmailForm/EmailForm'
 import ImgForm from './ImgForm/ImgForm'
 import PetForm from './PetForm/PetForm'
-import MyDate from './AppointComponent/Appoint'
+import MyDate from './myDateComponent/myDate'
 
 
 export default class Profile extends Component {
@@ -26,12 +26,14 @@ export default class Profile extends Component {
         this.FilesServices = new FilesServices()
         this.AuthServices = new AuthServices()
         this.state = {
+
             showModalUsername: false,
             showModalPassword: false,
             showModalEmail: false,
             showModalImg: false,
             showPetForm: false
         }
+        console.log(props)
     }
     showModalUsername = () => this.setState({ showModalUsername: true })
     showModalPassword = () => this.setState({ showModalPassword: true })
@@ -45,47 +47,44 @@ export default class Profile extends Component {
     render() {
         return (
             <>
-                <h1>Soy el perfil y tal : 3, { this.props.loggedInUser.username }</h1>
-                { this.props.loggedInUser.img ?
-                    <figure><img src={ this.props.loggedInUser.img } alt="Profile Pic" /></figure>
-                    :
-                    <h4><i>Podrías añadir una foto de perfil</i></h4> }
-
-
-
                 <Container>
                     <Row className='justify-content-between'>
-                        {/* <MyDate {...this.props} /> */ }
-                        <Col>
-                            <DropdownButton as={ ButtonGroup } title="Cambiar perfil" id="bg-nested-dropdown">
-                                <Dropdown.Item eventKey="1" onClick={ this.showModalUsername } >Cambiar nombre de usuario</Dropdown.Item>
-                                <Dropdown.Item eventKey="2" onClick={ this.showModalPassword }>Cambiar contraseña</Dropdown.Item>
-                                <Dropdown.Item eventKey="3" onClick={ this.showModalEmail }>Cambiar email</Dropdown.Item>
-                                <Dropdown.Item eventKey="4" onClick={ this.showModalImg }>Cambiar foto de perfil</Dropdown.Item>
+                        <Col md={6}>
+                            <DropdownButton as={ButtonGroup} title="Editar perfil" id="bg-nested-dropdown">
+                                <Dropdown.Item eventKey="1" onClick={this.showModalUsername} >Cambiar nombre de usuario</Dropdown.Item>
+                                <Dropdown.Item eventKey="2" onClick={this.showModalPassword}>Cambiar contraseña</Dropdown.Item>
+                                <Dropdown.Item eventKey="3" onClick={this.showModalEmail}>Cambiar email</Dropdown.Item>
+                                <Dropdown.Item eventKey="4" onClick={this.showModalImg}>Cambiar foto de perfil</Dropdown.Item>
                             </DropdownButton>
-                        </Col>
-                        <Col>
 
-                            <Button onClick={ this.petFormChange }>{ this.state.showPetForm ? 'Ocultar formulario' : 'Crear nueva mascota' }</Button>
+                            {this.props.loggedInUser.img ?
+                                <figure><img style={{ width: "100%" }} src={this.props.loggedInUser.img} alt="Profile Pic" /></figure>
+                                :
+                                <h4><i>Podrías añadir una foto de perfil</i></h4>}
+                        </Col>
+
+                        <Col md={6}>
+                            {<MyDate {...this.props} />}
                         </Col>
                     </Row>
+                    <Button onClick={this.petFormChange}>{this.state.showPetForm ? 'Ocultar formulario' : 'Crear nueva mascota'}</Button>
 
                 </Container>
 
-                <Modal size='sm' centered show={ this.state.showModalUsername } onHide={ this.closeModal } animation={ true }>
-                    <ProfileForm setTheUser={ this.props.setTheUser } loggedInUser={ this.props.loggedInUser } closeModal={ this.closeModal } />
+                <Modal size='sm' centered show={this.state.showModalUsername} onHide={this.closeModal} animation={true}>
+                    <ProfileForm setTheUser={this.props.setTheUser} loggedInUser={this.props.loggedInUser} closeModal={this.closeModal} />
                 </Modal>
-                <Modal size='sm' centered show={ this.state.showModalPassword } onHide={ this.closeModal } animation={ true }>
-                    <PasswordForm setTheUser={ this.props.setTheUser } loggedInUser={ this.props.loggedInUser } closeModal={ this.closeModal } />
+                <Modal size='sm' centered show={this.state.showModalPassword} onHide={this.closeModal} animation={true}>
+                    <PasswordForm setTheUser={this.props.setTheUser} loggedInUser={this.props.loggedInUser} closeModal={this.closeModal} />
                 </Modal>
-                <Modal size='sm' centered show={ this.state.showModalEmail } onHide={ this.closeModal } animation={ true }>
-                    <EmailForm setTheUser={ this.props.setTheUser } loggedInUser={ this.props.loggedInUser } closeModal={ this.closeModal } />
+                <Modal size='sm' centered show={this.state.showModalEmail} onHide={this.closeModal} animation={true}>
+                    <EmailForm setTheUser={this.props.setTheUser} loggedInUser={this.props.loggedInUser} closeModal={this.closeModal} />
                 </Modal>
-                <Modal size='sm' centered show={ this.state.showModalImg } onHide={ this.closeModal } animation={ true }>
-                    <ImgForm setTheUser={ this.props.setTheUser } loggedInUser={ this.props.loggedInUser } closeModal={ this.closeModal } />
+                <Modal size='sm' centered show={this.state.showModalImg} onHide={this.closeModal} animation={true}>
+                    <ImgForm setTheUser={this.props.setTheUser} loggedInUser={this.props.loggedInUser} closeModal={this.closeModal} />
                 </Modal>
 
-                { this.state.showPetForm && <Container ><PetForm petFormChange={ this.petFormChange } petFormChange={ this.petFormChange } setTheUser={ this.props.setTheUser } loggedInUser={ this.props.loggedInUser } /></Container> }
+                {this.state.showPetForm && <Container ><PetForm petFormChange={this.petFormChange} setTheUser={this.props.setTheUser} loggedInUser={this.props.loggedInUser} /></Container>}
 
             </>
         )

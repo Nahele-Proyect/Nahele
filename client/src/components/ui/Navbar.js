@@ -44,7 +44,7 @@ export default class Navigation extends Component {
 
             this.props.loggedInUser ?
                 (
-                    <Navbar style={{ marginBottom: '25px' }} sticky='top' bg="dark" expand="lg" variant="dark">
+                    <Navbar sticky='top' bg="dark" expand="lg" variant="dark">
                         <Navbar.Brand ><Link className='logo' to="/">Fluffy's Shelter</Link></Navbar.Brand>
                         <Nav.Link as="small" style={{ color: 'white' }}>{greeting}</Nav.Link>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
