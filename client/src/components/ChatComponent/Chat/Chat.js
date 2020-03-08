@@ -31,7 +31,7 @@ const Chat = props => {
         alert(error)
       }
     })
-  }, [ENDPOINT, props.location.search])
+  }, [ENDPOINT, name, props.location.search])
 
   useEffect(() => {
     socket.on('message', (message) => {
@@ -60,11 +60,11 @@ const Chat = props => {
       <div className="outerContainer">
         <div className="container">
 
-          <InfoBar room={ room } />
-          <Messages messages={ messages } name={ name } />
-          <Input message={ message } setMessage={ setMessage } sendMessage={ sendMessage } />
+          <InfoBar room={room} />
+          <Messages messages={messages} name={name} />
+          <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
         </div>
-        <TextContainer users={ users } />
+        <TextContainer users={users} />
       </div>
     </div>
   )
