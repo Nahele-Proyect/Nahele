@@ -47,7 +47,7 @@ export default class PetForm extends Component {
     }
     showMoreInfoHandler = () => this.setState({ showMoreForm: !this.state.showMoreForm })
     inputsHandler = e => {
-        e.target.type === 'radio' && (e.target.value = e.target.checked)
+        e.target.type === 'radio' && (e.target.value = e.target.id)
         e.target.type === 'checkbox' && (e.target.value = e.target.checked)
 
         this.setState({ form: { ...this.state.form, [e.target.name]: e.target.value } })
@@ -105,6 +105,9 @@ export default class PetForm extends Component {
                             <Form.Label htmlFor='city'>Ciudad</Form.Label>
                             <Form.Control type='text' id='city' name='city' value={ this.state.form.city } placeholder='Escribe el nombre de tu ciudad' onChange={ this.inputsHandler } />
 
+                            <Form.Label htmlFor='born'>Nacimiento</Form.Label>
+                            <Form.Control type='date' id='born' name='born' value={ this.state.form.born } onChange={ this.inputsHandler } />
+
                             <fieldset>
                                 <Form.Group as={ Row } >
                                     <Form.Label as={ Col } md={ 2 }>Genero</Form.Label>
@@ -139,7 +142,7 @@ export default class PetForm extends Component {
                     this.state.showMoreForm &&
                     <Row className='justify-content-between align-items-center'>
                         <Form.Group as={ Col } md={ 5 }>
-                            <Form.Label htmlFor='activity'>Especie</Form.Label>
+                            <Form.Label htmlFor='activity'>Actividad</Form.Label>
                             <Form.Control as='select' id='activity' name='activity' value={ this.state.form.activity } onChange={ this.inputsHandler } >
                                 <option value='Desconocida'>Desconocida</option>
                                 <option value='Baja'>Baja</option>
@@ -150,8 +153,8 @@ export default class PetForm extends Component {
                             <Form.Label htmlFor='weigth'>Peso</Form.Label>
                             <Form.Control type='text' id='weigth' name='weigth' value={ this.state.form.weigth } placeholder='Peso en kilos' onChange={ this.inputsHandler } />
 
-                            <Form.Label htmlFor='activity'>Actividad</Form.Label>
-                            <Form.Control as='select' id='activity' name='activity' value={ this.state.form.activity } onChange={ this.inputsHandler }>
+                            <Form.Label htmlFor='size'>Tamaño</Form.Label>
+                            <Form.Control as='select' id='size' name='size' value={ this.state.form.activity } onChange={ this.inputsHandler }>
                                 <option value='Mediano'>Mediano</option>
                                 <option value='Pequeño'>Pequeño</option>
                                 <option value='Grande'>Grande</option>

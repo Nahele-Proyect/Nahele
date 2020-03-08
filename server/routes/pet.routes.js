@@ -19,12 +19,12 @@ router.post('/new', (req, res) => {
 
     req.body.owner = req.user._id
 
-    req.body.vaccinated = req.body.vaccinated === 'true' ? 'Sí' : 'No'
-    req.body.dewormed = req.body.dewormed === 'true' ? 'Sí' : 'No'
-    req.body.healthy = req.body.healthy === 'true' ? 'Sí' : 'No'
-    req.body.sterilized = req.body.sterilized === 'true' ? 'Sí' : 'No'
-    req.body.indentified = req.body.identified === 'true' ? 'Sí' : 'No'
-    req.body.microchip = req.body.microchip === 'true' ? 'Sí' : 'No'
+    req.body.vaccinated = (req.body.vaccinated === 'true' ? 'Sí' : 'No')
+    req.body.dewormed = (req.body.dewormed === 'true' ? 'Sí' : 'No')
+    req.body.healthy = (req.body.healthy === 'true' ? 'Sí' : 'No')
+    req.body.sterilized = (req.body.sterilized === 'true' ? 'Sí' : 'No')
+    req.body.indentified = (req.body.identified === 'true' ? 'Sí' : 'No')
+    req.body.microchip = (req.body.microchip === 'true' ? 'Sí' : 'No')
 
     req.body.born && (req.body.born = new Date(req.body.born))
 

@@ -20,7 +20,7 @@ import PetForm from './PetForm/PetForm'
 import MyDate from './AppointComponent/Appoint'
 
 
-class Profile extends Component {
+export default class Profile extends Component {
     constructor(props) {
         super(props)
         this.FilesServices = new FilesServices()
@@ -32,7 +32,6 @@ class Profile extends Component {
             showModalImg: false,
             showPetForm: false
         }
-
     }
     showModalUsername = () => this.setState({ showModalUsername: true })
     showModalPassword = () => this.setState({ showModalPassword: true })
@@ -47,14 +46,18 @@ class Profile extends Component {
         return (
             <>
                 <h1>Soy el perfil y tal : 3, { this.props.loggedInUser.username }</h1>
-                <figure><img src={ this.props.loggedInUser.img } alt="Profile Pic" /></figure>
+                { this.props.loggedInUser.img ?
+                    <figure><img src={ this.props.loggedInUser.img } alt="Profile Pic" /></figure>
+                    :
+                    <h4><i>Podrías añadir una foto de perfil</i></h4> }
+
 
 
                 <Container>
                     <Row className='justify-content-between'>
                         {/* <MyDate {...this.props} /> */ }
                         <Col>
-                            <DropdownButton as={ ButtonGroup } title="Dropdown" id="bg-nested-dropdown">
+                            <DropdownButton as={ ButtonGroup } title="Cambiar perfil" id="bg-nested-dropdown">
                                 <Dropdown.Item eventKey="1" onClick={ this.showModalUsername } >Cambiar nombre de usuario</Dropdown.Item>
                                 <Dropdown.Item eventKey="2" onClick={ this.showModalPassword }>Cambiar contraseña</Dropdown.Item>
                                 <Dropdown.Item eventKey="3" onClick={ this.showModalEmail }>Cambiar email</Dropdown.Item>
@@ -63,7 +66,7 @@ class Profile extends Component {
                         </Col>
                         <Col>
 
-                            <Button onClick={ this.petFormChange }>{ this.state.showPetForm ? 'Ocultar formulario' : 'Mostrar formulario' }</Button>
+                            <Button onClick={ this.petFormChange }>{ this.state.showPetForm ? 'Ocultar formulario' : 'Crear nueva mascota' }</Button>
                         </Col>
                     </Row>
 
@@ -88,5 +91,3 @@ class Profile extends Component {
         )
     }
 }
-
-export default Profile
