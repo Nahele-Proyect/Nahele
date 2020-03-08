@@ -15,6 +15,7 @@ router.post('/new', (req, res) => {
     }
     if (!req.body.city) {
         res.json({ status: 'ko', message: 'La mascota necesita tener una ciudad' })
+        return
     }
 
     req.body.owner = req.user._id
@@ -35,6 +36,12 @@ router.post('/new', (req, res) => {
                 .then(user => res.json({ status: 'ok', user }))
                 .catch(err => console.log(err))
         })
+        .catch(err => console.log(err))
+})
+
+router.post('newScraped', (req, res) => {
+    Pet.create(req.body)
+        .then(pet => res.json({ status: 'ok', pet }))
         .catch(err => console.log(err))
 })
 

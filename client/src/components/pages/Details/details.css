@@ -1,3 +1,8 @@
+.details{
+    margin-top: 20px;
+}
+
 .details img{
-    width: 50%;
+    height: 550px;
+    object-fit: cover;
 }
