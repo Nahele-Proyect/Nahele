@@ -30,12 +30,9 @@ router.post('/new', (req, res) => {
     req.body.born && (req.body.born = new Date(req.body.born))
 
     Pet.create(req.body)
-        .then(newPet => {
-            User.findByIdAndUpdate(req.user._id, { $push: { pets: newPet._id } }, { new: true })
-                .populate('pets')
-                .then(user => res.json({ status: 'ok', user }))
-                .catch(err => console.log(err))
-        })
+        .then(newPet => newPet._id)
+        .then(newPetId => User.findByIdAndUpdate(req.user._id, { $push: { pets: newPetId } }, { new: true }).populate('pets'))
+        .then(user => res.json({ status: 'ok', user }))
         .catch(err => console.log(err))
 })
 

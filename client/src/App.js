@@ -21,7 +21,7 @@ class App extends Component {
     super()
 
     this.state = {
-      loggedInUser: false
+      loggedInUser: undefined
     }
     this.AuthServices = new AuthServices()
   }
@@ -40,26 +40,32 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state)
+
     return (
       <>
-        <Navbar setTheUser={ this.setTheUser } loggedInUser={ this.state.loggedInUser } />
+        { this.state.loggedInUser !== undefined ?
+          <>
+            <Navbar setTheUser={ this.setTheUser } loggedInUser={ this.state.loggedInUser } />
 
-        { <Switch>
-          <Route exact path='/grafic' render={ () => <BasicChart /> } />
-          <Route exact path='/' render={ () => <Index  { ...this.state.loggedInUser } /> } />
-          <Route path='/details/:link' render={ props => <Details { ...props } /> } />
-          <Route path="/profile" render={ () => this.state.loggedInUser ? <Profile loggedInUser={ this.state.loggedInUser } setTheUser={ this.setTheUser } /> : <Redirect to="/" /> } />
+            <Switch>
+              <Route exact path='/grafic' render={ () => <BasicChart /> } />
+              <Route exact path='/' render={ () => <Index  { ...this.state.loggedInUser } /> } />
+              <Route path='/details/:link' render={ props => <Details { ...props } /> } />
+              <Route path="/profile" render={ () => this.state.loggedInUser ? <Profile loggedInUser={ this.state.loggedInUser } setTheUser={ this.setTheUser } /> : <Redirect to="/" /> } />
 
 
 
-          {/* rutas andres, chat mapa y calendario */ }
-          <Route path="/join" render={ () => this.state.loggedInUser ? <Join loggedInUser={ this.state.loggedInUser } /> : <Redirect to='/' /> } />
-          <Route path="/chat" render={ props => this.state.loggedInUser ? <Chat { ...props } loggedInUser={ this.state.loggedInUser } /> : <Redirect to='/' /> } />
-          <Route path="/map" render={ props => <Map { ...props } /> } />
-          {/* <Route path="/newCalendar/:id" render={ props => <Calendar { ...props } fetchUser={ this.fetchUser } /> } /> */ }
+              {/* rutas andres, chat mapa y calendario */ }
+              <Route path="/join" render={ () => this.state.loggedInUser ? <Join loggedInUser={ this.state.loggedInUser } /> : <Redirect to='/' /> } />
+              <Route path="/chat" render={ props => this.state.loggedInUser ? <Chat { ...props } loggedInUser={ this.state.loggedInUser } /> : <Redirect to='/' /> } />
+              <Route path="/map" render={ props => <Map { ...props } /> } />
+              {/* <Route path="/newCalendar/:id" render={ props => <Calendar { ...props } fetchUser={ this.fetchUser } /> } /> */ }
 
-        </Switch> }
+            </Switch>
+          </>
+          :
+          <h1>Cargando</h1>
+        }
       </>
     )
   }

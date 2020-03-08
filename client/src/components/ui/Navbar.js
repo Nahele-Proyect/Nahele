@@ -50,6 +50,7 @@ export default class Navigation extends Component {
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="ml-auto">
+                                <Nav.Link as="div"> <Link to="/join">Chat</Link></Nav.Link>
                                 <Nav.Link as="div"> <Link to="/">Inicio</Link></Nav.Link>
                                 <Nav.Link as="div"> <Link to="/profile">Perfil</Link></Nav.Link>
                                 <Nav.Link onClick={ this.logout }>Cerrar sesión</Nav.Link>
