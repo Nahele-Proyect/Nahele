@@ -2,12 +2,11 @@ const express = require('express')
 const router = express.Router()
 
 const Calendar = require('../models/Calendar.model')
-const Pet = require('../models/Pet.model')
 const User = require('../models/User.model')
 
 router.post('/new/:id', (req, res) => {
     const user = req.user._id
-    console.log(req.params.id)
+
     const urlPet = req.params.id
     const {
         title,
@@ -40,5 +39,23 @@ router.post('/new/:id', (req, res) => {
         })
         .catch(err => console.log('error en calendario 1', err))
 
+})
+
+router.delete('/delete/:ID', (req, res) => {
+    Calendar.findByIdAndDelete(req.params.ID)
+        .then(deletedCalendar => deletedCalendar._id)
+        .then(calendarId => User.findByIdAndUpdate(req.user._id, {
+            $pull: {
+                calendar: calendarId
+            }
+        }, {
+            new: true
+        }))
+        .then(user =>
+            res.json({
+                status: 'ok',
+                user
+            }))
+        .catch(err => console.log(`Ha habido un error eliminando la montaña rusa de la BBDD ${err}`))
 })
 module.exports = router

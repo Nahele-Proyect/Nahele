@@ -8,11 +8,7 @@ export default class Services {
         })
         this.axiosCancelSource = axios.CancelToken.source()
     }
-    getAll = () => this.service.get('/', {
-        cancelToken: this.axiosCancelSource.token
-    }).then(response => response.data)
-    getDetails = endpoint => this.service.get('/details/' + endpoint, {
-        cancelToken: this.axiosCancelSource.token
-    }).then(response => response.data)
+    getAll = () => this.service.get('/', { cancelToken: this.axiosCancelSource.token }).then(response => response.data)
+    getDetails = endpoint => this.service.get('/details/' + endpoint, { cancelToken: this.axiosCancelSource.token }).then(response => response.data)
     cancelAll = () => this.axiosCancelSource.cancel('Component unmounted.')
 }
