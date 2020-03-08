@@ -16,42 +16,30 @@ class myDate extends Component {
             <Col md={6} >
                 <Card
                     style={{
-                        height: "85vh",
+                        height: "75vh",
                         backgroundColor: "rgba(255,255, 255, 0.5)",
-                        overflow: "scroll",
                         boxShadow: "10px 10px 15px 0px rgba(0, 0, 0, 0.75)"
-                    }}
-                >
+                    }}>
                     <Card.Body>
                         <Card.Title style={{ textAlign: "center" }}>
                             <h3>CALENDARIO DE CITAS</h3>
                         </Card.Title>
-                        <Card.Text
-                            style={{ height: "75vh", textAlign: "center", overflow: "scroll" }}>
+                        <Card.Text as={'div'} style={{ height: "65vh", textAlign: "center", overflow: "scroll" }}>
 
-                            {this.props.loggedInUser.calendar
-                                ? this.props.loggedInUser.calendar.map((elm, idx) => (
+                            {this.props.loggedInUser.calendar &&
+                                this.props.loggedInUser.calendar.map((elm, idx) => (
                                     <div key={idx}>
-                                        <p ><strong>Woof Appointment: </strong>
-
-                                            <strong>Booking Name: </strong>
-                                            {elm.title}
-
-                                            <strong>Date: </strong>
-                                            {elm.start.substr(0, 10)}
-
-                                            <Link to={`/details/${elm.petsUrl}`}>
-                                                Go to Center
-                                        </Link>
-
-                                        </p>
+                                        <p><strong>Cita</strong></p>
+                                        <p><strong>Nombre de la cita: {elm.title}</strong></p>
+                                        <p><strong>Date: {elm.start.substr(0, 10)}</strong></p>
+                                        <Link to={`/details/${elm.petsUrl}`}>Go to Center</Link>
                                     </div>
-                                ))
-                                : null}
+                                ))}
+
                         </Card.Text>
                     </Card.Body>
-                </Card >
-            </Col >
+                </Card>
+            </Col>
 
         )
     }

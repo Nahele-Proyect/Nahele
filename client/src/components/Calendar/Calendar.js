@@ -63,24 +63,19 @@ class MyCalendar extends Component {
     handleShow = () => this.setState({ showModalWindow: true })
     handleClose = () => this.setState({ showModalWindow: false })
 
-
-
     render() {
         return (
             <>
                 <Container>
                     <section>
                         <div style={{ display: "flex", justifyContent: "space-between" }}>
-                            <Button variant="light" className="btn-profile" onClick={this.handleShow}>
-                                Add an Appointment
-              </Button>
+                            <Button variant="light" className="btn-profile" onClick={this.handleShow}>Añadir una cita</Button>
                         </div>
                         <Row>
                             <Col md={12}>
                                 <div
                                     style={{ height: "75vh", marginTop: "25px" }}
-                                    className="calendar-container"
-                                >
+                                    className="calendar-container">
                                     <Calendar
                                         localizer={localizer}
                                         events={this.state.mybackup}
@@ -94,46 +89,23 @@ class MyCalendar extends Component {
                 </Container>
                 <Modal show={this.state.showModalWindow} onHide={this.handleClose}>
                     <Modal.Header closeButton>
-                        <Modal.Title>Woof Details</Modal.Title>
+                        <Modal.Title>Detalles de la cita</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <Form onSubmit={this.handleSubmit}>
                             <Form.Group>
-                                <Form.Label>Booked Name</Form.Label>
-                                <Form.Control
-                                    type="text"
-                                    name="title"
-                                    placeholder="Full Name"
-                                    onChange={this.handleInputChange}
-                                    value={this.state.myEventsList.title}
-                                />
+                                <Form.Label>Título de la cita</Form.Label>
+                                <Form.Control type="text" name="title" placeholder="Full Name" onChange={this.handleInputChange} value={this.state.myEventsList.title} />
                             </Form.Group>
                             <Form.Group>
-                                <Form.Label>Pick a Start Date</Form.Label>
-                                <Form.Control
-                                    type="date"
-                                    name="start"
-                                    onChange={this.handleInputChange}
-                                    value={this.state.myEventsList.start}
-                                />
+                                <Form.Label>Selecciona fecha de inicio</Form.Label>
+                                <Form.Control type="date" name="start" onChange={this.handleInputChange} value={this.state.myEventsList.start} />
                             </Form.Group>
                             <Form.Group>
-                                <Form.Label>Pick an End Date</Form.Label>
-                                <Form.Control
-                                    type="date"
-                                    name="end"
-                                    onChange={this.handleInputChange}
-                                    value={this.state.myEventsList.end}
-                                />
+                                <Form.Label>Seleccionar fecha de fin</Form.Label>
+                                <Form.Control type="date" name="end" onChange={this.handleInputChange} value={this.state.myEventsList.end} />
                             </Form.Group>
-                            <Button
-                                variant="dark"
-                                size="sm"
-                                type="submit"
-                                onClick={this.handleSubmit}
-                            >
-                                Book Appointment
-              </Button>
+                            <Button variant="dark" size="sm" type="submit" onClick={this.handleSubmit}>Añadir cita</Button>
                         </Form>
                     </Modal.Body>
                 </Modal>
