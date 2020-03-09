@@ -53,14 +53,13 @@ export default class BasicChart extends Component {
 
         pieSeries.dataFields.value = "Cantidad"
         pieSeries.dataFields.category = "Especie"
-
     }
 
     render() {
         return (
             this.state.data ?
                 <div className='basicChart'>
-                    <div id="chartdiv" style={{ width: "100%", height: "500px" }}></div>
+                    <div id="chartdiv" style={ { width: "100%", height: "500px" } }></div>
                 </div>
                 :
                 <h1>Cargando el grafico weeeee</h1>

@@ -42,7 +42,7 @@ export default class Details extends Component {
 
                                     <h1>Nombre: { this.state.pet.name }</h1>
                                     <h6>{ this.state.pet.specie }</h6>
-                                    <p>Nacimiento: { this.state.pet.born.substr(0, 10) }</p>
+                                    <p>Nacimiento: { this.state.pet.born ? this.state.pet.born.substr(0, 10) : 'Desconocido' }</p>
                                     <p>Sexo: { this.state.pet.gender }</p>
                                     <p>Tamaño: { this.state.pet.size }</p>
                                     <p>Peso: { this.state.pet.weigth }</p>

@@ -3,11 +3,14 @@ import React, { Component } from 'react'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import Button from 'react-bootstrap/Button'
+import Modal from 'react-bootstrap/Modal'
 
 import ScrapServices from '../../../services/scrap.service'
 
 import PetCard from './petCard/PetCard'
 import Filter from './Filter/Filter'
+import IndexChart from '../../Charts/IndexChart/IndexChart'
 
 export default class Index extends Component {
     constructor(props) {
@@ -18,7 +21,8 @@ export default class Index extends Component {
             filters: {
                 specie: '',
                 urgency: ''
-            }
+            },
+            showGraficModal: false
         }
         this.filtered = undefined
         this.scrapServices = new ScrapServices()
@@ -32,10 +36,12 @@ export default class Index extends Component {
         this.scrapServices.getAll()
             .then(allPets => this.setState({ pets: allPets.pets }))
             .catch(err => err)
-
     }
 
     changeFilters = filters => this.setState({ ...this.state, filters: { specie: filters.specie, urgency: filters.urgency } })
+
+    closeModal = () => this.setState({ showGraficModal: false })
+    openGraficModal = () => this.setState({ showGraficModal: true })
 
     render() {
         if (this.state.pets) {
@@ -57,6 +63,14 @@ export default class Index extends Component {
                             <Filter changeFilters={ this.changeFilters } />
                         </Col>
                     </Row>
+
+                    { this.state.pets &&
+                        <>
+                            <Modal size='md' centered show={ this.state.showGraficModal } onHide={ this.closeModal } animation={ true }>
+                                <IndexChart pets={ this.state.pets } closeModal={ this.closeModal } />
+                            </Modal>
+
+                            <Button onClick={ this.openGraficModal } >Ver Grafico</Button></> }
 
                     { this.state.pets ?
                         <Row>

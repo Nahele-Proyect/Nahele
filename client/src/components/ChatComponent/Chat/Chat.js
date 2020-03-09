@@ -26,21 +26,13 @@ const Chat = props => {
 
     setRoom(room)
 
-    socket.emit('join', { name, room }, (error) => {
-      if (error) {
-        alert(error)
-      }
-    })
-  }, [ENDPOINT, props.location.search])
+    socket.emit('join', { name, room }, (error) => error && alert(error))
+  }, [ENDPOINT, name, props.location.search])
 
   useEffect(() => {
-    socket.on('message', (message) => {
-      setMessages([...messages, message])
-    })
+    socket.on('message', (message) => setMessages([...messages, message]))
 
-    socket.on('roomData', ({ users }) => {
-      setUsers(users)
-    })
+    socket.on('roomData', ({ users }) => setUsers(users))
 
     return () => {
       socket.emit('disconnect')

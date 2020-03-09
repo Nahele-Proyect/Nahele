@@ -37,9 +37,17 @@ router.post('/new', (req, res) => {
 })
 
 router.post('newScraped', (req, res) => {
-    Pet.create(req.body)
-        .then(pet => res.json({ status: 'ok', pet }))
-        .catch(err => console.log(err))
+
+    Pet.findOne({ link: req.body.link })
+        .then(foundDog => {
+            if (foundDog) {
+                res.json({ status: "found", foundDog })
+                return
+            }
+            Pet.create(req.body)
+                .then(pet => res.json({ status: 'created', pet }))
+                .catch(err => console.log(err))
+        })
 })
 
 module.exports = router

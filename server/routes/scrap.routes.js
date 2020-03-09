@@ -56,17 +56,12 @@ router.get('/', (req, res) => {
                 }
             })
 
-        }).then(pets => res.json({
-            status: 'ok',
-            pets
-        }))
+        }).then(pets => res.json({ status: 'ok', pets }))
         .catch(err => console.log(err))
 })
 
 router.get('/details/:code', (req, res) => {
-    const pet = {
-        personality: []
-    }
+    const pet = { personality: [] }
 
     axiosApp.get('/' + req.params.code)
         .then(response => {
@@ -120,10 +115,7 @@ router.get('/details/:code', (req, res) => {
                 }
             })
 
-        }).then(() => res.json({
-            status: 'ok',
-            pet
-        }))
+        }).then(() => res.json({ status: 'ok', pet }))
         .catch(err => console.log(err))
 })
 

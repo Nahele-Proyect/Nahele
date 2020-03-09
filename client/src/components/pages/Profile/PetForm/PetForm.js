@@ -16,30 +16,26 @@ export default class PetForm extends Component {
         this.fileServices = new FileServices()
         this.state = {
             form: {
-                name: '',//Basic
-                img: '',//Basic
-                city: '',//Basic
-                urgency: 'En Adopción',//Basic
-                born: '',//Basic
-                specie: '',//Basic
-                gender: '',//Basic
+                name: '',
+                img: '',
+                city: '',
+                urgency: 'En Adopción',
+                born: '',
+                specie: '',
+                gender: '',
 
-                activity: '',//Extends
-                weigth: '',//Extends
-                size: 'Mediano',//Extends
+                activity: '',
+                weigth: '',
+                size: 'Mediano',
 
-                vaccinated: false,//State
-                dewormed: false,//State
-                healthy: false,//State
-                sterilized: false,//State
-                indentified: false,//State
-                microchip: false,//State
+                vaccinated: false,
+                dewormed: false,
+                healthy: false,
+                sterilized: false,
+                indentified: false,
+                microchip: false,
 
-                personality: [],//Soft
-                comment: '',//Soft
-
-                //flag: '',   //Sera por defecto la bandera de españa (Podriamos quitar esto de aqui)
-                //owner: '', //Sera el usuario actual (Podriamos quitaer esto de aqui y usar el req.user para almacenarlo)
+                comment: '',
             },
             showMoreForm: false,
             message: ''
@@ -66,9 +62,7 @@ export default class PetForm extends Component {
             .then(user => user.status === 'ok' ? this.finishForm(user) : this.setState({ message: user.message }))
             .catch(err => console.log(err))
     }
-    finishForm = user => {
-        this.props.setTheUser(user.user, this.props.petFormChange())
-    }
+    finishForm = user => this.props.setTheUser(user.user, this.props.petFormChange())
 
     render() {
         return (

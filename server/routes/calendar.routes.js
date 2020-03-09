@@ -15,20 +15,20 @@ router.post('/new/:id', (req, res) => {
     } = req.body
 
     Calendar.create({
-            title,
-            start,
-            end,
-            user: user,
-            petsUrl: urlPet
-        })
+        title,
+        start,
+        end,
+        user: user,
+        petsUrl: urlPet
+    })
         .then(theCalendar => {
             User.findByIdAndUpdate(req.user._id, {
-                    $addToSet: {
-                        calendar: theCalendar._id
-                    }
-                }, {
-                    new: true
-                })
+                $addToSet: {
+                    calendar: theCalendar._id
+                }
+            }, {
+                new: true
+            })
                 .populate('calendar')
                 .then(theUser => res.json({
                     theCalendar,

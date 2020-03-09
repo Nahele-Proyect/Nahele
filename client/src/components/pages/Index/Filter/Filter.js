@@ -20,14 +20,9 @@ export default class Filter extends Component {
             }
         }
     }
-    quitFilters = () => {
+    quitFilters = () => this.setState({ form: { specie: '', urgency: '' }, filter: { specieFilter: '', urgencyFilter: '' } }, () => this.props.changeFilters(this.state.filter))
 
-        this.setState({ form: { specie: '', urgency: '' }, filter: { specieFilter: '', urgencyFilter: '' } }, () => this.props.changeFilters(this.state.filter))
-    }
-    inputHandler = e => {
-
-        this.setState({ form: { ...this.state.form, [e.target.name]: e.target.id }, filter: { ...this.state.filter, [e.target.name]: e.target.id } }, () => this.props.changeFilters(this.state.filter))
-    }
+    inputHandler = e => this.setState({ form: { ...this.state.form, [e.target.name]: e.target.id }, filter: { ...this.state.filter, [e.target.name]: e.target.id } }, () => this.props.changeFilters(this.state.filter))
 
     render() {
 
