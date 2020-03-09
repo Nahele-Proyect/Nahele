@@ -9,4 +9,5 @@ export default class PetServices {
     }
     createPet = petData => this.service.post('/new', petData).then(response => response.data)
     getOnePet = petId => this.service.get('/find/' + petId).then(response => response.data)
+    deleteOnePet = petId => this.service.delete('/delete/' + petId).then(response => response.data)
 }

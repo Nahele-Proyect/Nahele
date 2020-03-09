@@ -13,6 +13,7 @@ import PetCard from './petCard/PetCard'
 import Filter from './Filter/Filter'
 import IndexChart from '../../Charts/IndexChart/IndexChart'
 
+
 export default class Index extends Component {
     constructor(props) {
         super(props)
@@ -70,11 +71,11 @@ export default class Index extends Component {
 
                     { this.state.pets &&
                         <>
-                            <Modal size='md' centered show={ this.state.showGraficModal } onHide={ this.closeModal } animation={ true }>
+                            <Modal size='lg' centered show={ this.state.showGraficModal } onHide={ this.closeModal } animation={ true }>
                                 <IndexChart pets={ this.state.pets } closeModal={ this.closeModal } />
                             </Modal>
 
-                            <Button onClick={ this.openGraficModal } >Ver Grafico</Button></> }
+                            <Button onClick={ this.openGraficModal } >Ver porcentajes</Button></> }
 
                     { this.state.pets ?
                         <Row>
@@ -84,9 +85,8 @@ export default class Index extends Component {
                                 this.filtered.map((elm, idx) => <Col md="3" key={ idx }><PetCard { ...elm }></PetCard></Col>) }
                         </Row>
                         :
-                        <p>Cargando man... :3</p>
+                        <figure style={ { display: 'flex', minHeight: '80vh', justifyContent: 'center', alignItems: 'center' } }><img src='./dancing-dog.gif' /></figure>
                     }
-
 
                 </Container>
             </div>

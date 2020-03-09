@@ -53,6 +53,7 @@ export default class IndexChart extends Component {
         return (
             this.state.data ?
                 <div className='indexChart'>
+                    <h1 style={ { textAlign: 'center', marginTop: "30px" } }>Porcentaje actual</h1>
                     <div id="indexChart" style={ { width: "100%", height: "500px" } }></div>
                 </div>
                 :
