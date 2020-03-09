@@ -1,13 +1,14 @@
+//React imoprts
 import React, { Component } from 'react'
-
+//Bootstrao imorts
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
-
+//Services imports
 import ScrapServices from '../../../services/scrap.service'
-
+//Self-made imports
 import PetCard from './petCard/PetCard'
 import Filter from './Filter/Filter'
 import IndexChart from '../../Charts/IndexChart/IndexChart'
@@ -28,7 +29,7 @@ export default class Index extends Component {
         this.scrapServices = new ScrapServices()
     }
 
-    componentDidMount = () => { this.getAllPets() }
+    componentDidMount = () => this.getAllPets()
 
     componentWillUnmount = () => this.scrapServices.cancelAll()
 
@@ -38,12 +39,15 @@ export default class Index extends Component {
             .catch(err => err)
     }
 
+    //Filter handlers
     changeFilters = filters => this.setState({ ...this.state, filters: { specie: filters.specie, urgency: filters.urgency } })
 
+    //Modal handlers
     closeModal = () => this.setState({ showGraficModal: false })
     openGraficModal = () => this.setState({ showGraficModal: true })
 
     render() {
+        //This filter by the filter state
         if (this.state.pets) {
             this.filtered = [...this.state.pets]
 

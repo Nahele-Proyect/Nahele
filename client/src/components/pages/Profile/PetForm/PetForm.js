@@ -1,8 +1,9 @@
+//React imports
 import React, { Component } from 'react'
-
+//Services imports
 import PetServices from '../../../../services/pet.service'
 import FileServices from '../../../../services/files.service'
-
+//Bootstrap imports
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
@@ -41,28 +42,28 @@ export default class PetForm extends Component {
             message: ''
         }
     }
-    showMoreInfoHandler = () => this.setState({ showMoreForm: !this.state.showMoreForm })
-    inputsHandler = e => {
+    showMoreInfoHandler = () => this.setState({ showMoreForm: !this.state.showMoreForm })//Change extended form visibility
+    inputsHandler = e => {//Handles all inputs, except image one
         e.target.type === 'radio' && (e.target.value = e.target.id)
         e.target.type === 'checkbox' && (e.target.value = e.target.checked)
 
         this.setState({ form: { ...this.state.form, [e.target.name]: e.target.value } })
     }
-    imgFileUpload = e => {
+    imgFileUpload = e => {//Handle cloudinary upload (and image set)
         const uploadData = new FormData()
         uploadData.append('img', e.target.files[0])
         this.fileServices.uploadImage(uploadData)
             .then(img => this.setState({ form: { ...this.state.form, img: img.img } }))
             .catch(err => console.log(err))
     }
-    submitHandler = e => {
+    submitHandler = e => {//Handle the button effect and the form submit
         e.preventDefault()
 
         this.petServices.createPet(this.state.form)
             .then(user => user.status === 'ok' ? this.finishForm(user) : this.setState({ message: user.message }))
             .catch(err => console.log(err))
     }
-    finishForm = user => this.props.setTheUser(user.user, this.props.petFormChange())
+    finishForm = user => this.props.setTheUser(user.user, this.props.petFormChange())//Set the global user and close the form
 
     render() {
         return (

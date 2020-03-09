@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from "react-router-dom"
 //Services imports
 import ScrapServices from '../../../services/scrap.service'
+import PetServices from '../../../services/pet.service'
 //Bootstrap imports
 import Container from 'react-bootstrap/Container'
 import Col from 'react-bootstrap/Col'
@@ -16,11 +17,21 @@ export default class Details extends Component {
             pet: undefined
         }
         this.scrapServices = new ScrapServices()
+        this.petServices = new PetServices()
     }
-    componentDidMount = () => this.getOnePet(this.props.match.params.link)
+    componentDidMount = () => {
+        this.props.match.params.link && this.getOnePet(this.props.match.params.link)
+        this.props.match.params.id && this.getMyPet(this.props.match.params.id)
+    }
 
     getOnePet = petLink => {
         this.scrapServices.getDetails(petLink)
+            .then(onePet => this.setState({ pet: onePet.pet }))
+            .catch(err => err)
+    }
+
+    getMyPet = petId => {
+        this.petServices.getOnePet(petId)
             .then(onePet => this.setState({ pet: onePet.pet }))
             .catch(err => err)
     }

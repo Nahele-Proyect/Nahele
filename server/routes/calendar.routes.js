@@ -56,6 +56,6 @@ router.delete('/delete/:ID', (req, res) => {
                 status: 'ok',
                 user
             }))
-        .catch(err => console.log(`Ha habido un error eliminando la montaña rusa de la BBDD ${err}`))
+        .catch(err => console.log(`Errorsito por aqui papa ${err}`))
 })
 module.exports = router

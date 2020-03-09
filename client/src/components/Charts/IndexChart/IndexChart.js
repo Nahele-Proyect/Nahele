@@ -1,5 +1,6 @@
+//React imports
 import React, { Component } from 'react'
-
+//amChart imports
 import * as am4core from "@amcharts/amcharts4/core"
 import * as am4charts from "@amcharts/amcharts4/charts"
 
@@ -19,11 +20,11 @@ export default class IndexChart extends Component {
     }
 
     componentWillUnmount = () => {
-        this.chart && this.chart.dispose()
+        this.chart && this.chart.dispose() //Quit de chart instance
         this.props.closeModal()
     }
 
-    setData = () => {
+    setData = () => {//Set de data in state adapted to chart neededs
         let arrSpecie = [...this.props.pets].map(elm => elm.specie)
         let keySpecie = []
         arrSpecie.forEach(elm => keySpecie.includes(elm) ? null : keySpecie.push(elm))
@@ -35,7 +36,7 @@ export default class IndexChart extends Component {
         this.setState({ ...this.state.data, data: { specie: keySpecie.map((elm, idx) => { return { Especie: elm, Cantidad: objSpecie[elm] } }) } })
     }
 
-    mountChart = () => {
+    mountChart = () => { //Mounts the pie chart
         this.chart = am4core.create("indexChart", am4charts.PieChart)
 
         this.chart.paddingRight = 90

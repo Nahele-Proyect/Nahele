@@ -51,6 +51,7 @@ class App extends Component {
               <Route exact path='/grafic' render={ () => <BasicChart /> } />
               <Route exact path='/' render={ () => <Index  { ...this.state.loggedInUser } /> } />
               <Route path='/details/:link' render={ props => <Details { ...props } /> } />
+              <Route path='/myPet/:id' render={ props => <Details { ...props } /> } />
               <Route path="/profile" render={ () => this.state.loggedInUser ? <Profile loggedInUser={ this.state.loggedInUser } setTheUser={ this.setTheUser } /> : <Redirect to="/" /> } />
 
 

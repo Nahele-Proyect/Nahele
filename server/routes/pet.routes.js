@@ -50,4 +50,11 @@ router.post('newScraped', (req, res) => {
         })
 })
 
+router.get('/find/:id', (req, res) => {
+
+    Pet.findById(req.params.id)
+        .then(foundDog => res.json({ status: 'ok', pet: foundDog }))
+        .catch(err => console.log(err))
+})
+
 module.exports = router
