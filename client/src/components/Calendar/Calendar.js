@@ -1,8 +1,9 @@
-import React, { Component } from "react"
+import React, { Component } from 'react'
 
-import { Calendar, momentLocalizer } from "react-big-calendar"
-import moment from "moment"
-import "react-big-calendar/lib/css/react-big-calendar.css"
+import { Calendar, momentLocalizer } from 'react-big-calendar'
+import 'moment/locale/es'
+import moment from 'moment'
+import 'react-big-calendar/lib/css/react-big-calendar.css'
 
 import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
@@ -10,12 +11,26 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Modal from 'react-bootstrap/Modal'
 
-import CalendarService from "../../services/calendar.service"
+import CalendarService from '../../services/calendar.service'
 import ScrapServices from '../../services/scrap.service'
 
 import './calendar.css'
 
 const localizer = momentLocalizer(moment)
+const messages = {
+    allDay: 'Todo el dia',
+    previous: 'Anterior',
+    next: 'Siguiente',
+    today: 'Hoy',
+    month: 'Mes',
+    week: 'Semana',
+    day: 'Día',
+    agenda: 'Agenda',
+    date: 'Fecha',
+    time: 'Tiempo',
+    event: 'Evento',
+    showMore: total => `+ Mostrar más (${total})`
+}
 
 class MyCalendar extends Component {
     constructor(props) {
@@ -61,7 +76,7 @@ class MyCalendar extends Component {
                 start: new Date(`${a} 00:00:00`),
                 end: new Date(`${c} 00:00:00`)
             }
-            return calendarCopy.push(aux) //ver si esto esta bien
+            return calendarCopy.push(aux)
         })
         this.setState({ mybackup: calendarCopy })
     }
@@ -74,9 +89,11 @@ class MyCalendar extends Component {
                 this.handleClose()
             })
             .catch(err => console.log(err))
+        this.showPrevEvents()
     }
 
     handleInputChange = e => {
+
         const myEvent = this.state.myEventsList.map(event => {
             e.target.name.includes("title") && (event.title = e.target.value)
             e.target.name.includes("start") && (event.start = e.target.value)
@@ -96,13 +113,15 @@ class MyCalendar extends Component {
             <>
                 <Container>
                     <section>
-                        <div style={{ display: "flex", justifyContent: "space-between" }}>
+                        <div style={{ display: "flex", justifyContent: 'center' }}>
                             <Button variant="light" className="btn-profile" onClick={this.handleShow}>Añadir una cita</Button>
                         </div>
                         <Row>
                             <Col md={12}>
-                                <div style={{ height: "75vh", marginTop: "25px" }} className="calendar-container">
+                                <div style={{ height: "80vh", marginTop: "25px" }} className="calendar-container">
                                     <Calendar
+                                        messages={messages}
+                                        culture='es'
                                         localizer={localizer}
                                         events={this.state.mybackup}
                                         startAccessor="start"

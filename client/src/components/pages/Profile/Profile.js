@@ -22,6 +22,8 @@ import MyDate from './myDateComponent/myDate'
 import PetList from './PetsList/PetList'
 
 
+
+
 export default class Profile extends Component {
     constructor(props) {
         super(props)
@@ -68,9 +70,10 @@ export default class Profile extends Component {
 
                         <Col md={ 6 }>
                             <MyDate { ...this.props } />
-                            <PetList loggedInUser={ this.props.loggedInUser } setTheUser={ this.props.setTheUser } />
+                            <PetList loggedInUser={ this.props.loggedInUser } />
                         </Col>
                     </Row>
+                    <Button color="primary" onClick={ this.petFormChange }>{ this.state.showPetForm ? 'Ocultar formulario' : 'Crear nueva mascota' }</Button>
 
                     <Button style={ { marginTop: '10px' } } onClick={ this.petFormChange }>{ this.state.showPetForm ? 'Ocultar formulario' : 'Dar en adopción' }</Button>
                 </Container>

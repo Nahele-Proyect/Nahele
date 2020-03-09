@@ -1,5 +1,4 @@
 import axios from 'axios'
-import { ResponsiveBreakpoints } from '@amcharts/amcharts4/core'
 
 export default class PetServices {
     constructor() {
