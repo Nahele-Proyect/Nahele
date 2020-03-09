@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { Card, Button } from "react-bootstrap"
+
+import Button from "react-bootstrap/Button"
+import Card from "react-bootstrap/Card"
+
 import CalendarService from '../../../../services/calendar.service'
 
 class myDate extends Component {
@@ -27,7 +30,6 @@ class myDate extends Component {
                         {this.props.loggedInUser.calendar &&
                             this.props.loggedInUser.calendar.map((elm, idx) => (
                                 <div key={idx}>
-                                    {console.log(elm)}
                                     <p><strong>Título: </strong>{elm.title}</p>
                                     <p><strong>Fecha de inicio: </strong>{elm.start && (elm.start.substr(0, 10))}</p>
                                     <p><strong>Fecha fin: </strong>{elm.end && (elm.end.substr(0, 10))}</p>
