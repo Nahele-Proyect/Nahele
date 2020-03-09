@@ -79,11 +79,11 @@ export default class PetForm extends Component {
                                 :
                                 <>
                                     <img style={ { margin: '20px 0px', width: '60%' } } src='./jake.png' alt='foto' />
-                                    <Form.Control name='img' id='img' type='file' onChange={ this.imgFileUpload } />
+                                    <Form.Control name='img' id='img' type='file' style={ { color: 'transparent' } } onChange={ this.imgFileUpload } />
                                 </>
                             }
 
-                            <Form.Label htmlFor='specie'></Form.Label>
+                            <Form.Label style={ { marginTop: ' 20px', display: 'block' } } htmlFor='specie'>Especie</Form.Label>
                             <Form.Control type='text' id='specie' name='specie' value={ this.state.form.specie } placeholder='Gato, Perro...' onChange={ this.inputsHandler } />
 
                             <Form.Label htmlFor='urgency'>Urgencia</Form.Label>
@@ -94,21 +94,21 @@ export default class PetForm extends Component {
 
                         </Form.Group>
                         <Form.Group as={ Col } md='5' className="align-self-end">
-                            <Form.Label htmlFor='name'>Nombre</Form.Label>
+                            <Form.Label style={ { marginTop: '15px' } } htmlFor='name'>Nombre</Form.Label>
                             <Form.Control type='text' id='name' name='name' value={ this.state.form.name } placeholder='Nombre de la mascota' onChange={ this.inputsHandler } />
 
-                            <Form.Label htmlFor='city'>Ciudad</Form.Label>
+                            <Form.Label style={ { marginTop: '15px' } } htmlFor='city'>Ciudad</Form.Label>
                             <Form.Control type='text' id='city' name='city' value={ this.state.form.city } placeholder='Escribe el nombre de tu ciudad' onChange={ this.inputsHandler } />
 
-                            <Form.Label htmlFor='born'>Nacimiento</Form.Label>
+                            <Form.Label style={ { marginTop: '15px' } } htmlFor='born'>Nacimiento</Form.Label>
                             <Form.Control type='date' id='born' name='born' value={ this.state.form.born } onChange={ this.inputsHandler } />
 
                             <fieldset>
                                 <Form.Group as={ Row } >
-                                    <Form.Label as={ Col } md={ 2 }>Genero</Form.Label>
+                                    <Form.Label style={ { marginTop: '15px' } } as={ Col } md={ 2 }>Genero</Form.Label>
                                     <Col md={ 4 }>
 
-                                        <Form.Check checked={ this.state.form.gender === 'Macho' } onChange={ this.inputsHandler }
+                                        <Form.Check style={ { marginTop: '15px' } } checked={ this.state.form.gender === 'Macho' } onChange={ this.inputsHandler }
                                             type="radio"
                                             label="Macho"
                                             name="gender"
@@ -117,7 +117,7 @@ export default class PetForm extends Component {
                                     </Col>
                                     <Col md={ 4 }>
 
-                                        <Form.Check checked={ this.state.form.gender === 'Hembra' } onChange={ this.inputsHandler }
+                                        <Form.Check style={ { marginTop: '15px' } } checked={ this.state.form.gender === 'Hembra' } onChange={ this.inputsHandler }
                                             type="radio"
                                             label="Hembra"
                                             name="gender"
@@ -137,7 +137,7 @@ export default class PetForm extends Component {
                     this.state.showMoreForm &&
                     <Row className='justify-content-between align-items-center'>
                         <Form.Group as={ Col } md={ 5 }>
-                            <Form.Label htmlFor='activity'>Actividad</Form.Label>
+                            <Form.Label style={ { marginTop: '15px' } } htmlFor='activity'>Actividad</Form.Label>
                             <Form.Control as='select' id='activity' name='activity' value={ this.state.form.activity } onChange={ this.inputsHandler } >
                                 <option value='Desconocida'>Desconocida</option>
                                 <option value='Baja'>Baja</option>
@@ -145,10 +145,10 @@ export default class PetForm extends Component {
                                 <option value='Alta'>Alta</option>
                             </Form.Control>
 
-                            <Form.Label htmlFor='weigth'>Peso</Form.Label>
+                            <Form.Label style={ { marginTop: '15px' } } htmlFor='weigth'>Peso</Form.Label>
                             <Form.Control type='text' id='weigth' name='weigth' value={ this.state.form.weigth } placeholder='Peso en kilos' onChange={ this.inputsHandler } />
 
-                            <Form.Label htmlFor='size'>Tamaño</Form.Label>
+                            <Form.Label style={ { marginTop: '15px' } } htmlFor='size'>Tamaño</Form.Label>
                             <Form.Control as='select' id='size' name='size' value={ this.state.form.activity } onChange={ this.inputsHandler }>
                                 <option value='Mediano'>Mediano</option>
                                 <option value='Pequeño'>Pequeño</option>

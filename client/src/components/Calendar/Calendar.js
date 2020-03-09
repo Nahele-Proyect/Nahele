@@ -1,11 +1,18 @@
 import React, { Component } from "react"
+
 import { Calendar, momentLocalizer } from "react-big-calendar"
 import moment from "moment"
 import "react-big-calendar/lib/css/react-big-calendar.css"
-import { Container, Row, Col, Button, Modal } from "react-bootstrap"
+
+import Button from 'react-bootstrap/Button'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import Modal from 'react-bootstrap/Modal'
+
 import CalendarService from "../../services/calendar.service"
-//Falta algo para obtener los datos de la mascota
 import ScrapServices from '../../services/scrap.service'
+
 import './calendar.css'
 
 const localizer = momentLocalizer(moment)
@@ -26,16 +33,37 @@ class MyCalendar extends Component {
             ],
             showEvents: false
         }
-
         this.ScrapServices = new ScrapServices()
         this.calendarService = new CalendarService()
     }
+
     componentDidMount = () => this.dogInfo()
 
     dogInfo = () => {
         this.ScrapServices.getDetails(this.props.match.params.id)
-            .then(theDog => this.setState({ dog: { ...this.state.dog, ...theDog.pet } }))
+            .then(theDog => {
+                this.setState({ dog: { ...this.state.dog, ...theDog.pet }, showEvents: true }, () => this.showPrevEvents())
+            })
             .catch(err => console.log(err))
+    }
+
+    showPrevEvents = () => {
+        let calendarCopy = [...this.state.mybackup]
+        let a, b, c
+        this.props.loggedInUser.calendar.map(elm => {
+            if (elm.start) {
+                a = elm.start.substr(0, 10)
+                b = elm.title
+                c = elm.end.substr(0, 10)
+            }
+            let aux = {
+                title: `${b}`,
+                start: new Date(`${a} 00:00:00`),
+                end: new Date(`${c} 00:00:00`)
+            }
+            return calendarCopy.push(aux) //ver si esto esta bien
+        })
+        this.setState({ mybackup: calendarCopy })
     }
 
     handleSubmit = e => {
@@ -43,7 +71,7 @@ class MyCalendar extends Component {
         this.calendarService.postCalendar(this.state.myEventsList[0], this.props.match.params.id)
             .then(() => {
                 this.props.fetchUser()
-                this.props.history.push(`/profile`)
+                this.handleClose()
             })
             .catch(err => console.log(err))
     }
@@ -73,15 +101,12 @@ class MyCalendar extends Component {
                         </div>
                         <Row>
                             <Col md={12}>
-                                <div
-                                    style={{ height: "75vh", marginTop: "25px" }}
-                                    className="calendar-container">
+                                <div style={{ height: "75vh", marginTop: "25px" }} className="calendar-container">
                                     <Calendar
                                         localizer={localizer}
                                         events={this.state.mybackup}
                                         startAccessor="start"
-                                        endAccessor="end"
-                                    />
+                                        endAccessor="end" />
                                 </div>
                             </Col>
                         </Row>

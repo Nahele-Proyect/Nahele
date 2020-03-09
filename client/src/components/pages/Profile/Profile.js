@@ -51,17 +51,17 @@ export default class Profile extends Component {
         return (
             <>
                 <Container>
-                    <Row className='justify-content-between'>
+                    <DropdownButton as={ ButtonGroup } title="Editar perfil" id="bg-nested-dropdown">
+                        <Dropdown.Item eventKey="1" onClick={ this.showModalUsername } >Cambiar nombre de usuario</Dropdown.Item>
+                        <Dropdown.Item eventKey="2" onClick={ this.showModalPassword }>Cambiar contraseña</Dropdown.Item>
+                        <Dropdown.Item eventKey="3" onClick={ this.showModalEmail }>Cambiar email</Dropdown.Item>
+                        <Dropdown.Item eventKey="4" onClick={ this.showModalImg }>Cambiar foto de perfil</Dropdown.Item>
+                    </DropdownButton>
+                    <Row className='justify-content-between' style={ { marginTop: '50px' } }>
                         <Col md={ 6 }>
-                            <DropdownButton as={ ButtonGroup } title="Editar perfil" id="bg-nested-dropdown">
-                                <Dropdown.Item eventKey="1" onClick={ this.showModalUsername } >Cambiar nombre de usuario</Dropdown.Item>
-                                <Dropdown.Item eventKey="2" onClick={ this.showModalPassword }>Cambiar contraseña</Dropdown.Item>
-                                <Dropdown.Item eventKey="3" onClick={ this.showModalEmail }>Cambiar email</Dropdown.Item>
-                                <Dropdown.Item eventKey="4" onClick={ this.showModalImg }>Cambiar foto de perfil</Dropdown.Item>
-                            </DropdownButton>
 
                             { this.props.loggedInUser.img ?
-                                <figure><img style={ { width: "100%" } } src={ this.props.loggedInUser.img } alt="Profile Pic" /></figure>
+                                <figure style={ { margin: '0 auto' } } ><img style={ { width: "80%", height: '257px' } } src={ this.props.loggedInUser.img } alt="Profile Pic" /></figure>
                                 :
                                 <h4><i>Podrías añadir una foto de perfil</i></h4> }
                         </Col>

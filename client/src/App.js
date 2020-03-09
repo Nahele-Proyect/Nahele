@@ -60,7 +60,7 @@ class App extends Component {
               <Route path="/join" render={ () => this.state.loggedInUser ? <Join loggedInUser={ this.state.loggedInUser } /> : <Redirect to='/' /> } />
               <Route path="/chat" render={ props => this.state.loggedInUser ? <Chat { ...props } loggedInUser={ this.state.loggedInUser } /> : <Redirect to='/' /> } />
               <Route path="/map" render={ props => <Map { ...props } /> } />
-              <Route path="/newCalendar/:id" render={ props => <Calendar { ...props } fetchUser={ this.fetchUser } /> } />
+              <Route path="/newCalendar/:id" render={ props => <Calendar { ...props } loggedInUser={ this.state.loggedInUser } fetchUser={ this.fetchUser } /> } />
 
             </Switch>
           </>
