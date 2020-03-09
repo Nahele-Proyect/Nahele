@@ -1,0 +1,164 @@
+.pic-profile h2 {
+    font-size: 16px;
+    letter-spacing: -1px;
+    line-height: 20px;
+    color: #747474;
+    text-align: center;
+}
+
+.pic-profile .i {
+    width: 20px;
+    height: 20px;
+}
+
+.pic-profile .i-login {
+    margin: 13px 0px 0px 15px;
+    position: relative;
+    float: left;
+    background-image: url('./../../../../images/pawsRight.png');
+    background-size: 18px 18px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.pic-profile .box {
+    width: 330px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.pic-profile .box-form {
+    width: 320px;
+    position: relative;
+    z-index: 1;
+}
+
+.pic-profile .box-login-tab {
+    width: 50%;
+    height: 40px;
+    background: #fdfdfd;
+    position: relative;
+    float: left;
+    z-index: 1;
+    border-radius: 6px 6px 0 0;
+    transform: perspective(5px) rotateX(0.93deg) translateZ(-1px);
+    transform-origin: 0 0;
+    backface-visibility: hidden;
+    box-shadow: 15px -15px 30px rgba(0, 0, 0, 0.32);
+}
+
+.pic-profile .box-login-title {
+    width: 35%;
+    height: 40px;
+    position: absolute;
+    float: left;
+    z-index: 2;
+}
+
+.pic-profile .box-login {
+    position: relative;
+    top: -4px;
+    width: 320px;
+    background: #fdfdfd;
+    text-align: center;
+    overflow: hidden;
+    z-index: 2;
+    border-top-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    box-shadow: 15px 30px 30px rgba(0, 0, 0, 0.32);
+}
+
+.pic-profile button:focus {
+    outline: 0;
+}
+
+.pic-profile .fieldset-body p {
+    width: 100%;
+    display: inline-table;
+    padding: 5px 20px;
+    margin-bottom: 2px;
+}
+
+.pic-profile label {
+    float: left;
+    width: 100%;
+    top: 0px;
+    color: #032942;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: left;
+    line-height: 1.5;
+    margin-top: 7px;
+}
+
+.pic-profile input[type=file] {
+    width: 100%;
+    height: 32px;
+    padding: 0px 10px;
+    background-color: #00000008;
+    border: none;
+    display: inline-block;
+    color: #303030;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.pic-profile input[type=email]:focus {
+    background-color: #d4eef5;
+    outline: none;
+}
+
+.pic-profile input[type=submit] {
+    width: 100%;
+    height: 48px;
+    margin-top: 15px;
+    padding: 0px 20px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: #fff;
+    line-height: 40px;
+    text-align: center;
+    background-color: #313787;
+    border: 1px #313787 solid;
+    opacity: 1;
+    cursor: pointer;
+    transition: all .5s ease-in;
+}
+
+.pic-profile input[type=submit]:hover {
+    background-color: #40a5df;
+    border: 1px #40a5df solid;
+}
+
+.pic-profile input[type=submit]:focus {
+    outline: none;
+}
+
+.pic-profile p.field span.i {
+    width: 24px;
+    height: 24px;
+    float: right;
+    position: relative;
+    margin-top: -26px;
+    right: 2px;
+    z-index: 2;
+    display: none;
+}
+
+.pic-profile .link {
+    color: blue;
+    margin-top: 10px;
+}
+
+.pic-profile .link:hover {
+    cursor: pointer;
+
+}
+
+.pic-profile .failureError {
+    color: red;
+}

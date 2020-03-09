@@ -53,7 +53,7 @@ class ImgForm extends Component {
     render() {
 
         return (
-            <div className='email'>
+            <div className='pic-profile'>
                 <form id="form-container" onSubmit={this.handleSubmit}>
                     <div className='box'>
                         <div className='box-form'>
@@ -67,7 +67,7 @@ class ImgForm extends Component {
                                 <div className='fieldset-body' id='login_form'>
                                     <p className='field'>
                                         <label htmlFor='imageUrl'>Foto de perfil</label>
-                                        <input type='file' id='imageUrl' name='imageUrl' title='Sube una foto de perfil' onChange={this.handleFileUpload} />
+                                        <input style={{ color: 'transparent' }} type='file' id='imageUrl' name='imageUrl' title='Sube una foto de perfil' onChange={this.handleFileUpload} />
                                     </p>
                                     <p className='failureError'> {this.state.errorMessage}</p>
                                     <p className='link account-message aux-mes' onClick={this.props.closeModal} >Volver atrás</p>

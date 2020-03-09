@@ -42,6 +42,7 @@ router.post('/new/:id', (req, res) => {
 })
 
 router.delete('/delete/:ID', (req, res) => {
+
     Calendar.findByIdAndDelete(req.params.ID)
         .then(deletedCalendar => deletedCalendar._id)
         .then(calendarId => User.findByIdAndUpdate(req.user._id, {
@@ -50,7 +51,7 @@ router.delete('/delete/:ID', (req, res) => {
             }
         }, {
             new: true
-        }))
+        }).populate('calendar'))
         .then(user =>
             res.json({
                 status: 'ok',
@@ -58,4 +59,5 @@ router.delete('/delete/:ID', (req, res) => {
             }))
         .catch(err => console.log(`Ha habido un error eliminando la montaña rusa de la BBDD ${err}`))
 })
+
 module.exports = router
