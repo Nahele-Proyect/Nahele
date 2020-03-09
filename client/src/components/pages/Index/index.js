@@ -70,11 +70,11 @@ export default class Index extends Component {
 
                     { this.state.pets &&
                         <>
-                            <Modal size='md' centered show={ this.state.showGraficModal } onHide={ this.closeModal } animation={ true }>
+                            <Modal size='lg' centered show={ this.state.showGraficModal } onHide={ this.closeModal } animation={ true }>
                                 <IndexChart pets={ this.state.pets } closeModal={ this.closeModal } />
                             </Modal>
 
-                            <Button onClick={ this.openGraficModal } >Ver Grafico</Button></> }
+                            <Button onClick={ this.openGraficModal } >Ver porcentajes</Button></> }
 
                     { this.state.pets ?
                         <Row>

@@ -17,26 +17,26 @@ class myDate extends Component {
 
         return (
 
-            <Card style={{ height: "auto", backgroundColor: "rgba(255,255, 255, 0.5)", width: '70%', margin: '0 auto' }}>
+            <Card style={ { height: "auto", backgroundColor: "rgba(255,255, 255, 0.5)", width: '70%', margin: '0 auto', marginBottom: '25px' } }>
                 <Card.Body >
-                    <Card.Title style={{ textAlign: "center" }}>
+                    <Card.Title style={ { textAlign: "center" } }>
                         <h4>CALENDARIO DE CITAS</h4>
                     </Card.Title>
-                    <Card.Text as={'div'} style={{ height: "25vh", textAlign: "center", overflowY: "scroll", backgroundColor: '#00000008' }}>
+                    <Card.Text as={ 'div' } style={ { height: "25vh", textAlign: "center", overflowY: "scroll", backgroundColor: '#00000008' } }>
 
-                        {this.props.loggedInUser.calendar &&
+                        { this.props.loggedInUser.calendar &&
                             this.props.loggedInUser.calendar.map((elm, idx) => (
-                                <div key={idx}>
-                                    {console.log(elm)}
-                                    <p><strong>Título: </strong>{elm.title}</p>
-                                    <p><strong>Fecha de inicio: </strong>{elm.start && (elm.start.substr(0, 10))}</p>
-                                    <p><strong>Fecha fin: </strong>{elm.end && (elm.end.substr(0, 10))}</p>
+                                <div key={ idx }>
+                                    { console.log(elm) }
+                                    <p><strong>Título: </strong>{ elm.title }</p>
+                                    <p><strong>Fecha de inicio: </strong>{ elm.start && (elm.start.substr(0, 10)) }</p>
+                                    <p><strong>Fecha fin: </strong>{ elm.end && (elm.end.substr(0, 10)) }</p>
 
-                                    <Link to={`/details/${elm.petsUrl}`}>Ir a la mascota</Link>
-                                    <Button onClick={() => this.deleteCalendar(elm._id)} >Eliminar</Button>
+                                    <Link to={ `/details/${elm.petsUrl}` }>Ir a la mascota</Link>
+                                    <Button onClick={ () => this.deleteCalendar(elm._id) } >Eliminar</Button>
                                     <hr />
                                 </div>
-                            ))}
+                            )) }
 
                     </Card.Text>
                 </Card.Body>
