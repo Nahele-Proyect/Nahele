@@ -73,7 +73,6 @@ export default class Profile extends Component {
                             <PetList setTheUser={ this.props.setTheUser } loggedInUser={ this.props.loggedInUser } />
                         </Col>
                     </Row>
-                    <Button color="primary" onClick={ this.petFormChange }>{ this.state.showPetForm ? 'Ocultar formulario' : 'Crear nueva mascota' }</Button>
 
                     <Button style={ { marginTop: '10px' } } onClick={ this.petFormChange }>{ this.state.showPetForm ? 'Ocultar formulario' : 'Dar en adopción' }</Button>
                 </Container>
