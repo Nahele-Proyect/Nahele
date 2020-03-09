@@ -1,5 +1,15 @@
 .messages {
+
   padding: 5% 0;
   overflow: auto;
   flex: auto;
+}
+
+.messages .css-1qyrjaz {
+  background-image: url('../../../images/downArrow.png');
+  object-fit: contain;
+  width: 20px;
+  height: 25px;
+  background-repeat: no-repeat;
+  background-position: center;
 }
