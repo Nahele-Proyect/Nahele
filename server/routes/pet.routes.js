@@ -31,7 +31,7 @@ router.post('/new', (req, res) => {
 
     Pet.create(req.body)
         .then(newPet => newPet._id)
-        .then(newPetId => User.findByIdAndUpdate(req.user._id, { $push: { pets: newPetId } }, { new: true }).populate('pets'))
+        .then(newPetId => User.findByIdAndUpdate(req.user._id, { $push: { pets: newPetId } }, { new: true }).populate('pets').populate('calendar'))
         .then(user => res.json({ status: 'ok', user }))
         .catch(err => console.log(err))
 })
@@ -54,6 +54,14 @@ router.get('/find/:id', (req, res) => {
 
     Pet.findById(req.params.id)
         .then(foundDog => res.json({ status: 'ok', pet: foundDog }))
+        .catch(err => console.log(err))
+})
+
+router.delete('/delete/:id', (req, res) => {
+
+    Pet.findByIdAndDelete(req.params.id)
+        .then(deletedPet => User.findByIdAndUpdate(req.user._id, { $pull: { pets: deletedPet._id } }).populate('calendar').populate('pets'))
+        .then(user => res.json({ status: 'ok', user }))
         .catch(err => console.log(err))
 })
 

@@ -30,6 +30,7 @@ router.post('/new/:id', (req, res) => {
                 new: true
             })
                 .populate('calendar')
+                .populate('pets')
                 .then(theUser => res.json({
                     theCalendar,
                     theUser
@@ -51,7 +52,7 @@ router.delete('/delete/:ID', (req, res) => {
             }
         }, {
             new: true
-        }).populate('calendar'))
+        }).populate('calendar').populate('pets'))
         .then(user =>
             res.json({
                 status: 'ok',

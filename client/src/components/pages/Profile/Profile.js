@@ -61,18 +61,18 @@ export default class Profile extends Component {
                         <Col md={ 6 }>
 
                             { this.props.loggedInUser.img ?
-                                <figure style={ { margin: '0 auto' } } ><img style={ { width: "80%", height: '257px' } } src={ this.props.loggedInUser.img } alt="Profile Pic" /></figure>
+                                <figure style={ { margin: '0 auto' } } ><img style={ { objectFit: 'cover', height: '400px' } } src={ this.props.loggedInUser.img } alt="Profile Pic" /></figure>
                                 :
                                 <h4><i>Podrías añadir una foto de perfil</i></h4> }
                         </Col>
 
                         <Col md={ 6 }>
                             <MyDate { ...this.props } />
-                            <PetList loggedInUser={ this.props.loggedInUser } />
+                            <PetList loggedInUser={ this.props.loggedInUser } setTheUser={ this.props.setTheUser } />
                         </Col>
                     </Row>
-                    <Button onClick={ this.petFormChange }>{ this.state.showPetForm ? 'Ocultar formulario' : 'Crear nueva mascota' }</Button>
 
+                    <Button style={ { marginTop: '10px' } } onClick={ this.petFormChange }>{ this.state.showPetForm ? 'Ocultar formulario' : 'Dar en adopción' }</Button>
                 </Container>
 
                 <Modal size='sm' centered show={ this.state.showModalUsername } onHide={ this.closeModal } animation={ true }>
