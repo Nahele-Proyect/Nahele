@@ -70,7 +70,7 @@ export default class Profile extends Component {
 
                         <Col md={ 6 }>
                             <MyDate { ...this.props } />
-                            <PetList loggedInUser={ this.props.loggedInUser } />
+                            <PetList setTheUser={ this.props.setTheUser } loggedInUser={ this.props.loggedInUser } />
                         </Col>
                     </Row>
                     <Button color="primary" onClick={ this.petFormChange }>{ this.state.showPetForm ? 'Ocultar formulario' : 'Crear nueva mascota' }</Button>
