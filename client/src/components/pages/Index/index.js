@@ -68,31 +68,27 @@ export default class Index extends Component {
             <div className='index'>
                 <Container>
 
-                    { this.state.pets &&
+                    {this.state.pets &&
                         <>
-                            <Filter changeFilters={ this.changeFilters } />
+                            <Filter changeFilters={this.changeFilters} />
+                            <Button onClick={this.openGraficModal} >Ver porcentajes</Button></>}
 
-
-
-
-                            <Button onClick={ this.openGraficModal } >Ver porcentajes</Button></> }
-
-                    { this.state.pets ?
+                    {this.state.pets ?
                         <Row>
-                            { this.filtered.length === 0 ?
+                            {this.filtered.length === 0 ?
                                 <h1>No hay ahora mismo mascotas con esos filtros</h1>
                                 :
-                                this.filtered.map((elm, idx) => <Col lg="3" md='4' sm='6' key={ idx }><PetCard { ...elm }></PetCard></Col>) }
+                                this.filtered.map((elm, idx) => <Col lg="3" md='4' sm='6' key={idx}><PetCard {...elm}></PetCard></Col>)}
                         </Row>
                         :
                         <>
-                            <Loader style={ { display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '80vh' } } type="Rings" color="red" height={ 250 } width={ 250 } timeout={ 10000 } />
+                            <Loader style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '80vh' }} type="Rings" color="red" height={250} width={250} timeout={10000} />
 
                         </>
                     }
 
-                    <Modal size='lg' centered show={ this.state.showGraficModal } onHide={ this.closeModal } animation={ true }>
-                        <IndexChart pets={ this.state.pets } closeModal={ this.closeModal } />
+                    <Modal size='lg' centered show={this.state.showGraficModal} onHide={this.closeModal} animation={true}>
+                        <IndexChart pets={this.state.pets} closeModal={this.closeModal} />
                     </Modal>
                 </Container>
             </div>

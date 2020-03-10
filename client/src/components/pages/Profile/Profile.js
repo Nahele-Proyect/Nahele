@@ -10,6 +10,8 @@ import Dropdown from 'react-bootstrap/Dropdown'
 import DropdownButton from 'react-bootstrap/DropdownButton'
 import Container from 'react-bootstrap/Container'
 import Image from 'react-bootstrap/Image'
+import Accordion from 'react-bootstrap/Accordion'
+import Card from 'react-bootstrap/Card'
 //Sevices imports
 import FilesServices from '../../../services/files.service'
 import AuthServices from '../../../services/auth.service'
@@ -21,6 +23,9 @@ import ImgForm from './ImgForm/ImgForm'
 import PetForm from './PetForm/PetForm'
 import MyDate from './myDateComponent/myDate'
 import PetList from './PetsList/PetList'
+//Self-made css import
+import './Profile.css'
+
 
 
 
@@ -54,47 +59,65 @@ export default class Profile extends Component {
         return (
             <>
                 <Container>
-                    <DropdownButton as={ ButtonGroup } title="Editar perfil" id="bg-nested-dropdown">
-                        <Dropdown.Item eventKey="1" onClick={ this.showModalUsername } >Cambiar nombre de usuario</Dropdown.Item>
-                        <Dropdown.Item eventKey="2" onClick={ this.showModalPassword }>Cambiar contraseña</Dropdown.Item>
-                        <Dropdown.Item eventKey="3" onClick={ this.showModalEmail }>Cambiar email</Dropdown.Item>
-                        <Dropdown.Item eventKey="4" onClick={ this.showModalImg }>Cambiar foto de perfil</Dropdown.Item>
+                    <DropdownButton as={ButtonGroup} title="Editar perfil" id="bg-nested-dropdown">
+                        <Dropdown.Item eventKey="1" >Cambiar nombre de usuario</Dropdown.Item>
+                        <Dropdown.Item eventKey="2" onClick={this.showModalPassword}>Cambiar contraseña</Dropdown.Item>
+                        <Dropdown.Item eventKey="3" onClick={this.showModalEmail}>Cambiar email</Dropdown.Item>
+                        <Dropdown.Item eventKey="4" onClick={this.showModalImg}>Cambiar foto de perfil</Dropdown.Item>
                     </DropdownButton>
-                    <Row className='justify-content-between' style={ { marginTop: '50px' } }>
-                        <Col md={ 6 }>
+                    <Accordion defaultActiveKey="0">
+                        <Card>
+                            <Card.Header style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                <Accordion.Toggle style={{ margin: '0 auto' }} as={Button} variant="link" eventKey="0">Ajustes</Accordion.Toggle>
+                            </Card.Header>
+                            <Accordion.Collapse eventKey="0">
+                                <Card.Body style={{ display: 'flex', justifyContent: 'space-between' }}>
+                                    <p className='options' onClick={this.showModalUsername}>Cambiar nombre de usuario</p>
+                                    <p className='options' onClick={this.showModalPassword}>Cambiar Contraseña</p>
+                                    <p className='options' onClick={this.showModalEmail}>Cambiar email</p>
+                                    <p className='options' onClick={this.showModalImg}>Cambiar foto de perfil</p>
 
-                            { this.props.loggedInUser.img ?
-                                <figure style={ { margin: '0 auto' } } ><Image style={ { objectFit: 'cover', height: '400px', width: '80%' } } src={ this.props.loggedInUser.img } alt="Profile Pic" roundedCircle /></figure>
+                                </Card.Body>
+                            </Accordion.Collapse>
+
+                        </Card>
+
+                    </Accordion>
+                    <Row className='justify-content-between' style={{ marginTop: '50px' }}>
+                        <Col md={6}>
+
+                            {this.props.loggedInUser.img ?
+                                <figure style={{ margin: '0 auto' }} ><Image style={{ objectFit: 'cover', height: '400px', width: '80%' }} src={this.props.loggedInUser.img} alt="Profile Pic" roundedCircle /></figure>
                                 :
                                 <>
-                                    <figure><Image style={ { objectFit: 'cover', height: '400px', width: '80%' } } src='./suited-dog.jpg' alt='default' roundedCircle /></figure>
+                                    <figure><Image style={{ objectFit: 'cover', height: '400px', width: '80%' }} src='./suited-dog.jpg' alt='default' roundedCircle /></figure>
                                     <h4><i>Podrías añadir una foto de perfil</i></h4>
-                                </> }
+                                </>}
                         </Col>
 
-                        <Col md={ 6 }>
-                            <MyDate { ...this.props } />
-                            <PetList setTheUser={ this.props.setTheUser } loggedInUser={ this.props.loggedInUser } />
+                        <Col md={6}>
+                            <MyDate {...this.props} />
+                            <PetList setTheUser={this.props.setTheUser} loggedInUser={this.props.loggedInUser} />
                         </Col>
                     </Row>
 
-                    <Button style={ { marginTop: '10px' } } onClick={ this.petFormChange }>{ this.state.showPetForm ? 'Ocultar formulario' : 'Dar en adopción' }</Button>
+                    <Button style={{ marginTop: '10px' }} onClick={this.petFormChange}>{this.state.showPetForm ? 'Ocultar formulario' : 'Dar en adopción'}</Button>
                 </Container>
 
-                <Modal size='sm' centered show={ this.state.showModalUsername } onHide={ this.closeModal } animation={ true }>
-                    <ProfileForm setTheUser={ this.props.setTheUser } loggedInUser={ this.props.loggedInUser } closeModal={ this.closeModal } />
+                <Modal size='sm' centered show={this.state.showModalUsername} onHide={this.closeModal} animation={true}>
+                    <ProfileForm setTheUser={this.props.setTheUser} loggedInUser={this.props.loggedInUser} closeModal={this.closeModal} />
                 </Modal>
-                <Modal size='sm' centered show={ this.state.showModalPassword } onHide={ this.closeModal } animation={ true }>
-                    <PasswordForm setTheUser={ this.props.setTheUser } loggedInUser={ this.props.loggedInUser } closeModal={ this.closeModal } />
+                <Modal size='sm' centered show={this.state.showModalPassword} onHide={this.closeModal} animation={true}>
+                    <PasswordForm setTheUser={this.props.setTheUser} loggedInUser={this.props.loggedInUser} closeModal={this.closeModal} />
                 </Modal>
-                <Modal size='sm' centered show={ this.state.showModalEmail } onHide={ this.closeModal } animation={ true }>
-                    <EmailForm setTheUser={ this.props.setTheUser } loggedInUser={ this.props.loggedInUser } closeModal={ this.closeModal } />
+                <Modal size='sm' centered show={this.state.showModalEmail} onHide={this.closeModal} animation={true}>
+                    <EmailForm setTheUser={this.props.setTheUser} loggedInUser={this.props.loggedInUser} closeModal={this.closeModal} />
                 </Modal>
-                <Modal size='sm' centered show={ this.state.showModalImg } onHide={ this.closeModal } animation={ true }>
-                    <ImgForm setTheUser={ this.props.setTheUser } loggedInUser={ this.props.loggedInUser } closeModal={ this.closeModal } />
+                <Modal size='sm' centered show={this.state.showModalImg} onHide={this.closeModal} animation={true}>
+                    <ImgForm setTheUser={this.props.setTheUser} loggedInUser={this.props.loggedInUser} closeModal={this.closeModal} />
                 </Modal>
 
-                { this.state.showPetForm && <Container ><PetForm petFormChange={ this.petFormChange } setTheUser={ this.props.setTheUser } loggedInUser={ this.props.loggedInUser } /></Container> }
+                {this.state.showPetForm && <Container ><PetForm petFormChange={this.petFormChange} setTheUser={this.props.setTheUser} loggedInUser={this.props.loggedInUser} /></Container>}
 
             </>
         )
