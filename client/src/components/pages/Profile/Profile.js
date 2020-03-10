@@ -9,6 +9,7 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import Dropdown from 'react-bootstrap/Dropdown'
 import DropdownButton from 'react-bootstrap/DropdownButton'
 import Container from 'react-bootstrap/Container'
+import Image from 'react-bootstrap/Image'
 //Sevices imports
 import FilesServices from '../../../services/files.service'
 import AuthServices from '../../../services/auth.service'
@@ -63,7 +64,7 @@ export default class Profile extends Component {
                         <Col md={6}>
 
                             {this.props.loggedInUser.img ?
-                                <figure style={{ margin: '0 auto' }} ><img style={{ objectFit: 'cover', height: '400px', width: '100%' }} src={this.props.loggedInUser.img} alt="Profile Pic" /></figure>
+                                <figure style={{ margin: '0 auto' }} ><Image style={{ objectFit: 'cover', height: '400px', width: '80%' }} src={this.props.loggedInUser.img} alt="Profile Pic" roundedCircle /></figure>
                                 :
                                 <h4><i>Podrías añadir una foto de perfil</i></h4>}
                         </Col>

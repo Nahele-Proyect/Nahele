@@ -70,14 +70,10 @@ export default class Index extends Component {
 
                     {this.state.pets &&
                         <>
-                            <Row>
-                                <Col >
-                                    <Filter changeFilters={this.changeFilters} />
-                                </Col>
-                            </Row>
-                            <Modal size='lg' centered show={this.state.showGraficModal} onHide={this.closeModal} animation={true}>
-                                <IndexChart pets={this.state.pets} closeModal={this.closeModal} />
-                            </Modal>
+                            <Filter changeFilters={this.changeFilters} />
+
+
+
 
                             <Button onClick={this.openGraficModal} >Ver porcentajes</Button></>}
 
@@ -95,6 +91,9 @@ export default class Index extends Component {
                         </>
                     }
 
+                    <Modal size='lg' centered show={this.state.showGraficModal} onHide={this.closeModal} animation={true}>
+                        <IndexChart pets={this.state.pets} closeModal={this.closeModal} />
+                    </Modal>
                 </Container>
             </div>
         )
