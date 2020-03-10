@@ -1,5 +1,6 @@
+//React import
 import React from 'react'
-
+//Self-made css import 
 import './Input.css'
 
 const Input = ({ setMessage, sendMessage, message }) => (

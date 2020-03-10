@@ -1,6 +1,6 @@
 //React imoprts
 import React, { Component } from 'react'
-//Bootstrao imorts
+//Bootstrap imports
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -13,6 +13,9 @@ import PetCard from './petCard/PetCard'
 import Filter from './Filter/Filter'
 import IndexChart from '../../Charts/IndexChart/IndexChart'
 
+// Spinner
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
+import Loader from 'react-loader-spinner'
 
 export default class Index extends Component {
     constructor(props) {
@@ -48,6 +51,7 @@ export default class Index extends Component {
     openGraficModal = () => this.setState({ showGraficModal: true })
 
     render() {
+
         //This filter by the filter state
         if (this.state.pets) {
             this.filtered = [...this.state.pets]
@@ -63,29 +67,32 @@ export default class Index extends Component {
         return (
             <div className='index'>
                 <Container>
-                    <Row>
-                        <Col >
-                            <Filter changeFilters={ this.changeFilters } />
-                        </Col>
-                    </Row>
 
-                    { this.state.pets &&
+                    {this.state.pets &&
                         <>
-                            <Modal size='lg' centered show={ this.state.showGraficModal } onHide={ this.closeModal } animation={ true }>
-                                <IndexChart pets={ this.state.pets } closeModal={ this.closeModal } />
+                            <Row>
+                                <Col >
+                                    <Filter changeFilters={this.changeFilters} />
+                                </Col>
+                            </Row>
+                            <Modal size='lg' centered show={this.state.showGraficModal} onHide={this.closeModal} animation={true}>
+                                <IndexChart pets={this.state.pets} closeModal={this.closeModal} />
                             </Modal>
 
-                            <Button onClick={ this.openGraficModal } >Ver porcentajes</Button></> }
+                            <Button onClick={this.openGraficModal} >Ver porcentajes</Button></>}
 
-                    { this.state.pets ?
+                    {this.state.pets ?
                         <Row>
-                            { this.filtered.length === 0 ?
+                            {this.filtered.length === 0 ?
                                 <h1>No hay ahora mismo mascotas con esos filtros</h1>
                                 :
-                                this.filtered.map((elm, idx) => <Col md="3" key={ idx }><PetCard { ...elm }></PetCard></Col>) }
+                                this.filtered.map((elm, idx) => <Col lg="3" md='4' sm='6' key={idx}><PetCard {...elm}></PetCard></Col>)}
                         </Row>
                         :
-                        <figure style={ { display: 'flex', minHeight: '80vh', justifyContent: 'center', alignItems: 'center' } }><img src='./dancing-dog.gif' /></figure>
+                        <>
+                            <Loader style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '80vh' }} type="Rings" color="red" height={250} width={250} timeout={10000} />
+
+                        </>
                     }
 
                 </Container>

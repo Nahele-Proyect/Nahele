@@ -1,7 +1,8 @@
+//React import
 import React from 'react'
-
+//Self-made css import
 import './Message.css'
-
+//ReactEmoji import
 import ReactEmoji from 'react-emoji'
 
 const Message = ({ message: { text, user }, name }) => {

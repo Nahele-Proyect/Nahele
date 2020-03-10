@@ -13,6 +13,9 @@ import Join from './components/ChatComponent/Join/Join'
 import Map from './components/GoogleMaps/GoogleMaps'
 import Calendar from './components/Calendar/Calendar'
 
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
+import Loader from 'react-loader-spinner'
+
 
 import BasicChart from './components/Charts/basicChart/BasicChart'
 
@@ -65,7 +68,7 @@ class App extends Component {
             </Switch>
           </>
           :
-          <h1>Cargando</h1>
+          <Loader style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '80vh' }} type="Rings" color="red" height={250} width={250} timeout={10000} />
         }
       </>
     )

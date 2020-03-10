@@ -1,7 +1,8 @@
+//React import
 import React from 'react'
-
+//Image import
 import onlineIcon from '../../../images/onlineIcon.png'
-
+//Self-made css import
 import './TextContainer.css'
 
 const TextContainer = ({ users }) => (

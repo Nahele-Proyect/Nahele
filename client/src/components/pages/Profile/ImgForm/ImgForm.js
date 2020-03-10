@@ -1,9 +1,10 @@
+//React imports
 import React, { Component } from 'react'
-
-import './ImgForm.css'
-
+//Services import
 import FilesServices from '../../../../services/files.service'
 import AuthServices from '../../../../services/auth.service'
+//Self-made css import
+import './ImgForm.css'
 
 class ImgForm extends Component {
 

@@ -1,7 +1,8 @@
+//React imports
 import React, { Component } from 'react'
-
+//Sevices imports
 import AuthServices from '../../../services/auth.service'
-
+//Self-made css imports
 import './FormSignupModal.css'
 
 export default class SignupForm extends Component {
