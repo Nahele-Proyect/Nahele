@@ -65,7 +65,10 @@ export default class Profile extends Component {
                             { this.props.loggedInUser.img ?
                                 <figure style={ { margin: '0 auto' } } ><img style={ { objectFit: 'cover', height: '400px' } } src={ this.props.loggedInUser.img } alt="Profile Pic" /></figure>
                                 :
-                                <h4><i>Podrías añadir una foto de perfil</i></h4> }
+                                <>
+                                    <figure><img src='./suited-dog.jpg' alt='default' /></figure>
+                                    <h4><i>Podrías añadir una foto de perfil</i></h4>
+                                </> }
                         </Col>
 
                         <Col md={ 6 }>

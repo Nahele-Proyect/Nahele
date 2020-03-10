@@ -85,7 +85,7 @@ export default class Index extends Component {
                                 this.filtered.map((elm, idx) => <Col md="3" key={ idx }><PetCard { ...elm }></PetCard></Col>) }
                         </Row>
                         :
-                        <figure style={ { display: 'flex', minHeight: '80vh', justifyContent: 'center', alignItems: 'center' } }><img src='./dancing-dog.gif' /></figure>
+                        <figure style={ { display: 'flex', minHeight: '80vh', justifyContent: 'center', alignItems: 'center' } }><img src='./dancing-dog.gif' alt='funny dog' /></figure>
                     }
 
                 </Container>

@@ -1,13 +1,20 @@
+/*<--These routes get scraped info from petshelter-->*/
+
+//Express imports
 const express = require('express')
 const router = express.Router()
+//axios import
 const axios = require('axios')
+//Cheerio import
 const cheerio = require('cheerio')
 
+//Axiosapp creation with a base url (for the scraping)
 const axiosApp = axios.create({
     baseURL: 'https://petshelter.miwuki.com'
 })
 
-router.get('/', (req, res) => {
+router.get('/', (req, res) => { //Gets main page info
+    //All the filds tha will be scraped (prevents errors)
     const names = []
     const imgs = []
     const links = []
@@ -16,35 +23,36 @@ router.get('/', (req, res) => {
     const flags = []
     const citys = []
 
-    axiosApp.get('/')
+    axiosApp.get('/')   //Get the page
         .then(response => {
-            const $ = cheerio.load(response.data)
+            const $ = cheerio.load(response.data) //Load the html info
 
-            $('img').each((idx, image) => {
+            $('img').each((idx, image) => { //img scraping
 
+                //get the flag image
                 if (image.attribs.src.includes('.svg') &&
                     !image.attribs.src.includes('fav') &&
                     !image.attribs.src.includes('invisible')
                 ) flags.push(image.attribs.src)
 
-                if (
-                    image.attribs.src !== undefined &&
+                //get the pet image
+                if (image.attribs.src !== undefined &&
                     !image.attribs.src.includes('.svg') &&
                     !image.attribs.src.includes('.png')
                 ) imgs.push(image.attribs.src)
             })
 
-            $('.m-animal__nombre').each((idx, name) => names.push(name.children[0].data))
+            $('.m-animal__nombre').each((idx, name) => names.push(name.children[0].data))   //gets the name
 
-            $('.m-portlet a').each((idx, link) => links.push('/' + link.attribs.href))
+            $('.m-portlet a').each((idx, link) => links.push('/' + link.attribs.href))      //gets the link
 
-            $('.m-animal__especie').each((idx, specie) => species.push(specie.children[0].data))
+            $('.m-animal__especie').each((idx, specie) => species.push(specie.children[0].data))//gets the specie
 
-            $('.m-portlet__foot').each((idx, urgency) => urgencys.push(urgency.children[0].data))
+            $('.m-portlet__foot').each((idx, urgency) => urgencys.push(urgency.children[0].data))//gets the urgency
 
-            $('.info span').each((idx, city) => citys.push(city.children[0].data))
+            $('.info span').each((idx, city) => citys.push(city.children[0].data))      //gets the city
 
-            return names.map((elm, idx) => {
+            return names.map((elm, idx) => { //returns an array with all the scraped pets
                 return {
                     name: elm.trim(),
                     img: imgs[idx].trim(),
@@ -56,20 +64,20 @@ router.get('/', (req, res) => {
                 }
             })
 
-        }).then(pets => res.json({ status: 'ok', pets }))
+        }).then(pets => res.json({ status: 'ok', pets }))   //send the scraped pets array to the front
         .catch(err => console.log(err))
 })
 
-router.get('/details/:code', (req, res) => {
+router.get('/details/:code', (req, res) => {    //gets the animal details (fron the url already scraped)
     const pet = { personality: [] }
 
-    axiosApp.get('/' + req.params.code)
+    axiosApp.get('/' + req.params.code) //get the page
         .then(response => {
-            const $ = cheerio.load(response.data)
+            const $ = cheerio.load(response.data)   //load the html
 
-            $('.m-portlet__head img').each((idx, image) => !image.attribs.src.includes('.svg') && (pet.img = image.attribs.src.trim()))
+            $('.m-portlet__head img').each((idx, image) => !image.attribs.src.includes('.svg') && (pet.img = image.attribs.src.trim())) //get the img
 
-            $('#nombre').each((idx, name) => pet.name = name.children[0].data.trim())
+            $('#nombre').each((idx, name) => pet.name = name.children[0].data.trim()) //get the name
 
             $('.m-list-timeline__time').each((idx, data) => {
 
@@ -115,7 +123,7 @@ router.get('/details/:code', (req, res) => {
                 }
             })
 
-        }).then(() => res.json({ status: 'ok', pet }))
+        }).then(() => res.json({ status: 'ok', pet })) //returns the scraped details info to the front
         .catch(err => console.log(err))
 })
 

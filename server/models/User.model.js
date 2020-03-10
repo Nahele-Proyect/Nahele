@@ -1,6 +1,7 @@
+//mongoose imports
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
-
+//user schema
 const userSchema = new Schema({
   username: String,
   password: String,

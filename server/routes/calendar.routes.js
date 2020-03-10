@@ -1,10 +1,11 @@
+//Express imports
 const express = require('express')
 const router = express.Router()
-
+//Models imports
 const Calendar = require('../models/Calendar.model')
 const User = require('../models/User.model')
 
-router.post('/new/:id', (req, res) => {
+router.post('/new/:id', (req, res) => { //Create a new calendar event
     const user = req.user._id
 
     const urlPet = req.params.id
@@ -14,14 +15,14 @@ router.post('/new/:id', (req, res) => {
         end
     } = req.body
 
-    Calendar.create({
+    Calendar.create({   //Create calendar event
         title,
         start,
         end,
         user: user,
         petsUrl: urlPet
     })
-        .then(theCalendar => {
+        .then(theCalendar => {  //Link with user calendar events
             User.findByIdAndUpdate(req.user._id, {
                 $addToSet: {
                     calendar: theCalendar._id
@@ -29,9 +30,9 @@ router.post('/new/:id', (req, res) => {
             }, {
                 new: true
             })
-                .populate('calendar')
+                .populate('calendar')   //Populate all user fields
                 .populate('pets')
-                .then(theUser => res.json({
+                .then(theUser => res.json({ //Send completed user to refresh user in front
                     theCalendar,
                     theUser
                 }))
@@ -42,18 +43,18 @@ router.post('/new/:id', (req, res) => {
 
 })
 
-router.delete('/delete/:ID', (req, res) => {
+router.delete('/delete/:ID', (req, res) => {    //Delete an event from the calendar
 
-    Calendar.findByIdAndDelete(req.params.ID)
+    Calendar.findByIdAndDelete(req.params.ID)   //Deletes from the calendar collection
         .then(deletedCalendar => deletedCalendar._id)
-        .then(calendarId => User.findByIdAndUpdate(req.user._id, {
+        .then(calendarId => User.findByIdAndUpdate(req.user._id, {  //Delete from the user field calendar
             $pull: {
                 calendar: calendarId
             }
         }, {
             new: true
-        }).populate('calendar').populate('pets'))
-        .then(user =>
+        }).populate('calendar').populate('pets'))   //Populate both fields to have all the current field populated
+        .then(user =>   //Sends the user current info to the front
             res.json({
                 status: 'ok',
                 user

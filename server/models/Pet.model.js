@@ -1,6 +1,7 @@
+//mongoose imports
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
-
+//pet shechema (scraped and self-made pets)
 const petSchema = new Schema({
     name: { type: String, required: true },
     img: { type: String, required: true },

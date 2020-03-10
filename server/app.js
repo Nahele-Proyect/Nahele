@@ -1,13 +1,17 @@
+//dotenv config
 require('dotenv').config()
+//mongooseconfig
 require('./configs/mongoose.config')
-
+//Express imports
 const express = require('express')
 const app = express();
 
+//Middleware imports
 require('./configs/middleware.config')(app)
 require('./configs/locals.config')(app)
 require('./configs/session.config')(app)
 
+//Base URLs
 app.use('/api/auth', require('./routes/auth.routes'))
 app.use('/api/files', require('./routes/files.routes'))
 app.use('/api/scrap', require('./routes/scrap.routes'))

@@ -1,9 +1,13 @@
+//Express imports
 const express = require('express')
 const authRoutes = express.Router()
+//Mailer imports
 const sendMail = require('../configs/mailer.config').welcomeMail
 const changeEmail = require('../configs/mailer.config').newEmail
+//Validation imoports
 const passport = require('passport')
 const bcrypt = require('bcryptjs')
+//Models imports
 const User = require('../models/User.model')
 
 authRoutes.post('/signup', (req, res, next) => {
@@ -15,7 +19,7 @@ authRoutes.post('/signup', (req, res, next) => {
         email
     } = req.body
 
-    if (!username) {
+    if (!username) {    //username fild validation
         res.json({
             message: 'Porfavor, introduzca nombre de usuario.',
             status: 'fail'
@@ -23,7 +27,7 @@ authRoutes.post('/signup', (req, res, next) => {
         return
     }
 
-    if (!password) {
+    if (!password) {    //password field validation
         res.json({
             message: 'Porfavor, introduzca contraseña.',
             status: 'fail'
@@ -31,14 +35,14 @@ authRoutes.post('/signup', (req, res, next) => {
         return
     }
 
-    if (password != confirmPassword) {
+    if (password != confirmPassword) {  //pasword second validation
         res.json({
             message: 'Las contraseñas no coinciden.',
             status: 'fail'
         })
     }
 
-    if (!email) {
+    if (!email) {   //email validation
         res.json({
             message: 'Porfavor, introduzca correo electrónico.',
             status: 'fail'
@@ -46,7 +50,7 @@ authRoutes.post('/signup', (req, res, next) => {
         return
     }
 
-    if (!email.match(/^\S+@\S+\.\S+$/)) {
+    if (!email.match(/^\S+@\S+\.\S+$/)) {   //email match validation
         res.json({
             message: 'Introduce una dirección de correo válida',
             status: 'fail'
@@ -54,7 +58,7 @@ authRoutes.post('/signup', (req, res, next) => {
         return
     }
 
-    if (password.length < 6) {
+    if (password.length < 6) {  //password length validation
         res.json({
             message: 'La contraseña debe tener al menos 8 carácteres.',
             status: 'fail'
@@ -62,7 +66,7 @@ authRoutes.post('/signup', (req, res, next) => {
         return
     }
 
-    if (!password.match(/[A-Z]/) || !password.match(/[0-9]/)) {
+    if (!password.match(/[A-Z]/) || !password.match(/[0-9]/)) { //pasword match validation
         res.json({
             message: 'La contraseña debe tener al menos una mayúscula y un número.',
             status: 'fail'
@@ -70,7 +74,7 @@ authRoutes.post('/signup', (req, res, next) => {
         return
     }
 
-    User.findOne({
+    User.findOne({  //User no repeat validation
         username
     }, (err, foundUser) => {
 
@@ -90,6 +94,7 @@ authRoutes.post('/signup', (req, res, next) => {
             return
         }
 
+        //hashPass creation
         const salt = bcrypt.genSaltSync(10)
         const hashPass = bcrypt.hashSync(password, salt)
 
@@ -99,7 +104,7 @@ authRoutes.post('/signup', (req, res, next) => {
             email
         })
 
-        aNewUser.save(err => {
+        aNewUser.save(err => {  //User creation
 
             if (err) {
                 res.status(400).json({
@@ -108,9 +113,9 @@ authRoutes.post('/signup', (req, res, next) => {
                 return
             }
 
-            sendMail(username, email, password)
+            sendMail(username, email, password) //welcome email
 
-            req.login(aNewUser, (err) => {
+            req.login(aNewUser, (err) => {  //direct login after signup
 
                 if (err) {
                     res.status(500).json({
@@ -119,13 +124,13 @@ authRoutes.post('/signup', (req, res, next) => {
                     return
                 }
 
-                res.json(aNewUser)
+                res.json(aNewUser)  //send user info to the front
             })
         })
     })
 })
 
-authRoutes.post('/login', (req, res, next) => {
+authRoutes.post('/login', (req, res, next) => { //login route
 
     const {
         username,
@@ -246,10 +251,10 @@ authRoutes.put('/updateUsername', (req, res, next) => {
     }
 
     User.findByIdAndUpdate(req.user._id, {
-            username
-        }, {
-            new: true
-        })
+        username
+    }, {
+        new: true
+    })
         .then(theUser => res.json(theUser))
         .catch(err => console.log(err))
 })
@@ -305,10 +310,10 @@ authRoutes.put('/updatePassword', (req, res, next) => {
     }
 
     User.findByIdAndUpdate(req.user._id, {
-            password: hashPass
-        }, {
-            new: true
-        })
+        password: hashPass
+    }, {
+        new: true
+    })
         .then(theUser => res.json(theUser))
         .catch(err => console.log(err))
 })
@@ -363,10 +368,10 @@ authRoutes.put('/updateEmail', (req, res, next) => {
     changeEmail(req.user.username, req.user.email, newEmail)
 
     User.findByIdAndUpdate(req.user._id, {
-            email: newEmail
-        }, {
-            new: true
-        })
+        email: newEmail
+    }, {
+        new: true
+    })
         .then(theUser => res.json(theUser))
         .catch(err => console.log(err))
 })
