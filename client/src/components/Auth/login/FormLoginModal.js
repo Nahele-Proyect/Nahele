@@ -1,7 +1,9 @@
+//React imports
 import React, { Component } from 'react'
-
-import './FormLogin.css'
+//Sevices imports
 import AuthServices from '../../../services/auth.service'
+//Self-made css imports
+import './FormLogin.css'
 
 
 export default class LoginForm extends Component {

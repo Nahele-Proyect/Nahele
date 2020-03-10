@@ -1,19 +1,20 @@
+//React imports
 import React, { Component } from 'react'
-
+// Calendar imports
 import { Calendar, momentLocalizer } from 'react-big-calendar'
 import 'moment/locale/es'
 import moment from 'moment'
 import 'react-big-calendar/lib/css/react-big-calendar.css'
-
+//Bootstrap import
 import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Modal from 'react-bootstrap/Modal'
-
+//Sevices imports
 import CalendarService from '../../services/calendar.service'
 import ScrapServices from '../../services/scrap.service'
-
+//Self-made css imports
 import './calendar.css'
 
 const localizer = momentLocalizer(moment)

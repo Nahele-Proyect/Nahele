@@ -1,8 +1,9 @@
+//React import
 import React from 'react'
-
+//Images import
 import onlineIcon from '../../../images/onlineIcon.png'
 import closeIcon from '../../../images/closeIcon.png'
-
+//Self-made css import
 import './InfoBar.css'
 
 const InfoBar = props => (

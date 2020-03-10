@@ -1,8 +1,9 @@
+//React imports
 import React, { Component } from 'react'
-
-import './Password.css'
-
+//Service import
 import AuthServices from '../../../../services/auth.service'
+//Self-made css import
+import './Password.css'
 
 
 

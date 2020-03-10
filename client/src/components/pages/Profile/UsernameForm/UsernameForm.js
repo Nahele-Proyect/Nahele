@@ -1,8 +1,9 @@
+//React import
 import React, { Component } from 'react'
-
+//Services imports
 import AuthServices from '../../../../services/auth.service'
 import FilesServices from '../../../../services/files.service'
-
+//Self-made css import
 import './ProfileForm.css'
 
 

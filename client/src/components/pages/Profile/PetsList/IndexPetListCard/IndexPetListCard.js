@@ -1,5 +1,7 @@
+//React imports
 import React from 'react'
 import { Link } from 'react-router-dom'
+//Bootstrap import
 import Button from 'react-bootstrap/Button'
 
 const IndexPetListCard = props => {

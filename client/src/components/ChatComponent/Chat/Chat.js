@@ -1,13 +1,14 @@
+//React imports
 import React, { useState, useEffect } from "react"
 import queryString from 'query-string'
-
+//Sockets imports
 import io from "socket.io-client"
-
+//Self-made components imports
 import TextContainer from '../TextContainer/TextContainer'
 import Messages from '../Messages/Messages'
 import InfoBar from '../InfoBar/InfoBar'
 import Input from '../Input/Input'
-
+//Self-made css import
 import './Chat.css'
 
 let socket
@@ -52,11 +53,11 @@ const Chat = props => {
       <div className="outerContainer">
         <div className="container">
 
-          <InfoBar room={ room } />
-          <Messages messages={ messages } name={ name } />
-          <Input message={ message } setMessage={ setMessage } sendMessage={ sendMessage } />
+          <InfoBar room={room} />
+          <Messages messages={messages} name={name} />
+          <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
         </div>
-        <TextContainer users={ users } />
+        <TextContainer users={users} />
       </div>
     </div>
   )

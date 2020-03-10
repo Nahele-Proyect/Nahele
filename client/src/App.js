@@ -13,6 +13,9 @@ import Join from './components/ChatComponent/Join/Join'
 import Map from './components/GoogleMaps/GoogleMaps'
 import Calendar from './components/Calendar/Calendar'
 
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
+import Loader from 'react-loader-spinner'
+
 
 class App extends Component {
   constructor() {
@@ -59,7 +62,7 @@ class App extends Component {
             </Switch>
           </>
           :
-          <figure  ><img src='./dancing-dog.gif' alt='funny dog' /></figure>
+          <Loader style={ { display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '80vh' } } type="Rings" color="red" height={ 250 } width={ 250 } timeout={ 10000 } />
         }
       </>
     )
