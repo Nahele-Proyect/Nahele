@@ -67,7 +67,7 @@ export default class Profile extends Component {
                                 <figure style={ { margin: '0 auto' } } ><Image style={ { objectFit: 'cover', height: '400px', width: '80%' } } src={ this.props.loggedInUser.img } alt="Profile Pic" roundedCircle /></figure>
                                 :
                                 <>
-                                    <figure><img src='./suited-dog.jpg' alt='default' /></figure>
+                                    <figure><Image style={ { objectFit: 'cover', height: '400px', width: '80%' } } src='./suited-dog.jpg' alt='default' roundedCircle /></figure>
                                     <h4><i>Podrías añadir una foto de perfil</i></h4>
                                 </> }
                         </Col>
