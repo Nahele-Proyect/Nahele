@@ -50,8 +50,8 @@ class App extends Component {
 
             <Switch>
               <Route exact path='/' render={ () => <Index  { ...this.state.loggedInUser } /> } />
-              <Route path='/details/:link' render={ props => <Details { ...props } /> } />
-              <Route path='/myPet/:id' render={ props => <Details { ...props } /> } />
+              <Route path='/details/:link' render={ props => <Details loggedInUser={ this.state.loggedInUser } setTheUser={ this.setTheUser } { ...props } /> } />
+              <Route path='/myPet/:id' render={ props => <Details loggedInUser={ this.state.loggedInUser } setTheUser={ this.setTheUser } { ...props } /> } />
               <Route path="/profile" render={ () => this.state.loggedInUser ? <Profile loggedInUser={ this.state.loggedInUser } setTheUser={ this.setTheUser } /> : <Redirect to="/" /> } />
 
               <Route path="/join" render={ () => this.state.loggedInUser ? <Join loggedInUser={ this.state.loggedInUser } /> : <Redirect to='/' /> } />

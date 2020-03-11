@@ -23,7 +23,8 @@ const petSchema = new Schema({
     identified: { type: String, enum: ["Sí", "No"] },
     microchip: { type: String, enum: ["Sí", "No"] },
     comment: String,
-    calendar: [{ type: Schema.Types.ObjectId, ref: "Calendar" }]
+    calendar: [{ type: Schema.Types.ObjectId, ref: "Calendar" }],
+    requests: [{ username: String, email: String, request: String }]
 }, {
     timestamps: true
 })
