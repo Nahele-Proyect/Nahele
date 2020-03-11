@@ -1,0 +1,7 @@
+.footer p, .footer a{
+    color: white;
+}
+ .footer p a:hover{
+    color: white;
+    font-weight: bold;
+}

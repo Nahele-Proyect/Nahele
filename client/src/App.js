@@ -1,18 +1,22 @@
+//Reac imports
 import React, { Component } from 'react'
 import { Switch, Route, Redirect } from "react-router-dom"
+//Styling
 import './App.css'
-
+//Services
 import AuthServices from './services/auth.service'
-
+//Self-made imports
 import Navbar from './components/ui/Navbar'
+import Footer from './components/ui/Footer/Footer'
 import Profile from './components/pages/Profile/Profile'
 import Index from './components/pages/Index/index'
 import Details from './components/pages/Details/Details'
+
 import Chat from './components/ChatComponent/Chat/Chat'
 import Join from './components/ChatComponent/Join/Join'
 import Map from './components/GoogleMaps/GoogleMaps'
 import Calendar from './components/Calendar/Calendar'
-
+//Spinner imports
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 import Loader from 'react-loader-spinner'
 
@@ -60,10 +64,12 @@ class App extends Component {
               <Route path="/newCalendar/:id" render={ props => <Calendar { ...props } loggedInUser={ this.state.loggedInUser } fetchUser={ this.fetchUser } /> } />
 
             </Switch>
+            <Footer />
           </>
           :
           <Loader style={ { display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '80vh' } } type="Rings" color="red" height={ 250 } width={ 250 } timeout={ 10000 } />
         }
+
       </>
     )
   }
