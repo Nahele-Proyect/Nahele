@@ -28,10 +28,14 @@ export default class AdoptPet extends Component {
         this.petServices.newScraped(this.props.pet)
             .then(pet => pet.pet)
             .then(pet => this.petServices.addRequest(pet._id, this.state.form))
-            .then(() => this.props.closeModal())
+            .then(user => { this.finish(user.user) })
             .catch(err => console.log(err))
     }
 
+    finish(user) {
+        this.props.setTheUser(user)
+        this.props.closeModal()
+    }
 
     render() {
         return (

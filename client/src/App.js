@@ -33,7 +33,6 @@ class App extends Component {
 
   componentDidMount = () => this.fetchUser()
 
-
   setTheUser = userObj => this.setState({ loggedInUser: userObj })
 
   fetchUser = () => {
