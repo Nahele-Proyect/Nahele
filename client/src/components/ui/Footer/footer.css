@@ -1,7 +1,21 @@
-.footer p, .footer a{
+.footer p,
+.footer a {
     color: white;
 }
- .footer p a:hover{
+
+.footer p {
+    margin: 0;
+    text-align: center;
+    padding: 10px;
+}
+
+.footer p a:hover {
     color: white;
     font-weight: bold;
+}
+
+.footer {
+    margin-top: 40px;
+    background-color: #5a2020;
+    color: white;
 }

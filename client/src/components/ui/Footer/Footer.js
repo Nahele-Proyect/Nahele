@@ -2,16 +2,17 @@ import React from 'react'
 
 import './footer.css'
 
-import Navbar from 'react-bootstrap/Navbar'
-
 const Footer = () => {
     return (
-        <Navbar fixed='bottom' className='footer' bg='dark'>
-            <Navbar.Collapse className="justify-content-center items-align-center">
-                <p>
-                    Made by: <a href='https://github.com/Andres-Atehortua' target='blank'>Andrés </a> & <a href='https://github.com/Nelsoncc1812' target='blank'> Nelson</a></p>
-            </Navbar.Collapse>
-        </Navbar>
+        <footer className='footer'>
+            <div>
+                <p> <i>Fluffy's Shelter 2020 Copyright © Todos los derechos reservados</i></p>
+            </div>
+            <div style={{ marginLeft: '20px' }}>
+                <p>Una aplicación de <a href='https://github.com/Nelsoncc1812' target='_blank'> Nelson</a> junto a <a href='https://github.com/Andres-Atehortua' target='_blank'>Andrés </a>.</p>
+            </div>
+
+        </footer>
     )
 }
 
