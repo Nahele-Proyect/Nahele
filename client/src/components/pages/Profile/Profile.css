@@ -1,9 +1,3 @@
-.options {
-    transition: all 1s ease-in;
-}
-
 .options:hover {
     cursor: pointer;
-    text-transform: uppercase;
-    transform: translate(10px);
 }

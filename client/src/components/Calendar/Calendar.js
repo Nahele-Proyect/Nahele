@@ -47,7 +47,7 @@ class MyCalendar extends Component {
                     end: new Date("")
                 }
             ],
-            showEvents: false
+
         }
         this.ScrapServices = new ScrapServices()
         this.calendarService = new CalendarService()
@@ -58,13 +58,13 @@ class MyCalendar extends Component {
     dogInfo = () => {
         this.ScrapServices.getDetails(this.props.match.params.id)
             .then(theDog => {
-                this.setState({ dog: { ...this.state.dog, ...theDog.pet }, showEvents: true }, () => this.showPrevEvents())
+                this.setState({ dog: { ...this.state.dog, ...theDog.pet } }, () => this.showPrevEvents())
             })
             .catch(err => console.log(err))
     }
 
     showPrevEvents = () => {
-        let calendarCopy = [...this.state.mybackup]
+        let calendarCopy = []
         let a, b, c
         this.props.loggedInUser.calendar.map(elm => {
             if (elm.start) {
@@ -88,6 +88,7 @@ class MyCalendar extends Component {
             .then(() => {
                 this.props.fetchUser()
                 this.handleClose()
+                this.dogInfo()
             })
             .catch(err => console.log(err))
         this.showPrevEvents()

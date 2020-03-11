@@ -104,32 +104,29 @@ export default class PetForm extends Component {
                             <Form.Control type='date' id='born' name='born' value={this.state.form.born} onChange={this.inputsHandler} />
 
                             <fieldset>
-                                <Form.Group as={Row} >
-                                    <Form.Label style={{ marginTop: '15px' }} as={Col} md={2}>Genero</Form.Label>
-                                    <Col md={4}>
+                                <Form.Group style={{ marginTop: '30px' }} as={Row} >
+                                    <Form.Label style={{ marginTop: '15px' }} as={Col} md={2}>Género</Form.Label>
 
-                                        <Form.Check style={{ marginTop: '15px' }} checked={this.state.form.gender === 'Macho'} onChange={this.inputsHandler}
-                                            type="radio"
-                                            label="Macho"
-                                            name="gender"
-                                            id="Macho"
-                                        />
-                                    </Col>
-                                    <Col md={4}>
+                                    <Form.Check style={{ margin: '15px 15px' }} checked={this.state.form.gender === 'Macho'} onChange={this.inputsHandler}
+                                        type="radio"
+                                        label="Macho"
+                                        name="gender"
+                                        id="Macho"
+                                    />
 
-                                        <Form.Check style={{ marginTop: '15px' }} checked={this.state.form.gender === 'Hembra'} onChange={this.inputsHandler}
-                                            type="radio"
-                                            label="Hembra"
-                                            name="gender"
-                                            id="Hembra"
-                                        />
-                                    </Col>
+                                    <Form.Check style={{ margin: '15px' }} checked={this.state.form.gender === 'Hembra'} onChange={this.inputsHandler}
+                                        type="radio"
+                                        label="Hembra"
+                                        name="gender"
+                                        id="Hembra"
+                                    />
                                 </Form.Group>
                             </fieldset>
 
                         </Form.Group>
                     </Form.Row>
                 </Form>
+                {this.state.message.length > 0 && <h6 style={{ color: 'red' }}>{this.state.message}</h6>}
 
 
                 <Button onClick={this.showMoreInfoHandler}>{this.state.showMoreForm ? 'Ocultar opciones extra' : 'Mostrar más opciones'}</Button>
@@ -163,24 +160,22 @@ export default class PetForm extends Component {
                             <Form.Check label='Esterilizado' name='sterilized' checked={this.state.form.sterilized === 'true'} onChange={this.inputsHandler} />
                             <Form.Check label='Identificado' name='identified' checked={this.state.form.identified === 'true'} onChange={this.inputsHandler} />
                             <Form.Check label='Microchip' name='microchip' checked={this.state.form.microchip === 'true'} onChange={this.inputsHandler} />
-                        </Form.Group>
 
-                        <Form.Group>
-                            <Form.Label htmlFor='comment'>Información extra:</Form.Label>
-                            <Form.Control as='textarea' name='comment' value={this.state.form.comment} onChange={this.inputsHandler} />
+                            <Form.Group style={{ marginTop: '25px' }}>
+                                <Form.Label htmlFor='comment'>Información extra:</Form.Label>
+                                <Form.Control as='textarea' name='comment' value={this.state.form.comment} onChange={this.inputsHandler} />
+                            </Form.Group>
                         </Form.Group>
                     </Row>
 
                 }
 
-                <Container>
-                    <Row className='justify-content-end'>
-                        {this.state.message.length > 0 && <h6>{this.state.message}</h6>}
-                        <Button as={Col} md={2} onClick={this.submitHandler}>Crear mascota</Button>
-                    </Row>
-                </Container>
 
-            </Container>
+                <Button style={{ position: 'relative', left: '70%', margin: '20px 0' }} onClick={this.submitHandler}>Crear mascota</Button>
+
+
+
+            </Container >
         )
     }
 }

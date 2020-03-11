@@ -5,9 +5,6 @@ import Button from 'react-bootstrap/Button'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import Modal from 'react-bootstrap/Modal'
-import ButtonGroup from 'react-bootstrap/ButtonGroup'
-import Dropdown from 'react-bootstrap/Dropdown'
-import DropdownButton from 'react-bootstrap/DropdownButton'
 import Container from 'react-bootstrap/Container'
 import Image from 'react-bootstrap/Image'
 import Accordion from 'react-bootstrap/Accordion'
@@ -26,10 +23,6 @@ import PetList from './PetsList/PetList'
 //Self-made css import
 import './Profile.css'
 
-
-
-
-
 export default class Profile extends Component {
     constructor(props) {
         super(props)
@@ -43,7 +36,6 @@ export default class Profile extends Component {
             showModalImg: false,
             showPetForm: false
         }
-        console.log(props)
     }
     //Modal openers handlers
     showModalUsername = () => this.setState({ showModalUsername: true })
@@ -59,29 +51,23 @@ export default class Profile extends Component {
         return (
             <>
                 <Container>
-                    <DropdownButton as={ButtonGroup} title="Editar perfil" id="bg-nested-dropdown">
-                        <Dropdown.Item eventKey="1" >Cambiar nombre de usuario</Dropdown.Item>
-                        <Dropdown.Item eventKey="2" onClick={this.showModalPassword}>Cambiar contraseña</Dropdown.Item>
-                        <Dropdown.Item eventKey="3" onClick={this.showModalEmail}>Cambiar email</Dropdown.Item>
-                        <Dropdown.Item eventKey="4" onClick={this.showModalImg}>Cambiar foto de perfil</Dropdown.Item>
-                    </DropdownButton>
-                    <Accordion defaultActiveKey="0">
-                        <Card>
-                            <Card.Header style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                                <Accordion.Toggle style={{ margin: '0 auto' }} as={Button} variant="link" eventKey="0">Ajustes</Accordion.Toggle>
+
+                    <Accordion defaultActiveKey="1">
+                        <Card style={{ backgroundColor: '#ffffff', border: '1px solid grey' }}>
+                            <Card.Header style={{ backgroundColor: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                <Accordion.Toggle style={{ margin: '0 auto', textDecoration: 'none', color: 'black' }} as={Button} variant="link" eventKey="0">AJUSTES</Accordion.Toggle>
                             </Card.Header>
                             <Accordion.Collapse eventKey="0">
-                                <Card.Body style={{ display: 'flex', justifyContent: 'space-between' }}>
-                                    <p className='options' onClick={this.showModalUsername}>Cambiar nombre de usuario</p>
-                                    <p className='options' onClick={this.showModalPassword}>Cambiar Contraseña</p>
-                                    <p className='options' onClick={this.showModalEmail}>Cambiar email</p>
-                                    <p className='options' onClick={this.showModalImg}>Cambiar foto de perfil</p>
-
+                                <Card.Body>
+                                    <ul style={{ display: 'flex', justifyContent: 'space-between', listStyle: 'none' }}>
+                                        <li className='options' onClick={this.showModalUsername}>-Cambiar nombre de usuario-</li>
+                                        <li className='options' onClick={this.showModalPassword}>-Cambiar Contraseña-</li>
+                                        <li className='options' onClick={this.showModalEmail}>-Cambiar email-</li>
+                                        <li className='options' onClick={this.showModalImg}>-Cambiar foto de perfil-</li>
+                                    </ul>
                                 </Card.Body>
                             </Accordion.Collapse>
-
                         </Card>
-
                     </Accordion>
                     <Row className='justify-content-between' style={{ marginTop: '50px' }}>
                         <Col md={6}>
@@ -101,8 +87,11 @@ export default class Profile extends Component {
                         </Col>
                     </Row>
 
-                    <Button style={{ marginTop: '10px' }} onClick={this.petFormChange}>{this.state.showPetForm ? 'Ocultar formulario' : 'Dar en adopción'}</Button>
                 </Container>
+
+
+                <Button style={{ position: 'relative', top: '50%', left: '45%', marginTop: ' 50px' }} onClick={this.petFormChange}>{this.state.showPetForm ? 'Ocultar formulario' : 'Dar en adopción'}</Button>
+
 
                 <Modal size='sm' centered show={this.state.showModalUsername} onHide={this.closeModal} animation={true}>
                     <ProfileForm setTheUser={this.props.setTheUser} loggedInUser={this.props.loggedInUser} closeModal={this.closeModal} />
