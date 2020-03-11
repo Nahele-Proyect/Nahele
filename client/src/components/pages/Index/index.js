@@ -8,6 +8,7 @@ import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
 //Services imports
 import ScrapServices from '../../../services/scrap.service'
+import PetServices from '../../../services/pet.service'
 //Self-made imports
 import PetCard from './petCard/PetCard'
 import Filter from './Filter/Filter'
@@ -31,6 +32,7 @@ export default class Index extends Component {
         }
         this.filtered = undefined
         this.scrapServices = new ScrapServices()
+        this.petServices = new PetServices()
     }
 
     componentDidMount = () => this.getAllPets()
@@ -38,8 +40,17 @@ export default class Index extends Component {
     componentWillUnmount = () => this.scrapServices.cancelAll()
 
     getAllPets = () => {
-        this.scrapServices.getAll()
-            .then(allPets => this.setState({ pets: allPets.pets }))
+
+        Promise.all([this.scrapServices.getAll(), this.petServices.getAllPets()])
+            .then(response => {
+
+                const scraped = response[0].pets
+                let db = response[1].pets
+                db = db.filter(elm => elm.owner)
+
+                return db.concat(scraped)
+            })
+            .then(pets => this.setState({ pets: pets }))
             .catch(err => err)
     }
 
