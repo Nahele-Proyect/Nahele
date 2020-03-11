@@ -74,7 +74,7 @@ export default class Index extends Component {
                             <Button onClick={ this.openGraficModal } >Ver porcentajes</Button></> }
 
                     { this.state.pets ?
-                        <Row style={ { marginBottom: '30px' } }>
+                        <Row style={ { paddingBottom: '85px' } }>
                             { this.filtered.length === 0 ?
                                 <h1>No hay ahora mismo mascotas con esos filtros</h1>
                                 :
