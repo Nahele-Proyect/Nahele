@@ -70,7 +70,7 @@ export default class PetForm extends Component {
             <Container>
                 <hr />
                 <br />
-                <Form>
+                <Form >
                     <Form.Row className='justify-content-between'>
 
                         <Form.Group as={Col} md='5'>
@@ -129,7 +129,7 @@ export default class PetForm extends Component {
                 {this.state.message.length > 0 && <h6 style={{ color: 'red' }}>{this.state.message}</h6>}
 
 
-                <Button onClick={this.showMoreInfoHandler}>{this.state.showMoreForm ? 'Ocultar opciones extra' : 'Mostrar más opciones'}</Button>
+                <Button style={{ marginBottom: '50px' }} onClick={this.showMoreInfoHandler}>{this.state.showMoreForm ? 'Ocultar opciones extra' : 'Mostrar más opciones'}</Button>
                 {
                     this.state.showMoreForm &&
                     <Row className='justify-content-between align-items-center'>

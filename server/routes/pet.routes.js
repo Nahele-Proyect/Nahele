@@ -75,7 +75,8 @@ router.post('/addRequest/:id', (req, res) => {
                 username: req.user.username, email: req.user.email, request: req.body.request
             }
         }
-    }).then(() => res.json({ status: 'ok' }))
+    }).then(pet => User.findById(req.user._id).populate('pets').populate('calendar'))
+        .then(user => res.json({ status: 'ok', user }))
         .catch(err => console.log(err))
 })
 
