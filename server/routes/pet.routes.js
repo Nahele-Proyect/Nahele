@@ -67,7 +67,7 @@ router.delete('/delete/:id', (req, res) => {    //Delete a pet in the Db by the 
         .catch(err => console.log(err))
 })
 
-router.post('/addRequest/:id', (req, res) => {
+router.post('/addRequest/:id', (req, res) => { //Add a request to the pet by the id given
 
     Pet.findByIdAndUpdate(req.params.id, {
         $push: {
@@ -77,6 +77,13 @@ router.post('/addRequest/:id', (req, res) => {
         }
     }).then(pet => User.findById(req.user._id).populate('pets').populate('calendar'))
         .then(user => res.json({ status: 'ok', user }))
+        .catch(err => console.log(err))
+})
+
+router.get('getAllPets', (req, res) => {   //Get all pets from our dbs
+
+    Pet.find()
+        .then(pets => res.json({ status: 'ok', pets }))
         .catch(err => console.log(err))
 })
 
