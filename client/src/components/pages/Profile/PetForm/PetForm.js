@@ -10,7 +10,7 @@ import Container from 'react-bootstrap/Container'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 //Image imports
-import suitedDog from '../../../../images/suited-dog.jpg'
+import jakeTheDog from '../../../../images/jake.png'
 
 export default class PetForm extends Component {
     constructor(props) {
@@ -80,7 +80,7 @@ export default class PetForm extends Component {
                                 <img style={{ margin: '20px 0px', width: '60%' }} src={this.state.form.img} alt='foto' />
                                 :
                                 <>
-                                    <img style={{ margin: '20px 0px', width: '60%' }} src={suitedDog} alt='foto' />
+                                    <img style={{ margin: '20px 0px', width: '60%' }} src={jakeTheDog} alt='foto' />
                                     <Form.Control name='img' id='img' type='file' style={{ color: 'transparent' }} onChange={this.imgFileUpload} />
                                 </>
                             }
