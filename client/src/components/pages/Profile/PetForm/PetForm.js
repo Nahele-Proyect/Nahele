@@ -9,6 +9,8 @@ import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
+//Image imports
+import suitedDog from '../../../../images/suited-dog.jpg'
 
 export default class PetForm extends Component {
     constructor(props) {
@@ -78,7 +80,7 @@ export default class PetForm extends Component {
                                 <img style={{ margin: '20px 0px', width: '60%' }} src={this.state.form.img} alt='foto' />
                                 :
                                 <>
-                                    <img style={{ margin: '20px 0px', width: '60%' }} src='./jake.png' alt='foto' />
+                                    <img style={{ margin: '20px 0px', width: '60%' }} src={suitedDog} alt='foto' />
                                     <Form.Control name='img' id='img' type='file' style={{ color: 'transparent' }} onChange={this.imgFileUpload} />
                                 </>
                             }
@@ -129,7 +131,7 @@ export default class PetForm extends Component {
                 {this.state.message.length > 0 && <h6 style={{ color: 'red' }}>{this.state.message}</h6>}
 
 
-                <Button style={{ marginBottom: '50px' }} onClick={this.showMoreInfoHandler}>{this.state.showMoreForm ? 'Ocultar opciones extra' : 'Mostrar más opciones'}</Button>
+                <Button variant='primary' style={{ marginBottom: '50px' }} onClick={this.showMoreInfoHandler}>{this.state.showMoreForm ? 'Ocultar opciones extra' : 'Mostrar más opciones'}</Button>
                 {
                     this.state.showMoreForm &&
                     <Row className='justify-content-between align-items-center'>
@@ -171,7 +173,7 @@ export default class PetForm extends Component {
                 }
 
 
-                <Button style={{ position: 'relative', left: '70%', margin: '20px 0' }} onClick={this.submitHandler}>Crear mascota</Button>
+                <Button variant='outline-success' style={{ position: 'relative', left: '70%', margin: '20px 0' }} onClick={this.submitHandler}>Crear mascota</Button>
 
 
 

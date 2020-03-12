@@ -9,8 +9,8 @@ const mapStyles = {
 }
 
 export class MapContainer extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
             showingInfoWindow: false,
             activeMarker: {},
@@ -25,7 +25,7 @@ export class MapContainer extends Component {
             showingInfoWindow: true
         })
 
-    onClose = props => {
+    onClose = () => {
         if (this.state.showingInfoWindow) {
             this.setState({
                 showingInfoWindow: false,
@@ -35,7 +35,6 @@ export class MapContainer extends Component {
     }
 
     render() {
-        console.log(this.props)
         return (
             <Map google={this.props.google} zoom={15} style={mapStyles} initialCenter={{ lat: 40.392611, lng: -3.698222 }} >
                 <Marker onClick={this.onMarkerClick} name={"Fluffy's Shelter"} />

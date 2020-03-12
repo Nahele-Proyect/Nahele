@@ -7,3 +7,9 @@ a:hover {
     text-decoration: none;
     color: inherit
 }
+
+body {
+    background-image: url('../src/images/background.png');
+    background-position: center;
+    background-repeat: repeat;
+}

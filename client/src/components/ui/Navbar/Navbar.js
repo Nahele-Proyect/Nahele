@@ -6,11 +6,11 @@ import Modal from 'react-bootstrap/Modal'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 //Services import
-import AuthServices from '../../services/auth.service'
+import AuthServices from '../../../services/auth.service'
 //Self-made css and components imports
 import './Navbar.css'
-import SignupForm from '../Auth/signup/FormSignupModal'
-import LoginForm from '../Auth/login/FormLoginModal'
+import SignupForm from '../../Auth/signup/FormSignupModal'
+import LoginForm from '../../Auth/login/FormLoginModal'
 
 export default class Navigation extends Component {
 
@@ -25,7 +25,7 @@ export default class Navigation extends Component {
 
     logout = () => {
         this.AuthServices.logout()
-            .then(response => {
+            .then(() => {
                 this.props.setTheUser(false)
             })
             .catch(err => console.log(err))
@@ -44,17 +44,17 @@ export default class Navigation extends Component {
 
             this.props.loggedInUser ?
                 (
-                    <Navbar sticky='top' bg="dark" expand="lg" variant="dark">
+                    <Navbar style={{ background: '#5a2020' }} sticky='top' expand="lg" >
                         <Navbar.Brand ><Link className='logo' to="/">Fluffy's Shelter</Link></Navbar.Brand>
                         <Nav.Link as="small" style={{ color: 'white' }}>{greeting}</Nav.Link>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="ml-auto">
-                                <Nav.Link as="div"> <Link to="/">Inicio</Link></Nav.Link>
-                                <Nav.Link as="div"> <Link to="/profile">Perfil</Link></Nav.Link>
-                                <Nav.Link as="div"> <Link to="/join">Salas de chat</Link></Nav.Link>
-                                <Nav.Link as={Link} to='/about' >Sobre Nosotros</Nav.Link>
-                                <Nav.Link onClick={this.logout}>Cerrar sesión</Nav.Link>
+                                <Nav.Link style={{ color: 'white' }} as={Link} to="/">Inicio</Nav.Link>
+                                <Nav.Link style={{ color: 'white' }} as={Link} to="/profile">Perfil</Nav.Link>
+                                <Nav.Link style={{ color: 'white' }} as={Link} to="/join">Salas de chat</Nav.Link>
+                                <Nav.Link style={{ color: 'white' }} as={Link} to='/about'>Sobre Nosotros</Nav.Link>
+                                <Nav.Link style={{ color: 'white' }} onClick={this.logout}>Cerrar sesión</Nav.Link>
                             </Nav>
                         </Navbar.Collapse>
                     </Navbar>
