@@ -3,7 +3,7 @@ const router = express.Router()
 
 router.get("/", (req, res) => {
   res.send({
-    response: "Server is up and running."
+    response: "El servidor está online."
   }).status(200)
 })
 

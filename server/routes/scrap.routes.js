@@ -13,7 +13,7 @@ const axiosApp = axios.create({
     baseURL: 'https://petshelter.miwuki.com'
 })
 
-router.get('/', (req, res) => { //Gets main page info
+router.get('/', (req, res, next) => { //Gets main page info
     //All the filds tha will be scraped (prevents errors)
     const names = []
     const imgs = []
@@ -23,7 +23,7 @@ router.get('/', (req, res) => { //Gets main page info
     const flags = []
     const citys = []
 
-    axiosApp.get('/')   //Get the page
+    axiosApp.get('/') //Get the page
         .then(response => {
             const $ = cheerio.load(response.data) //Load the html info
 
@@ -42,15 +42,15 @@ router.get('/', (req, res) => { //Gets main page info
                 ) imgs.push(image.attribs.src)
             })
 
-            $('.m-animal__nombre').each((idx, name) => names.push(name.children[0].data))   //gets the name
+            $('.m-animal__nombre').each((idx, name) => names.push(name.children[0].data)) //gets the name
 
-            $('.m-portlet a').each((idx, link) => links.push('/' + link.attribs.href))      //gets the link
+            $('.m-portlet a').each((idx, link) => links.push('/' + link.attribs.href)) //gets the link
 
-            $('.m-animal__especie').each((idx, specie) => species.push(specie.children[0].data))//gets the specie
+            $('.m-animal__especie').each((idx, specie) => species.push(specie.children[0].data)) //gets the specie
 
-            $('.m-portlet__foot').each((idx, urgency) => urgencys.push(urgency.children[0].data))//gets the urgency
+            $('.m-portlet__foot').each((idx, urgency) => urgencys.push(urgency.children[0].data)) //gets the urgency
 
-            $('.info span').each((idx, city) => citys.push(city.children[0].data))      //gets the city
+            $('.info span').each((idx, city) => citys.push(city.children[0].data)) //gets the city
 
             return names.map((elm, idx) => { //returns an array with all the scraped pets
                 return {
@@ -64,16 +64,21 @@ router.get('/', (req, res) => { //Gets main page info
                 }
             })
 
-        }).then(pets => res.json({ status: 'ok', pets }))   //send the scraped pets array to the front
-        .catch(err => console.log(err))
+        }).then(pets => res.json({
+            status: 'ok',
+            pets
+        })) //send the scraped pets array to the front
+        .catch(err => next(new Error(err)))
 })
 
-router.get('/details/:code', (req, res) => {    //gets the animal details (fron the url already scraped)
-    const pet = { personality: [] }
+router.get('/details/:code', (req, res, next) => { //gets the animal details (fron the url already scraped)
+    const pet = {
+        personality: []
+    }
 
     axiosApp.get('/' + req.params.code) //get the page
         .then(response => {
-            const $ = cheerio.load(response.data)   //load the html
+            const $ = cheerio.load(response.data) //load the html
 
             $('.m-portlet__head img').each((idx, image) => !image.attribs.src.includes('.svg') && (pet.img = image.attribs.src.trim())) //get the img
 
@@ -123,8 +128,11 @@ router.get('/details/:code', (req, res) => {    //gets the animal details (fron 
                 }
             })
 
-        }).then(() => res.json({ status: 'ok', pet })) //returns the scraped details info to the front
-        .catch(err => console.log(err))
+        }).then(() => res.json({
+            status: 'ok',
+            pet
+        })) //returns the scraped details info to the front
+        .catch(err => next(new Error(err)))
 })
 
 module.exports = router

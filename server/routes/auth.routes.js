@@ -19,38 +19,38 @@ authRoutes.post('/signup', (req, res, next) => {
         email
     } = req.body
 
-    if (!username) {    //username fild validation
+    if (!username) { //username fild validation
         res.json({
-            message: 'Porfavor, introduzca nombre de usuario.',
+            message: 'Por favor, introduzca nombre de usuario.',
             status: 'fail'
         })
         return
     }
 
-    if (!password) {    //password field validation
+    if (!password) { //password field validation
         res.json({
-            message: 'Porfavor, introduzca contraseña.',
+            message: 'Por favor, introduzca contraseña.',
             status: 'fail'
         })
         return
     }
 
-    if (password != confirmPassword) {  //pasword second validation
+    if (password != confirmPassword) { //pasword second validation
         res.json({
             message: 'Las contraseñas no coinciden.',
             status: 'fail'
         })
     }
 
-    if (!email) {   //email validation
+    if (!email) { //email validation
         res.json({
-            message: 'Porfavor, introduzca correo electrónico.',
+            message: 'Por favor, introduzca correo electrónico.',
             status: 'fail'
         })
         return
     }
 
-    if (!email.match(/^\S+@\S+\.\S+$/)) {   //email match validation
+    if (!email.match(/^\S+@\S+\.\S+$/)) { //email match validation
         res.json({
             message: 'Introduce una dirección de correo válida',
             status: 'fail'
@@ -58,7 +58,7 @@ authRoutes.post('/signup', (req, res, next) => {
         return
     }
 
-    if (password.length < 6) {  //password length validation
+    if (password.length < 6) { //password length validation
         res.json({
             message: 'La contraseña debe tener al menos 8 carácteres.',
             status: 'fail'
@@ -74,7 +74,7 @@ authRoutes.post('/signup', (req, res, next) => {
         return
     }
 
-    User.findOne({  //User no repeat validation
+    User.findOne({ //User no repeat validation
         username
     }, (err, foundUser) => {
 
@@ -104,27 +104,27 @@ authRoutes.post('/signup', (req, res, next) => {
             email
         })
 
-        aNewUser.save(err => {  //User creation
+        aNewUser.save(err => { //User creation
 
             if (err) {
                 res.status(400).json({
-                    message: 'Saving user to database went wrong.'
+                    message: 'Guardar el usuario en la base de datos salio mal.'
                 })
                 return
             }
 
             sendMail(username, email, password) //welcome email
 
-            req.login(aNewUser, (err) => {  //direct login after signup
+            req.login(aNewUser, (err) => { //direct login after signup
 
                 if (err) {
                     res.status(500).json({
-                        message: 'Login after signup went bad.'
+                        message: 'El log in tras el sign up salió mal'
                     })
                     return
                 }
 
-                res.json(aNewUser)  //send user info to the front
+                res.json(aNewUser) //send user info to the front
             })
         })
     })
@@ -139,7 +139,7 @@ authRoutes.post('/login', (req, res, next) => { //login route
 
     if (!username) {
         res.json({
-            message: 'Porfavor, introduce nombre de usuario.',
+            message: 'Por favor, introduce nombre de usuario.',
             status: 'fail'
         })
         return
@@ -147,7 +147,7 @@ authRoutes.post('/login', (req, res, next) => { //login route
 
     if (!password) {
         res.json({
-            message: 'Porfavor, introduce la contraseña.',
+            message: 'Por favor, introduce la contraseña.',
             status: 'fail'
         })
         return
@@ -159,7 +159,7 @@ authRoutes.post('/login', (req, res, next) => { //login route
 
         if (err) {
             res.json({
-                message: 'Algo ha ido mal, porfavor, inténtelo de nuevo.',
+                message: 'Algo ha ido mal, por favor, inténtelo de nuevo.',
                 status: 'fail'
             })
             return
@@ -176,7 +176,7 @@ authRoutes.post('/login', (req, res, next) => { //login route
         req.login(theUser, (err) => {
             if (err) {
                 res.status(500).json({
-                    message: 'Session save went bad.'
+                    message: 'El salvado de la sesión ha ido mal.'
                 })
                 return
             }
@@ -236,7 +236,7 @@ authRoutes.put('/updateUsername', (req, res, next) => {
 
     if (!username) {
         res.json({
-            message: 'Porfavor, introduzca nombre de usuario.',
+            message: 'Por favor, introduzca nombre de usuario.',
             status: 'fail'
         })
         return
@@ -251,12 +251,12 @@ authRoutes.put('/updateUsername', (req, res, next) => {
     }
 
     User.findByIdAndUpdate(req.user._id, {
-        username
-    }, {
-        new: true
-    })
+            username
+        }, {
+            new: true
+        })
         .then(theUser => res.json(theUser))
-        .catch(err => console.log(err))
+        .catch(err => next(new Error(err)))
 })
 
 authRoutes.put('/updatePassword', (req, res, next) => {
@@ -268,7 +268,7 @@ authRoutes.put('/updatePassword', (req, res, next) => {
 
     if (!password) {
         res.json({
-            message: 'Porfavor, introduzca contraseña.',
+            message: 'Por favor, introduzca contraseña.',
             status: 'fail'
         })
         return
@@ -310,12 +310,12 @@ authRoutes.put('/updatePassword', (req, res, next) => {
     }
 
     User.findByIdAndUpdate(req.user._id, {
-        password: hashPass
-    }, {
-        new: true
-    })
+            password: hashPass
+        }, {
+            new: true
+        })
         .then(theUser => res.json(theUser))
-        .catch(err => console.log(err))
+        .catch(err => next(new Error(err)))
 })
 
 authRoutes.put('/updateEmail', (req, res, next) => {
@@ -327,7 +327,7 @@ authRoutes.put('/updateEmail', (req, res, next) => {
 
     if (!oldEmail) {
         res.json({
-            message: 'Porfavor introduzca el correo electrónico actual',
+            message: 'Por favor introduzca el correo electrónico actual',
             status: 'fail'
         })
         return
@@ -351,7 +351,7 @@ authRoutes.put('/updateEmail', (req, res, next) => {
 
     if (!newEmail) {
         res.json({
-            message: 'Porfavor, introduzca correo electrónico.',
+            message: 'Por favor, introduzca correo electrónico.',
             status: 'fail'
         })
         return
@@ -368,12 +368,12 @@ authRoutes.put('/updateEmail', (req, res, next) => {
     changeEmail(req.user.username, req.user.email, newEmail)
 
     User.findByIdAndUpdate(req.user._id, {
-        email: newEmail
-    }, {
-        new: true
-    })
+            email: newEmail
+        }, {
+            new: true
+        })
         .then(theUser => res.json(theUser))
-        .catch(err => console.log(err))
+        .catch(err => next(new Error(err)))
 })
 
 module.exports = authRoutes
