@@ -63,14 +63,12 @@ router.post('/newScraped', (req, res, next) => { //Path to create a pet from the
     ) //Search for the dog existance in the DB
         .then(pet => {
             if (pet) {
-                console.log(pet)
                 res.json({
                     status: "found",
                     pet
                 }) //If the pet already exists return (to the front) the pet
                 return
             }
-            console.log(pet)
             Pet.create(req.body) //If the pet doesn't exists create it
                 .then(pet => res.json({
                     status: 'created',

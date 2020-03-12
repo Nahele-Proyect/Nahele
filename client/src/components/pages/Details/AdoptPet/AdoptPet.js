@@ -36,7 +36,6 @@ export default class AdoptPet extends Component {
                 .then(pet => this.petServices.addRequest(pet._id, this.state.form))
                 .then(user => this.finish(user.user))
                 .catch(err => console.log(err))
-
     }
 
     finish(user) {
