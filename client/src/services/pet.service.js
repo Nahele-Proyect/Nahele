@@ -7,6 +7,7 @@ export default class PetServices {
             withCredentials: true
         })
     }
+    getAllPets = () => this.service.get('/getAllPets').then(response => response.data)
     createPet = petData => this.service.post('/new', petData).then(response => response.data)
     newScraped = scrapedPet => this.service.post('/newScraped', scrapedPet).then(response => response.data)
     getOnePet = petId => this.service.get('/find/' + petId).then(response => response.data)

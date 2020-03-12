@@ -28,7 +28,7 @@ router.post('/upload', uploader.single("imageUrl"), (req, res, next) => {   //up
 
 router.post('/uploadImage', uploader.single('img'), (req, res, next) => {   //Pet upload
     if (!req.file) {    //file extistance verification
-        res.json({ status: 'ko', message: "Debes de ubir una imagen" })
+        res.json({ status: 'ko', message: "Debes de subir una imagen" })
         return
     }
 

@@ -11,6 +11,7 @@ import Footer from './components/ui/Footer/Footer'
 import Profile from './components/pages/Profile/Profile'
 import Index from './components/pages/Index/index'
 import Details from './components/pages/Details/Details'
+import About from './components/pages/About/About'
 
 import Chat from './components/ChatComponent/Chat/Chat'
 import Join from './components/ChatComponent/Join/Join'
@@ -54,6 +55,7 @@ class App extends Component {
               <Route path='/details/:link' render={props => <Details loggedInUser={this.state.loggedInUser} setTheUser={this.setTheUser} {...props} />} />
               <Route path='/myPet/:id' render={props => <Details loggedInUser={this.state.loggedInUser} setTheUser={this.setTheUser} {...props} />} />
               <Route path="/profile" render={() => this.state.loggedInUser ? <Profile loggedInUser={this.state.loggedInUser} setTheUser={this.setTheUser} /> : <Redirect to="/" />} />
+              <Route path='/about' render={() => <About />} />
 
               <Route path="/join" render={() => this.state.loggedInUser ? <Join loggedInUser={this.state.loggedInUser} /> : <Redirect to='/' />} />
               <Route path="/chat" render={props => this.state.loggedInUser ? <Chat {...props} loggedInUser={this.state.loggedInUser} /> : <Redirect to='/' />} />
