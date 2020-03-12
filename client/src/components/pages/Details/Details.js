@@ -84,10 +84,14 @@ export default class Details extends Component {
                                     </Col>
                                 </Row>
                                 <hr />
-                                <p>{this.state.pet.comment}</p>
+                                <div style={{ fontSize: '1.3em' }}>
+
+                                    <p>{this.state.pet.comment}</p>
+                                </div>
                             </Container>
                             <hr />
-                            <Link style={{ display: "flex", justifyContent: 'center', border: '1px solid grey' }} to={`/newCalendar/${this.props.match.params.link}`}><h3>CALENDARIO</h3></Link>
+
+                            <Link style={{ display: "flex", justifyContent: 'center', color: 'blue' }} to={`/newCalendar/${this.props.match.params.link}`}><h3>CALENDARIO</h3></Link>
 
                         </div>
 

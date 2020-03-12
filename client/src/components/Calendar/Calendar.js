@@ -116,7 +116,7 @@ class MyCalendar extends Component {
                 <Container>
                     <section>
                         <div style={{ display: "flex", justifyContent: 'center' }}>
-                            <Button variant="light" className="btn-profile" onClick={this.handleShow}>Añadir una cita</Button>
+                            <Button variant="outline-success" className="btn-profile" onClick={this.handleShow}>Añadir una cita</Button>
                         </div>
                         <Row>
                             <Col md={12}>

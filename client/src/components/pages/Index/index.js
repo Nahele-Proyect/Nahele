@@ -6,6 +6,9 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
+import Accordion from 'react-bootstrap/Accordion'
+import Card from 'react-bootstrap/Card'
+
 //Services imports
 import ScrapServices from '../../../services/scrap.service'
 import PetServices from '../../../services/pet.service'
@@ -77,16 +80,26 @@ export default class Index extends Component {
         return (
             <div className='index'>
                 <Container>
-
-                    {this.state.pets &&
-                        <>
-                            <Filter changeFilters={this.changeFilters} />
-                            <Button onClick={this.openGraficModal} >Ver porcentajes</Button></>}
-
+                    <Accordion defaultActiveKey="1">
+                        <Card style={{ backgroundColor: '#ffffff', border: '1px solid grey' }}>
+                            <Card.Header style={{ backgroundColor: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                <Accordion.Toggle style={{ margin: '0 auto', textDecoration: 'none', color: 'black' }} as={Button} variant="link" eventKey="0">FILTROS</Accordion.Toggle>
+                            </Card.Header>
+                            <Button variant='outline-info' onClick={this.openGraficModal} >Ver información general</Button>
+                            <Accordion.Collapse eventKey="0">
+                                <Card.Body>
+                                    {this.state.pets &&
+                                        <Filter changeFilters={this.changeFilters} />
+                                    }
+                                </Card.Body>
+                            </Accordion.Collapse>
+                        </Card>
+                    </Accordion>
                     {this.state.pets ?
                         <Row style={{ paddingBottom: '85px' }}>
+
                             {this.filtered.length === 0 ?
-                                <h1 style={{ paddingBottom: '20vh', marginTop: '100px' }}>Ahora mismo no hay mascotas con esos filtros</h1>
+                                <h1 style={{ paddingBottom: '37vh', marginTop: '100px' }}>Ahora mismo no hay mascotas con esos filtros</h1>
                                 :
                                 this.filtered.map((elm, idx) => <Col lg="3" md='4' sm='6' key={idx}><PetCard {...elm}></PetCard></Col>)}
                         </Row>
@@ -97,7 +110,7 @@ export default class Index extends Component {
                         </>
                     }
 
-                    <Modal size='lg' centered show={this.state.showGraficModal} onHide={this.closeModal} animation={true}>
+                    <Modal size='md' centered show={this.state.showGraficModal} onHide={this.closeModal} animation={true}>
                         <IndexChart pets={this.state.pets} closeModal={this.closeModal} />
                     </Modal>
                 </Container>

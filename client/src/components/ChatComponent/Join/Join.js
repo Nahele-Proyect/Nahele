@@ -13,15 +13,16 @@ const Join = props => {
         <div className="joinInnerContainer">
           <h1 className="heading">Salas de chat</h1>
 
-          <h2>{props.loggedInUser.username}</h2>
+          <h2 style={{ color: '#906a44' }}>{props.loggedInUser.username}</h2>
 
           <div >
             <div className="form-group">
-              <label htmlFor="chatList">Escoge la sala de chat</label>
+              <label className='choose' htmlFor="chatList">Escoge la sala de chat</label>
               <select name="park" className="form-control" id="chatList" onChange={e => setRoom(e.target.value)}>
                 <option defaultValue hidden>Seleccionar</option> {/*TO-DO preguntar otra forma*/}
                 <option value="perros">Perros</option>
                 <option value="gatos">Gatos</option>
+                <option value="gatos">Roedores</option>
                 <option value="otros">Otros</option>
 
               </select>
