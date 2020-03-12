@@ -23,7 +23,13 @@ export default class AdoptPet extends Component {
     submitHandler = e => {
         e.preventDefault()
 
-        this.props.pet.link ?
+        this.props.pet.owner ?
+
+            this.petServices.addRequest(this.props.pet._id, this.state.form)
+                .then(user => this.finish(user.user))
+                .catch(err => console.log(err))
+
+            :
 
             this.petServices.newScraped(this.props.pet)
                 .then(pet => pet.pet)
@@ -31,11 +37,6 @@ export default class AdoptPet extends Component {
                 .then(user => this.finish(user.user))
                 .catch(err => console.log(err))
 
-            :
-
-            this.petServices.addRequest(this.props.pet._id, this.state.form)
-                .then(user => this.finish(user.user))
-                .catch(err => console.log(err))
     }
 
     finish(user) {

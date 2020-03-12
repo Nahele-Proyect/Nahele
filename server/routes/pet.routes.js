@@ -58,17 +58,19 @@ router.post('/new', (req, res, next) => { //Create a pet in the DB
 
 router.post('/newScraped', (req, res, next) => { //Path to create a pet from the scraping, if the pet was already created, returns the existing one
 
-    Pet.findOne({
-        link: req.body.link
-    }) //Search for the dog existance in the DB
+    Pet.findOne(
+        req.body
+    ) //Search for the dog existance in the DB
         .then(pet => {
             if (pet) {
+                console.log(pet)
                 res.json({
                     status: "found",
                     pet
                 }) //If the pet already exists return (to the front) the pet
                 return
             }
+            console.log(pet)
             Pet.create(req.body) //If the pet doesn't exists create it
                 .then(pet => res.json({
                     status: 'created',
