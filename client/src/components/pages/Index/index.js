@@ -43,7 +43,6 @@ export default class Index extends Component {
 
         Promise.all([this.scrapServices.getAll(), this.petServices.getAllPets()])
             .then(response => {
-
                 const scraped = response[0].pets
                 let db = response[1].pets
                 db = db.filter(elm => elm.owner)
