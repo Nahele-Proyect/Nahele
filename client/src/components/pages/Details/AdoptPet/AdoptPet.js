@@ -23,11 +23,19 @@ export default class AdoptPet extends Component {
     submitHandler = e => {
         e.preventDefault()
 
-        this.petServices.newScraped(this.props.pet)
-            .then(pet => pet.pet)
-            .then(pet => this.petServices.addRequest(pet._id, this.state.form))
-            .then(user => this.finish(user.user))
-            .catch(err => console.log(err))
+        this.props.pet.owner ?
+
+            this.petServices.addRequest(this.props.pet._id, this.state.form)
+                .then(user => this.finish(user.user))
+                .catch(err => console.log(err))
+
+            :
+
+            this.petServices.newScraped(this.props.pet)
+                .then(pet => pet.pet)
+                .then(pet => this.petServices.addRequest(pet._id, this.state.form))
+                .then(user => this.finish(user.user))
+                .catch(err => console.log(err))
     }
 
     finish(user) {
@@ -38,7 +46,7 @@ export default class AdoptPet extends Component {
     render() {
         return (
             <div className='adoptPet'>
-                <form id="form-container" onSubmit={this.submitHandler}>
+                <form id="form-container" onSubmit={ this.submitHandler }>
                     <div className='box'>
                         <div className='box-form'>
                             <div className='box-login-tab'></div>
@@ -51,18 +59,18 @@ export default class AdoptPet extends Component {
                                 <div className='fieldset-body' id='login_form'>
                                     <p className='field'>
                                         <label htmlFor='username'>Usuario</label>
-                                        <input type='text' id='username' name='username' value={this.props.loggedInUser.username} readOnly />
+                                        <input type='text' id='username' name='username' value={ this.props.loggedInUser.username } readOnly />
                                     </p>
                                     <p className='field'>
                                         <label htmlFor='email'>Correo</label>
-                                        <input type='email' id='email' name='email' value={this.props.loggedInUser.email} readOnly />
+                                        <input type='email' id='email' name='email' value={ this.props.loggedInUser.email } readOnly />
                                     </p>
                                     <p className='field'>
                                         <label htmlFor='request'>Mensaje</label>
-                                        <textarea name='request' rows="10" cols="30" value={this.state.form.textArea} onChange={this.inputHandler} />
+                                        <textarea name='request' rows="10" cols="30" value={ this.state.form.textArea } onChange={ this.inputHandler } />
                                     </p>
-                                    <p className='failureMessage'> {this.state.errorMessage}</p>
-                                    <p className='link account-message aux-mes' onClick={this.props.closeModal} >Volver atrás</p>
+                                    <p className='failureMessage'> { this.state.errorMessage }</p>
+                                    <p className='link account-message aux-mes' onClick={ this.props.closeModal } >Volver atrás</p>
                                     <input type='submit' id='do_login' value='MANDAR SOLICITUD' />
                                 </div>
                             </div>

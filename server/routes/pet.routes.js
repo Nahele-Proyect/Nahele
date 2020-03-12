@@ -58,9 +58,9 @@ router.post('/new', (req, res, next) => { //Create a pet in the DB
 
 router.post('/newScraped', (req, res, next) => { //Path to create a pet from the scraping, if the pet was already created, returns the existing one
 
-    Pet.findOne({
-            link: req.body.link
-        }) //Search for the dog existance in the DB
+    Pet.findOne(
+        req.body
+    ) //Search for the dog existance in the DB
         .then(pet => {
             if (pet) {
                 res.json({
@@ -106,14 +106,14 @@ router.delete('/delete/:id', (req, res, next) => { //Delete a pet in the Db by t
 router.post('/addRequest/:id', (req, res, next) => { //Add a request to the pet by the id given
 
     Pet.findByIdAndUpdate(req.params.id, {
-            $push: {
-                requests: {
-                    username: req.user.username,
-                    email: req.user.email,
-                    request: req.body.request
-                }
+        $push: {
+            requests: {
+                username: req.user.username,
+                email: req.user.email,
+                request: req.body.request
             }
-        }).then(pet => User.findById(req.user._id).populate('pets').populate('calendar'))
+        }
+    }).then(pet => User.findById(req.user._id).populate('pets').populate('calendar'))
         .then(user => res.json({
             status: 'ok',
             user
