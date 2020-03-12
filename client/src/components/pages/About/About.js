@@ -28,7 +28,7 @@ const About = () => {
                         <hr />
                         <ListGroup.Item>
                             <figure style={ { display: 'flex', alignItems: 'center' } }><img src='./location.svg' /><h6 style={ { marginTop: '5px' } }>Dirección</h6></figure>
-                            <p>Paseo de la chopera nº15, Matadero, Madrid</p>
+                            <p>Paseo de la chopera nº 14, Matadero, Madrid</p>
                         </ListGroup.Item>
 
                         <ListGroup.Item>
@@ -39,7 +39,7 @@ const About = () => {
                     </ListGroup>
 
                 </Col>
-                <Col md={ 5 }>
+                <Col md={ 6 }>
                     <figure style={ { minHeight: '60vh', paddingTop: '20px' } }><Map /></figure>
                 </Col>
             </Row>
