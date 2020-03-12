@@ -1,8 +1,6 @@
 //Reac imports
 import React, { Component } from 'react'
 import { Switch, Route, Redirect } from "react-router-dom"
-//Styling
-import './App.css'
 //Services
 import AuthServices from './services/auth.service'
 //Self-made imports

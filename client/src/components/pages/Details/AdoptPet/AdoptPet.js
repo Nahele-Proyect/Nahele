@@ -2,11 +2,9 @@
 import React, { Component } from 'react'
 //Services imports
 import PetServices from '../../../../services/pet.service'
-//Bootstrap imports
-import Form from 'react-bootstrap/Form'
-import Container from 'react-bootstrap/Container'
-import Col from 'react-bootstrap/Col'
-import Button from 'react-bootstrap/Button'
+//Self-made css import
+import './AdoptPet.css'
+
 
 export default class AdoptPet extends Component {
     constructor(props) {
@@ -39,7 +37,7 @@ export default class AdoptPet extends Component {
 
     render() {
         return (
-            <div className='login'>
+            <div className='adoptPet'>
                 <form id="form-container" onSubmit={this.submitHandler}>
                     <div className='box'>
                         <div className='box-form'>
@@ -61,7 +59,7 @@ export default class AdoptPet extends Component {
                                     </p>
                                     <p className='field'>
                                         <label htmlFor='request'>Mensaje</label>
-                                        <input name='request' type='textarea' value={this.state.form.textArea} onChange={this.inputHandler} />
+                                        <textarea name='request' rows="10" cols="30" value={this.state.form.textArea} onChange={this.inputHandler} />
                                     </p>
                                     <p className='failureMessage'> {this.state.errorMessage}</p>
                                     <p className='link account-message aux-mes' onClick={this.props.closeModal} >Volver atrás</p>

@@ -37,8 +37,8 @@ export class MapContainer extends Component {
     render() {
         console.log(this.props)
         return (
-            <Map google={this.props.google} zoom={14} style={mapStyles} initialCenter={{ lat: -1.2884, lng: 36.8233 }} >
-                <Marker onClick={this.onMarkerClick} name={'Está bien chingón el marcador'} />
+            <Map google={this.props.google} zoom={15} style={mapStyles} initialCenter={{ lat: 40.392611, lng: -3.698222 }} >
+                <Marker onClick={this.onMarkerClick} name={"Fluffy's Shelter"} />
                 <InfoWindow marker={this.state.activeMarker} visible={this.state.showingInfoWindow} onClose={this.onClose}>
                     <div>
                         <h4>{this.state.selectedPlace.name}</h4>

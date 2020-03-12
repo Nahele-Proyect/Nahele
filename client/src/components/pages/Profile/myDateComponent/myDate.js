@@ -36,7 +36,7 @@ class myDate extends Component {
                                     <p><strong>Fecha fin: </strong>{elm.end && (elm.end.substr(0, 10))}</p>
 
                                     <Link to={`/details/${elm.petsUrl}`}>Ir a la mascota</Link>
-                                    <Button onClick={() => this.deleteCalendar(elm._id)} >Eliminar</Button>
+                                    <Button style={{ marginLeft: '15px' }} size='sm' variant='outline-danger' onClick={() => this.deleteCalendar(elm._id)} >Eliminar</Button>
                                     <hr />
                                 </div>
                             ))}
