@@ -7,6 +7,7 @@ const express = require('express')
 const app = express();
 
 //Middleware imports
+require('./configs/protocolRedirection.config')(app)// http to https redirection
 require('./configs/middleware.config')(app)
 require('./configs/locals.config')(app)
 require('./configs/session.config')(app)
