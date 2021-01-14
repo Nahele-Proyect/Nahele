@@ -28,25 +28,25 @@ router.get("/", (req, res, next) => {
     .get("/") //Get the page
     .then((response) => {
       const $ = cheerio.load(response.data); //Load the html info
-      console.log("Largo", $("img")[1].attribs["data-src"]);
+      console.log("Largo", $("img")[1].attribs.src);
       $("img").each((idx, image) => {
         //img scraping
         // console.log(image);
         //get the flag image
-        if (image.attribs["data-src"]) {
+        if (image.attribs.src) {
           if (
-            image.attribs["data-src"].includes(".svg") &&
-            !image.attribs["data-src"].includes("fav") &&
-            !image.attribs["data-src"].includes("invisible")
+            image.attribs.src.includes(".svg") &&
+            !image.attribs.src.includes("fav") &&
+            !image.attribs.src.includes("invisible")
           )
-            flags.push(image.attribs["data-src"]);
+            flags.push(image.attribs.src);
 
           if (
-            image.attribs["data-src"] !== undefined &&
-            !image.attribs["data-src"].includes(".svg") &&
-            !image.attribs["data-src"].includes(".png")
+            image.attribs.src !== undefined &&
+            !image.attribs.src.includes(".svg") &&
+            !image.attribs.src.includes(".png")
           )
-            imgs.push(image.attribs["data-src"]);
+            imgs.push(image.attribs.src);
         }
 
         //get the pet image
